@@ -98,13 +98,11 @@ Claude uses `/skill-name` for the same catalog shown below with Codex `$skill-na
 | `$blender-convert-3d-2d` | Convert Blender models into 2D sprites |
 | `$blender-convert-2d-3d` | Reconstruct Blender models from images |
 
-### 📦 Packages
+### 📦 Dependencies
 
-- **Blender** supplies the 3D runtime and bundled Python for Blender helpers.
-- **Official Blender Lab MCP** connects local Codex to Blender through the separately configured add-on/server.
-- **Python 3.11+** runs the standalone setup and output helpers.
-- **PyYAML** is the development dependency for skill metadata validation; see [requirements-dev.txt](requirements-dev.txt).
-- **PowerShell** runs the Windows installer.
+- [Blender](https://www.blender.org/)
+- [Official Blender Lab MCP](https://www.blender.org/lab/mcp-server/)
+- AI Harness (e.g. Codex)
 
 ## Credits
 

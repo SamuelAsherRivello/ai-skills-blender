@@ -34,11 +34,9 @@ Coming Soon...
 
 ## Table of Contents
 
-1. [Images](#images)
-2. [Live Demo](#live-demo)
-3. [Getting Started](#getting-started)
-4. [Project Details](#project-details)
-5. [Credits](#credits)
+1. [Getting Started](#getting-started)
+2. [Project Details](#project-details)
+3. [Credits](#credits)
 
 ## Getting Started
 

@@ -3,6 +3,12 @@
 <img src="docs/images/youtube-thumbnail.png" alt="Blender AI skills YouTube thumbnail" width="100%" />
 </p>
 
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Skills](https://img.shields.io/badge/skills-13-orange.svg)](skills/)
+[![Blender MCP](https://img.shields.io/badge/Blender_MCP-official-blueviolet.svg)](https://www.blender.org/lab/mcp-server/)
+[![Codex](https://img.shields.io/badge/Codex-skills-green.svg)](.codex/INSTALL.md)
+[![Claude Code](https://img.shields.io/badge/Claude_Code-skills-black.svg)](.claude/INSTALL.md)
+
 # Blender Skills for Codex and Claude Code
 
 Create, refine, and render 3D assets with thirteen reusable Blender skills.

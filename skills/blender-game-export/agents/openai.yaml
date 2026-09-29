@@ -1,0 +1,4 @@
+interface:
+  display_name: "Blender Game Export"
+  short_description: "Export Blender assets for game engines"
+  default_prompt: "Use $blender-game-export to export blender assets for game engines for my request."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Blender Procedural Geometry"
+  short_description: "Create reproducible Blender geometry"
+  default_prompt: "Use $blender-procedural-geometry to create reproducible blender geometry for my request."

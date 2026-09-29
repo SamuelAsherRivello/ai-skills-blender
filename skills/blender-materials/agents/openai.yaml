@@ -1,0 +1,4 @@
+interface:
+  display_name: "Blender Materials"
+  short_description: "Create and inspect Blender materials"
+  default_prompt: "Use $blender-materials to create and inspect blender materials for my request."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Blender Create Model"
+  short_description: "Model a scoped prop or character"
+  default_prompt: "Use $blender-create-model to model a scoped prop or character for my request."

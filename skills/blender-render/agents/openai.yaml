@@ -1,0 +1,4 @@
+interface:
+  display_name: "Blender Render"
+  short_description: "Render and verify Blender outputs"
+  default_prompt: "Use $blender-render to render and verify blender outputs for my request."

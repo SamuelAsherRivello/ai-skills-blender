@@ -1,0 +1,29 @@
+# Local execution output and authoring state
+/.acceptance/
+/openspec/
+/.agents/
+/.codex/
+
+# Python environments and generated test/cache files
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Blender recovery files; intentional .blend assets remain eligible
+*.blend[0-9]*
+*.blend@
+
+# Local credentials and editor/OS noise
+.env
+.env.*
+!.env.example
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini

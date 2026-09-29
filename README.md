@@ -54,16 +54,23 @@ Here are the steps.
 
 ### 3. 🛠 Install Skills
 
-1. **For Codex:** Copy the skill folders from [.codex/skills](.codex/skills/) into `~/.agents/skills/`.
-2. **For Claude Code:** Copy the skill folders from [.claude/skills](.claude/skills/) into `~/.claude/skills/`.
+#### A. Codex
+
+1. Copy the skill folders from [.codex/skills](.codex/skills/) into `~/.agents/skills/`.
 
 Or run this command from the repository in PowerShell:
 
 ```powershell
-# For Codex
 ./scripts/install-codex.ps1 -Scope User -Skills all
+```
 
-# For Claude Code
+#### B. Claude
+
+1. Copy the skill folders from [.claude/skills](.claude/skills/) into `~/.claude/skills/`.
+
+Or run this command from the repository in PowerShell:
+
+```powershell
 ./scripts/install-claude.ps1 -Scope User -Skills all
 ```
 

@@ -154,7 +154,7 @@ The optional shared gallery is loaded only when useful. Select a reference by fi
 
 - [Blender](https://www.blender.org/)
 - [Official Blender Lab MCP](https://www.blender.org/lab/mcp-server/)
-- AI Harness (e.g. Codex)
+- AI Harness: Ex. [Codex](https://openai.com/codex/), [Claude](https://claude.ai/)
 
 ## Credits
 

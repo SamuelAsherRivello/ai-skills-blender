@@ -1,3 +1,5 @@
+![Samuel Asher Rivello](https://raw.githubusercontent.com/SamuelAsherRivello/github-repository-template/main/project-name/documentation/samuel-asher-rivello-banner.png)
+
 # Blender Skills for Codex and Claude Code
 
 Thirteen focused skills for the official Blender Lab MCP connection. Shared sources live in [skills/](skills/), with client packages in [.codex/](.codex/INSTALL.md) and [.claude/](.claude/INSTALL.md).

@@ -82,6 +82,22 @@ Or run this command from the repository in PowerShell:
 
 Claude uses `/skill-name` for the same catalog shown below with Codex `$skill-name` syntax.
 
+### Calling a skill with reference
+
+```text
+$blender-create-model
+Subject: A boy getting ready for school, putting on a backpack.
+Render style: Comic book; use references/renders/render_character_v1.png as inspiration.
+Lighting: Warm morning light; consult references/lighting/lighting_character_v1.png.
+Setting: A cozy bedroom with school supplies.
+Camera: Full-body, three-quarter view at the character's eye level.
+Colors: Muted blues with yellow accents.
+Output: Editable Blender scene and a 1920x1080 PNG preview.
+Inspect the referenced images and choose treatments that fit this brief.
+```
+
+For Claude, replace `$blender-create-model` with `/blender-create-model`. Use absolute image paths if the reference folder is outside your current project.
+
 ## Skills
 
 | Name | Comment | Call Directly? |

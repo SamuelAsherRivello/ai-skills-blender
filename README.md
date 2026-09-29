@@ -106,21 +106,21 @@ Claude uses `/skill-name` for the same catalog shown below with Codex `$skill-na
 
 | Name | Comment | Call Directly? |
 |---|---|---|
-| `$blender-setup` | Check the Blender connection and diagnose setup issues | Yes |
-| `$blender-create-model` | Create a prop or character | Yes |
-| `$blender-create-environment` | Build a room, landscape, or modular scene | Yes |
-| `$blender-procedural-geometry` | Build editable generators and repeated geometry | When needed |
-| `$blender-materials` | Create or refine surface materials | When needed |
-| `$blender-uv-bake` | Unwrap meshes and bake texture maps | When needed |
-| `$blender-light-camera` | Refine lighting and camera composition | When needed |
-| `$blender-render` | Render the current scene and verify outputs | Yes |
-| `$blender-rig-animate` | Rig an asset or create animation clips | Yes |
-| `$blender-game-export` | Export an asset for a game engine | Yes |
-| `$blender-review-optimize` | Review asset quality and reduce rendering or geometry cost | When needed |
-| `$blender-convert-3d-2d` | Render a model into sprites or other 2D views | Yes |
-| `$blender-convert-2d-3d` | Reconstruct a model from an image | Yes |
+| `$blender-setup` | Check the Blender connection and diagnose setup issues | ![Yes](https://img.shields.io/badge/Yes-2ea44f?style=flat) |
+| `$blender-create-model` | Create a prop or character | ![Yes](https://img.shields.io/badge/Yes-2ea44f?style=flat) |
+| `$blender-create-environment` | Build a room, landscape, or modular scene | ![Yes](https://img.shields.io/badge/Yes-2ea44f?style=flat) |
+| `$blender-procedural-geometry` | Build editable generators and repeated geometry | ![Optional](https://img.shields.io/badge/Optional-f2cc60?style=flat) |
+| `$blender-materials` | Create or refine surface materials | ![Optional](https://img.shields.io/badge/Optional-f2cc60?style=flat) |
+| `$blender-uv-bake` | Unwrap meshes and bake texture maps | ![Optional](https://img.shields.io/badge/Optional-f2cc60?style=flat) |
+| `$blender-light-camera` | Refine lighting and camera composition | ![Optional](https://img.shields.io/badge/Optional-f2cc60?style=flat) |
+| `$blender-render` | Render the current scene and verify outputs | ![Yes](https://img.shields.io/badge/Yes-2ea44f?style=flat) |
+| `$blender-rig-animate` | Rig an asset or create animation clips | ![Yes](https://img.shields.io/badge/Yes-2ea44f?style=flat) |
+| `$blender-game-export` | Export an asset for a game engine | ![Yes](https://img.shields.io/badge/Yes-2ea44f?style=flat) |
+| `$blender-review-optimize` | Review asset quality and reduce rendering or geometry cost | ![Optional](https://img.shields.io/badge/Optional-f2cc60?style=flat) |
+| `$blender-convert-3d-2d` | Render a model into sprites or other 2D views | ![Yes](https://img.shields.io/badge/Yes-2ea44f?style=flat) |
+| `$blender-convert-2d-3d` | Reconstruct a model from an image | ![Yes](https://img.shields.io/badge/Yes-2ea44f?style=flat) |
 
-**Yes** marks a common starting point. **When needed** marks a specialist task that can also support a larger workflow. All skills can be called directly; these labels are guidance, not invocation restrictions. The AI can select relevant installed skills, but there is no fixed automatic chain between them.
+**Yes** marks a common starting point. **Optional** marks a specialist task that can also support a larger workflow. All skills can be called directly; these labels are guidance, not invocation restrictions. The AI can select relevant installed skills, but there is no fixed automatic chain between them.
 
 ### 📦 Dependencies
 

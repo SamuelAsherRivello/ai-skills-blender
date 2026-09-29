@@ -1,0 +1,23 @@
+{
+  "render_seconds": 5.134464700007811,
+  "batch_seconds": 8.558362999989185,
+  "sprite_count": 16,
+  "sprite_size": [
+    128,
+    128
+  ],
+  "frames_per_direction": 4,
+  "rig": "Head and tail idle; planted legs",
+  "seed": 31,
+  "scene": "Example_05-fox-sprite-sheet",
+  "objects": 30,
+  "blender": "5.2.2 LTS",
+  "engine": "Cycles",
+  "device": "OptiX",
+  "samples": 32,
+  "resolution": [
+    1280,
+    720
+  ],
+  "iteration": 1
+}

@@ -1,0 +1,13 @@
+{
+  "scene": "Example_05-fox-sprite-sheet",
+  "objects": 30,
+  "camera": "Presentation camera.002",
+  "render_path": "//result.png",
+  "resolution": [
+    1280,
+    720
+  ],
+  "screens": 12,
+  "libraries": 0,
+  "unpacked_images": []
+}

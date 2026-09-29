@@ -1,0 +1,42 @@
+{
+  "target_id": "target-01",
+  "task_id": "example-06-desk-lamp-from-image",
+  "worker_id": "/root/target06",
+  "mode": "supplied",
+  "status": "ready",
+  "image": {
+    "path": "target.png",
+    "width": 1536,
+    "height": 1024,
+    "format": "PNG",
+    "sha256": "9a8051040ff9bb921b95528999435fe18ace995ff5de303106d9560f3be44ec5"
+  },
+  "prompt": {
+    "path": "prompt.txt",
+    "original_generation_prompt": "unknown"
+  },
+  "brief": "brief.md",
+  "generation": {
+    "tool": null,
+    "provider": null,
+    "model": null,
+    "seed": null
+  },
+  "provenance_note": "Copied unchanged from ../../source.png, which parent identifies as references/renders/render_desk_lamp_v1.png. Only top-left Photorealistic panel is authoritative.",
+  "requested_output": {
+    "aspect_ratio": "16:9",
+    "resolution": [
+      1280,
+      720
+    ]
+  },
+  "references": [
+    "../../source.png"
+  ],
+  "previous_target_id": null,
+  "unchanged_scene_features": [],
+  "inspection": {
+    "performed": true,
+    "findings": "Observed full twelve-panel sheet. Top-left lamp has black circular base, two linked black arm segments, joint discs and yellow conical shade directed down-left with warm light pool. Hidden geometry is inferred. Full sheet preserved; no crop or pixel alteration."
+  }
+}

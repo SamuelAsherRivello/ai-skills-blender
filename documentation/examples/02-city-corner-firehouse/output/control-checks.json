@@ -1,0 +1,54 @@
+{
+  "valid": [
+    {
+      "window_count": 1,
+      "blind_height": 0.2,
+      "visible_glass": 1,
+      "visible_infill": 4
+    },
+    {
+      "window_count": 3,
+      "blind_height": 0.7,
+      "visible_glass": 3,
+      "visible_infill": 2
+    },
+    {
+      "window_count": 5,
+      "blind_height": 1.2,
+      "visible_glass": 5,
+      "visible_infill": 0
+    },
+    {
+      "window_count": 5,
+      "blind_height": 0.42,
+      "visible_glass": 5,
+      "visible_infill": 0
+    }
+  ],
+  "rejected": [
+    [
+      "0",
+      "0.42"
+    ],
+    [
+      "6",
+      "0.42"
+    ],
+    [
+      "True",
+      "0.42"
+    ],
+    [
+      "3",
+      "-1"
+    ],
+    [
+      "3",
+      "2"
+    ],
+    [
+      "3",
+      "nan"
+    ]
+  ]
+}

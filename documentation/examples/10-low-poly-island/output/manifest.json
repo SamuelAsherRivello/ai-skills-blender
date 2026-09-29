@@ -1,0 +1,18 @@
+{
+  "render_seconds": 5.579194600053597,
+  "seed": 31,
+  "style": "Flat faceted island with stylized geometric vegetation",
+  "limitation": "Static illustrative water and inferred terrain; not navigation-tested.",
+  "scene": "Example_10-low-poly-island",
+  "objects": 63,
+  "blender": "5.2.2 LTS",
+  "engine": "Cycles",
+  "device": "OptiX",
+  "samples": 32,
+  "resolution": [
+    1280,
+    720
+  ],
+  "iteration": 1,
+  "technical_correction": "Lowered studio floor to reveal water disk and flattened path cross-section; no new creative build."
+}

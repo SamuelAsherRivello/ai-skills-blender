@@ -1,0 +1,4 @@
+Use case: photorealistic-natural
+Asset type: 2D concept target for later editable Blender scene, not a Blender render.
+Create an inviting Scandinavian reading nook: oak floor, cream plaster walls, broad window, rust upholstered armchair, linen cushion, round side table, ceramic mug, books, leafy plant and woven rug. Warm afternoon window light with soft shadows. Architectural three-quarter perspective showing the open room and all key furnishings.
+Wide 16:9 composition, architectural interior perspective with comfortable margins, all key furnishings visible. Natural tactile upholstery, oak grain and subtle plaster; warm cream, rust and leafy green palette. No people, text, labels, UI or borders. This is one concept image, not a measured plan. Prioritize plausible layout and clean readable forms useful for a 3D interpretation.

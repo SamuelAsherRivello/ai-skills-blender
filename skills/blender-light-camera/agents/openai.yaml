@@ -1,0 +1,4 @@
+interface:
+  display_name: "Blender Light Camera"
+  short_description: "Compose cameras and shape lighting"
+  default_prompt: "Use $blender-light-camera to compose cameras and shape lighting for my request."

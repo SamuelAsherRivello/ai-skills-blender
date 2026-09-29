@@ -1,0 +1,21 @@
+{
+  "render_seconds": 5.928883499989752,
+  "additional_views": {
+    "matching-view.png": 1.6838646999676712,
+    "rear-view.png": 2.029136400029529,
+    "side-view.png": 1.549115800007712
+  },
+  "source_panel": "input/source.png top-left Photorealistic panel",
+  "assumptions": "Dimensions, joint depth, cable and hidden shade geometry inferred; reference is stylized illustration, not a measured photograph.",
+  "scene": "Example_06-desk-lamp-from-image",
+  "objects": 21,
+  "blender": "5.2.2 LTS",
+  "engine": "Cycles",
+  "device": "OptiX",
+  "samples": 32,
+  "resolution": [
+    1280,
+    720
+  ],
+  "iteration": 1
+}

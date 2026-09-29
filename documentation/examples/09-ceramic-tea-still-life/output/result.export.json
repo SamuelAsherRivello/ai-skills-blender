@@ -1,0 +1,27 @@
+{
+  "sourcePath": "documentation/examples/09-ceramic-tea-still-life/output/result.blend",
+  "sourceSha256": "044eabcba7dc6400feb1a1e38d9065fb8dfef7b5c8e78723c0cbef5728348193",
+  "glbPath": "documentation/examples/09-ceramic-tea-still-life/output/result.glb",
+  "glbSha256": "6d19a6eea3e2915d2fdc2d836079ef5185b70e02d24f042048251341d94d83c2",
+  "byteSize": 404396,
+  "warnings": [
+    "Blender world, compositor, and studio lighting are replaced by viewer lighting."
+  ],
+  "blenderVersion": "5.2.2 LTS",
+  "seconds": 0.13,
+  "exporterVersion": 3,
+  "view": {
+    "position": [
+      5.0,
+      4.0,
+      7.0
+    ],
+    "target": [
+      -0.12809371948242188,
+      0.5128967761993408,
+      -0.17932987213134766
+    ],
+    "frameHeight": 3.65625,
+    "aspect": 1.7777777777777777
+  }
+}

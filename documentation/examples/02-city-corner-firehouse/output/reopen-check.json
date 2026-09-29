@@ -1,0 +1,17 @@
+{
+  "scene": "Feedback_Firehouse_05",
+  "objects": 2611,
+  "scenes": 1,
+  "render_path": "//result.png",
+  "resolution": [
+    1280,
+    720
+  ],
+  "camera": "Street architectural camera.004",
+  "libraries": 0,
+  "external_images": [],
+  "controls": {
+    "window_count": 5,
+    "blind_height": 0.42
+  }
+}

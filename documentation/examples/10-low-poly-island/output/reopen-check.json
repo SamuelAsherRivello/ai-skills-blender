@@ -1,0 +1,13 @@
+{
+  "scene": "Example_10-low-poly-island",
+  "objects": 63,
+  "camera": "Presentation camera.007",
+  "render_path": "//result.png",
+  "resolution": [
+    1280,
+    720
+  ],
+  "screens": 12,
+  "libraries": 0,
+  "unpacked_images": []
+}

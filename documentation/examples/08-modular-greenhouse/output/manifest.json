@@ -1,0 +1,54 @@
+{
+  "render_seconds": 8.014203400001861,
+  "controls": {
+    "bays": 4,
+    "spacing": 1.0
+  },
+  "procedural_checks": [
+    {
+      "bays": 1,
+      "spacing": 0.7,
+      "objects": 63
+    },
+    {
+      "bays": 6,
+      "spacing": 1.4,
+      "objects": 223
+    },
+    {
+      "bays": 4,
+      "spacing": 1.0,
+      "objects": 159
+    },
+    {
+      "invalid_rejected": [
+        0,
+        1
+      ]
+    },
+    {
+      "invalid_rejected": [
+        7,
+        1
+      ]
+    },
+    {
+      "invalid_rejected": [
+        4,
+        -1
+      ]
+    }
+  ],
+  "limitation": "Thin modeled panes; simplified greenery and no climate simulation.",
+  "scene": "Example_08-modular-greenhouse",
+  "objects": 170,
+  "blender": "5.2.2 LTS",
+  "engine": "Cycles",
+  "device": "OptiX",
+  "samples": 32,
+  "resolution": [
+    1280,
+    720
+  ],
+  "iteration": 1
+}

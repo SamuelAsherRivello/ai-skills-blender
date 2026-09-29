@@ -1,0 +1,37 @@
+PROMPT 1 - Initial creation request
+
+$blender-create-environment
+
+Create a realistic architectural visualization of a firehouse on a city
+corner. Make it a detailed two-story red-brick station with two large
+fire-engine bays, a pedestrian entrance, stone trim, metal apparatus doors,
+reflective upper windows, a restrained station sign, and a hose-drying tower.
+Include sidewalks, curbs, an intersection with crosswalks, streetlights,
+a hydrant, and neighboring city buildings to establish the urban setting.
+
+Use realistic proportions and physically based masonry, stone, concrete,
+painted metal, asphalt, and glass. Add subtle surface texture and weathering.
+Use natural daytime lighting, balanced exposure, and believable shadows.
+Camera: clear architectural three-quarter perspective showing the front
+and side of the station and its relationship to the street corner. Keep
+the complete building visible and avoid excessive wide-angle distortion.
+
+Use blender-setup, blender-procedural-geometry, blender-materials,
+blender-light-camera, blender-render, and blender-review-optimize alongside
+blender-create-environment. Keep repeated facade windows editable with
+documented controls and verify those controls within sensible limits.
+Preserve existing Blender content and use an isolated scene.
+
+Deliver all generated files inside output/:
+- result.blend: editable portable scene, camera, materials, lights, controls.
+- result.png: clean final camera Render Result at 1280x720, no UI or HUD.
+- editor.png: genuine Blender editor screenshot of the completed scene.
+- review.md: settings, actual skills, measured timings, verification,
+  corrective actions, assumptions, and remaining quality limitations.
+
+Use 640x360 previews. Target less than 30 seconds per still as a goal,
+not a hard limit. Benchmark EEVEE or GPU Cycles and use denoising when useful.
+The result should read as realistic architecture, not a cartoon miniature.
+No external image reference is required: this is an original fictional
+firehouse, not a survey or reconstruction of a particular real building.
+Verify the saved file by reopening it and inspect the actual output images.

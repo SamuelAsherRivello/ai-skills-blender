@@ -1,0 +1,7 @@
+Use case: stylized-concept
+Asset type: 2D visual target for subsequent editable Blender scene creation; not a screenshot.
+Primary request: Create a whimsical low-poly island diorama with turquoise water, layered rocky cliffs, sandy beach, a winding path, pine trees and a small red-roof lighthouse. Distinct faceted forms, rich controlled color, soft sunny shadows.
+Composition: Clinical three-quarter orthographic view, complete island silhouette fully in frame with generous margins, landscape 16:9 composition. Show the cliff layers, shoreline and winding path clearly.
+Style: Coherent low-poly faceted geometry, visibly planar surfaces, controlled rich turquoise, warm sand and green foliage. A small lighthouse with a red roof is the focal accent.
+Lighting: Soft sunny lighting and legible gentle shadows.
+Constraints: One concept image, no text, labels, borders, logos or UI. Keep all requested forms readable and feasible as a simple Blender diorama.

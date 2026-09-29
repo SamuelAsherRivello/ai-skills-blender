@@ -1,0 +1,27 @@
+{
+  "sourcePath": "documentation/examples/10-low-poly-island/output/result.blend",
+  "sourceSha256": "f70f110231bd3ad8a34bfbe5d8b7e693ddc388b033f325cd2b04a5e20932c8bc",
+  "glbPath": "documentation/examples/10-low-poly-island/output/result.glb",
+  "glbSha256": "d47e78c431416ac38d10989a71a1f042eb5ba999c6a4288414f808f7dd9c5e35",
+  "byteSize": 712316,
+  "warnings": [
+    "Blender world, compositor, and studio lighting are replaced by viewer lighting."
+  ],
+  "blenderVersion": "5.2.2 LTS",
+  "seconds": 0.25,
+  "exporterVersion": 3,
+  "view": {
+    "position": [
+      7.0,
+      7.0,
+      9.0
+    ],
+    "target": [
+      -0.30816078186035156,
+      0.8924636840820312,
+      -0.3962106704711914
+    ],
+    "frameHeight": 5.287499785423279,
+    "aspect": 1.7777777777777777
+  }
+}

@@ -1,0 +1,7 @@
+Use case: product-mockup
+Asset type: 2D visual target for Blender construction, not a Blender render.
+Subject: Refined still life with seafoam glazed ceramic teapot, elegant curved spout and arched handle, two matching cups, honey-colored wooden tray, folded linen and one small citrus fruit.
+Style: Realistic studio product photography, coherent manufacturable forms, broad glossy glaze reflections, warm muted studio background.
+Composition: Clinical three-quarter orthographic-style view, horizontal 16:9 composition, entire tray, teapot, handle, spout, both cups, linen and fruit visible with generous margins. Readable separate silhouettes.
+Lighting: Broad soft studio key, gentle fill, warm neutral atmosphere and grounded contact shadows.
+Constraints: No text, logo, watermark, Blender UI, collage or extra props. One image only.

@@ -1,0 +1,13 @@
+{
+  "name": "blender-viewer-export-tools",
+  "private": true,
+  "type": "module",
+  "scripts": {"validate": "node validate.mjs", "optimize": "node optimize.mjs"},
+  "dependencies": {
+    "@gltf-transform/core": "4.5.1",
+    "@gltf-transform/extensions": "4.5.1",
+    "@gltf-transform/functions": "4.5.1",
+    "meshoptimizer": "1.3.0",
+    "gltf-validator": "2.0.0-dev.3.10"
+  }
+}

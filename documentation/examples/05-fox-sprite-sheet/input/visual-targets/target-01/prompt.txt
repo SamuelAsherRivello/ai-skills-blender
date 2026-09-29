@@ -1,0 +1,7 @@
+Use case: stylized-concept
+Asset type: 2D visual target for an editable Blender model and small game sprites; concept image only.
+Subject: One charming low-poly orange fox with ivory chest and tail tip, dark paws and expressive pointed ears. Quadruped standing calmly in a simple idle pose, all four legs and large bushy tail clearly readable.
+Style: Clean faceted low-poly geometry, appealing proportions, large readable shapes suitable for 128x128 sprites. Orange coat, warm ivory muzzle/chest/tail tip, dark brown paws and small nose, simple dark eyes.
+Composition: Full body, clinical three-quarter orthographic view, square frame with generous margins around ears, paws and tail. Neutral pale gray studio background, soft ground contact shadow.
+Lighting: Soft neutral studio illumination revealing facets without harsh contrast.
+Constraints: Single fox only, no accessories, no text, no diagrams, no UI, no sprite sheet. Anatomy coherent and silhouette readable, no cropped body parts. This is inspiration for 3D creation, not a Blender screenshot.

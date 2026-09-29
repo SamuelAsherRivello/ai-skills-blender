@@ -1,0 +1,691 @@
+{
+  "date": "2026-09-29",
+  "source_commit": "421019eccd7e6d518261a8ada79779ac01c41eb6",
+  "working_tree": "dirty; gallery changes local",
+  "examples": [
+    {
+      "name": "01-school-morning-character",
+      "files": {
+        "input/prompt.txt": {
+          "bytes": 2032,
+          "sha256": "afc4a4b8f0ccc09e35280dc308f1b265d2ae2506105091a20157005355ea5dcb"
+        },
+        "output/result.png": {
+          "bytes": 1198726,
+          "sha256": "919080900be6bcedf8bfde381ba8f7292026e1427550038fe5d11a28f4175322"
+        },
+        "output/result.blend": {
+          "bytes": 325922,
+          "sha256": "465ecf985f6065fed8263ae35702f29bf79dcef8c247728236c46e4a85f77bd3"
+        },
+        "output/editor.png": {
+          "bytes": 3524374,
+          "sha256": "2456558003d8630542bcb9d2a661aa65291256c0ea2387438ce029812404282d"
+        },
+        "output/review.md": {
+          "bytes": 7875,
+          "sha256": "47893773c3a254419f98946c15807dc5d01b55e0f6c472891019899884e49d6d"
+        }
+      },
+      "render_size": [
+        1280,
+        720
+      ],
+      "editor_size": [
+        2560,
+        1549
+      ],
+      "total_bytes": 5833200
+    },
+    {
+      "name": "02-city-corner-firehouse",
+      "files": {
+        "input/prompt.txt": {
+          "bytes": 2152,
+          "sha256": "64e782fd6c969befa98473d628a6b7798cbbb355eb20cf5e2fc19728ef715021"
+        },
+        "output/result.png": {
+          "bytes": 1473173,
+          "sha256": "f5cda32abdee63aa05a638ad730f4da467220ae37e1d8f48850bf146dad24522"
+        },
+        "output/result.blend": {
+          "bytes": 1150094,
+          "sha256": "6276cdddda097687b1f28d33d0f90ee8561b9374d14db917dbee23d0e5d7adcb"
+        },
+        "output/editor.png": {
+          "bytes": 937941,
+          "sha256": "d26fc3219f34b4ece31ad467582f459741dadd8262d9851a31b7955921a76673"
+        },
+        "output/review.md": {
+          "bytes": 3851,
+          "sha256": "f6a0173435a976c14f101bece6b8f4910bcd0ef5073b50a1788412fc1f578e7b"
+        }
+      },
+      "render_size": [
+        1280,
+        720
+      ],
+      "editor_size": [
+        2560,
+        1549
+      ],
+      "total_bytes": 49915252
+    },
+    {
+      "name": "03-game-ready-treasure-chest",
+      "files": {
+        "input/prompt.txt": {
+          "bytes": 678,
+          "sha256": "d448dafc22beeb4a50fcee3da6265be0213e5aba1b3ff329b2d4f6b6a5f572f3"
+        },
+        "output/result.png": {
+          "bytes": 1105978,
+          "sha256": "c7020323c5931029d17a7220a23119d2c408cd5273a0d7766547a1f014e032ec"
+        },
+        "output/result.blend": {
+          "bytes": 1595569,
+          "sha256": "22ccddebc57dcc116735952c13f652a5e7ae059a93073660a0dda8cb9746a980"
+        },
+        "output/editor.png": {
+          "bytes": 1562720,
+          "sha256": "1fbf0edf13336f1c810689b1e7bcf9256f2c24e92bbc9cd7bd4e9f7976f529c6"
+        },
+        "output/review.md": {
+          "bytes": 2957,
+          "sha256": "3286958b1581295c73516d54fc9e23cbfd0b85cf048033ce47c05ba226183ca9"
+        }
+      },
+      "render_size": [
+        1280,
+        720
+      ],
+      "editor_size": [
+        2560,
+        1549
+      ],
+      "fresh_capture_check": [
+        {
+          "pid": 40224,
+          "visible": true,
+          "minimized": false
+        },
+        {
+          "pid": 40224,
+          "visible": true,
+          "minimized": false
+        }
+      ],
+      "render_seconds": 5.473535400000401,
+      "reopen": {
+        "scene": "Example_03-game-ready-treasure-chest",
+        "objects": 7,
+        "camera": "Presentation camera",
+        "render_path": "//result.png",
+        "resolution": [
+          1280,
+          720
+        ],
+        "screens": 12,
+        "libraries": 0,
+        "unpacked_images": []
+      },
+      "target_sha256": "92e2d660fd51e9eef283916c8e7ae43c3ec1e17bbecf45b7e8964945be5bc8dd",
+      "total_bytes": 11477561
+    },
+    {
+      "name": "04-robot-greeting",
+      "files": {
+        "input/prompt.txt": {
+          "bytes": 640,
+          "sha256": "1a0387a32f2bf51911eff2aea1b5332043b590c2b4cacfdd22660913d8a86c5d"
+        },
+        "output/result.png": {
+          "bytes": 1029183,
+          "sha256": "398696d7512eed0906a0cb909652c024fe72fe17b2792c5e69bc648521ccf6c3"
+        },
+        "output/result.blend": {
+          "bytes": 233367,
+          "sha256": "fbb0042792831679898f5d72acf8cb2c9a05585f2f5ee1dc5cd833a946613ebd"
+        },
+        "output/editor.png": {
+          "bytes": 1470527,
+          "sha256": "72aaf0424f6411a58a28e29ba4266972eac26d293010138ff7e522a237092b44"
+        },
+        "output/review.md": {
+          "bytes": 2932,
+          "sha256": "cef1963f6a2ce29076b67846ec982fb306005cba725d2c25bfa12d693daca2d4"
+        }
+      },
+      "render_size": [
+        1280,
+        720
+      ],
+      "editor_size": [
+        2560,
+        1549
+      ],
+      "fresh_capture_check": [
+        {
+          "pid": 40224,
+          "visible": true,
+          "minimized": false
+        },
+        {
+          "pid": 40224,
+          "visible": true,
+          "minimized": false
+        }
+      ],
+      "render_seconds": 7.640178499976173,
+      "reopen": {
+        "scene": "Example_04-robot-greeting",
+        "objects": 42,
+        "camera": "Presentation camera.001",
+        "render_path": "//result.png",
+        "resolution": [
+          1280,
+          720
+        ],
+        "screens": 12,
+        "libraries": 0,
+        "unpacked_images": []
+      },
+      "target_sha256": "b096adc02627388695caf2c59d49395530bc8a6d4154542ca1f80b12c8bd0607",
+      "total_bytes": 9150974
+    },
+    {
+      "name": "05-fox-sprite-sheet",
+      "files": {
+        "input/prompt.txt": {
+          "bytes": 651,
+          "sha256": "1b6ab0e7cd14bd1034326f0798b52404fd420783091131dea69639c8769ff8c6"
+        },
+        "output/result.png": {
+          "bytes": 959659,
+          "sha256": "db36320c85c3bd18707025cbc6842ffe08d3e9db03b10473c420eb3cc23adcde"
+        },
+        "output/result.blend": {
+          "bytes": 164842,
+          "sha256": "a9b813fbae2c6e81c947d3423fa40a06b1ca7e461b3d21ac3aa4cfc74a949d47"
+        },
+        "output/editor.png": {
+          "bytes": 1410289,
+          "sha256": "99921108043d541c44096f1566183d61d329ae0437407eda114f99f2d90632cb"
+        },
+        "output/review.md": {
+          "bytes": 2921,
+          "sha256": "fdf0ebbc0990a472677a79bd4ce86ad297d0b2177ea1a6e44d396aa8cad0219e"
+        }
+      },
+      "render_size": [
+        1280,
+        720
+      ],
+      "editor_size": [
+        2560,
+        1549
+      ],
+      "fresh_capture_check": [
+        {
+          "pid": 40224,
+          "visible": true,
+          "minimized": false
+        },
+        {
+          "pid": 40224,
+          "visible": true,
+          "minimized": false
+        }
+      ],
+      "render_seconds": 5.134464700007811,
+      "reopen": {
+        "scene": "Example_05-fox-sprite-sheet",
+        "objects": 30,
+        "camera": "Presentation camera.002",
+        "render_path": "//result.png",
+        "resolution": [
+          1280,
+          720
+        ],
+        "screens": 12,
+        "libraries": 0,
+        "unpacked_images": []
+      },
+      "target_sha256": "ffc89e5a50a9a1719f146b4e388f42f40f467742f84beb91873dac3f737a272f",
+      "total_bytes": 4498514
+    },
+    {
+      "name": "06-desk-lamp-from-image",
+      "files": {
+        "input/prompt.txt": {
+          "bytes": 804,
+          "sha256": "df60c05696381d45c42f59519380ecad1e2d0398a75765c659bc74431b4a17a2"
+        },
+        "output/result.png": {
+          "bytes": 966172,
+          "sha256": "4ab9fe1978f89bc7da0b3314c73080cf1afe8900c64877e81f07effd365f2fa0"
+        },
+        "output/result.blend": {
+          "bytes": 172357,
+          "sha256": "78d17101af0199a69e06672614f10e68eec8ea184b2b846a31e03aec040ea5f3"
+        },
+        "output/editor.png": {
+          "bytes": 1432529,
+          "sha256": "9654ab163d63147b2ef4544de7fe898c893ff75fa1a9d272fcceb07750227c12"
+        },
+        "output/review.md": {
+          "bytes": 2703,
+          "sha256": "34e4fc5f0bff6cdc47a9e8f22386fb212f83618033f939bc3625a6bb0ea5ca9b"
+        }
+      },
+      "render_size": [
+        1280,
+        720
+      ],
+      "editor_size": [
+        2560,
+        1549
+      ],
+      "fresh_capture_check": [
+        {
+          "pid": 40224,
+          "visible": true,
+          "minimized": false
+        },
+        {
+          "pid": 40224,
+          "visible": true,
+          "minimized": false
+        }
+      ],
+      "render_seconds": 5.928883499989752,
+      "reopen": {
+        "scene": "Example_06-desk-lamp-from-image",
+        "objects": 21,
+        "camera": "Presentation camera.003",
+        "render_path": "//result.png",
+        "resolution": [
+          1280,
+          720
+        ],
+        "screens": 12,
+        "libraries": 0,
+        "unpacked_images": []
+      },
+      "target_sha256": "9a8051040ff9bb921b95528999435fe18ace995ff5de303106d9560f3be44ec5",
+      "total_bytes": 7988927
+    },
+    {
+      "name": "07-sunlit-reading-nook",
+      "files": {
+        "input/prompt.txt": {
+          "bytes": 631,
+          "sha256": "967586840121c92eac212866beb2633759a86d7f067d19d3e5df6d31fc3f25cb"
+        },
+        "output/result.png": {
+          "bytes": 1115532,
+          "sha256": "a4b6b9a40e396ec932b9fc1d9f696f2bc0ff56f250ae5baa281c0b787fc227bb"
+        },
+        "output/result.blend": {
+          "bytes": 274770,
+          "sha256": "2c8d3a07cab68f70ff998cc72713dc8b6a93f67a45188f8b72de4cb642b04309"
+        },
+        "output/editor.png": {
+          "bytes": 1575168,
+          "sha256": "4ca43160506cf6f06ee57323320b877cfc63e584393726c00673a20f9ddd86e4"
+        },
+        "output/review.md": {
+          "bytes": 2643,
+          "sha256": "38d212ae9b12e66d12695992b707cdfa1059502b1bc08e34ece948af0b3412f6"
+        }
+      },
+      "render_size": [
+        1280,
+        720
+      ],
+      "editor_size": [
+        2560,
+        1549
+      ],
+      "fresh_capture_check": [
+        {
+          "pid": 40224,
+          "visible": true,
+          "minimized": false
+        },
+        {
+          "pid": 40224,
+          "visible": true,
+          "minimized": false
+        }
+      ],
+      "render_seconds": 6.436587699980009,
+      "reopen": {
+        "scene": "Example_07-sunlit-reading-nook",
+        "objects": 205,
+        "camera": "Presentation camera.004",
+        "render_path": "//result.png",
+        "resolution": [
+          1280,
+          720
+        ],
+        "screens": 12,
+        "libraries": 0,
+        "unpacked_images": []
+      },
+      "target_sha256": "56943f4c58fd0ec27b6d4ec25127e4e79da01f03250cc7145b82b824cfc9d9af",
+      "total_bytes": 5691593
+    },
+    {
+      "name": "08-modular-greenhouse",
+      "files": {
+        "input/prompt.txt": {
+          "bytes": 600,
+          "sha256": "eac221b8fe1676ac326212e88a0a7adacb19b6a3af822f0688a622c01b3733eb"
+        },
+        "output/result.png": {
+          "bytes": 1165848,
+          "sha256": "504a70f6e1f36184e93993600a5fcb6a7beb930ca2df11d134801dd1d92f2017"
+        },
+        "output/result.blend": {
+          "bytes": 236683,
+          "sha256": "40a420be749a4e9081fae592fe5218737ec297e07eb8317935dd4a76175881c6"
+        },
+        "output/editor.png": {
+          "bytes": 1633882,
+          "sha256": "f5502f6283acc8f4bae53cbd412e098fe2ef85efa40a72d3de04fba1b3c8aeca"
+        },
+        "output/review.md": {
+          "bytes": 2632,
+          "sha256": "519f23036cbe6a7f4c9f58f53b2504504a0a3243c1545ec4820b281613c242f3"
+        }
+      },
+      "render_size": [
+        1280,
+        720
+      ],
+      "editor_size": [
+        2560,
+        1549
+      ],
+      "fresh_capture_check": [
+        {
+          "pid": 40224,
+          "visible": true,
+          "minimized": false
+        },
+        {
+          "pid": 40224,
+          "visible": true,
+          "minimized": false
+        }
+      ],
+      "render_seconds": 8.014203400001861,
+      "reopen": {
+        "scene": "Example_08-modular-greenhouse",
+        "objects": 170,
+        "camera": "Presentation camera.005",
+        "render_path": "//result.png",
+        "resolution": [
+          1280,
+          720
+        ],
+        "screens": 12,
+        "libraries": 0,
+        "unpacked_images": []
+      },
+      "target_sha256": "e8239ff12c701eb007c29ec87b57b8c5985517821fdd5bb7afddf1dfc6f8b4e3",
+      "total_bytes": 6224842
+    },
+    {
+      "name": "09-ceramic-tea-still-life",
+      "files": {
+        "input/prompt.txt": {
+          "bytes": 608,
+          "sha256": "e0887cd96d6d796b9317391541d5b93e466fa0adb7ad4be70a26741b7a09716e"
+        },
+        "output/result.png": {
+          "bytes": 1019932,
+          "sha256": "8ee3f3b715642f97f6ba6efc108d8fb0b2bb8bb25b2e6c6b1062d07c4a391849"
+        },
+        "output/result.blend": {
+          "bytes": 214656,
+          "sha256": "044eabcba7dc6400feb1a1e38d9065fb8dfef7b5c8e78723c0cbef5728348193"
+        },
+        "output/editor.png": {
+          "bytes": 1489136,
+          "sha256": "b60f901bdf3c18cf44486b0bdd1c1c1caaa0de1d51861acd140fcaf04a3dde5a"
+        },
+        "output/review.md": {
+          "bytes": 2471,
+          "sha256": "d446dc8975a8fe381475a4836446913439eaa710f884f844c0240bbc9fa2949b"
+        }
+      },
+      "render_size": [
+        1280,
+        720
+      ],
+      "editor_size": [
+        2560,
+        1549
+      ],
+      "fresh_capture_check": [
+        {
+          "pid": 40224,
+          "visible": true,
+          "minimized": false
+        },
+        {
+          "pid": 40224,
+          "visible": true,
+          "minimized": false
+        }
+      ],
+      "render_seconds": 3.3099992999923415,
+      "reopen": {
+        "scene": "Example_09-ceramic-tea-still-life",
+        "objects": 29,
+        "camera": "Presentation camera.006",
+        "render_path": "//result.png",
+        "resolution": [
+          1280,
+          720
+        ],
+        "screens": 12,
+        "libraries": 0,
+        "unpacked_images": []
+      },
+      "target_sha256": "1074f210e88ae8062cfef85fc06b7e29f01ce3210726436622ce539bb7cfb631",
+      "total_bytes": 5008387
+    },
+    {
+      "name": "10-low-poly-island",
+      "files": {
+        "input/prompt.txt": {
+          "bytes": 597,
+          "sha256": "dbdc83852fd5ffdfa7462786cf63ed72ceb48fc501ba3a9b8015a84710d80e6f"
+        },
+        "output/result.png": {
+          "bytes": 1064311,
+          "sha256": "9a65ba5f72e66ca4188ce2f66668863b43e441e98a5e7783f70b4ca2ad1f2835"
+        },
+        "output/result.blend": {
+          "bytes": 188048,
+          "sha256": "f70f110231bd3ad8a34bfbe5d8b7e693ddc388b033f325cd2b04a5e20932c8bc"
+        },
+        "output/editor.png": {
+          "bytes": 1515429,
+          "sha256": "56c112d6d0cd71b3d88be97c0ffd7e2b9d9a2d58a40cca509464f45fc0c585b8"
+        },
+        "output/review.md": {
+          "bytes": 2624,
+          "sha256": "36b00c32f264aa961a3b02f04573b1a3e79b7da17843a74bb5c803b539d0e1cf"
+        }
+      },
+      "render_size": [
+        1280,
+        720
+      ],
+      "editor_size": [
+        2560,
+        1549
+      ],
+      "fresh_capture_check": [
+        {
+          "pid": 40224,
+          "visible": true,
+          "minimized": false
+        },
+        {
+          "pid": 40224,
+          "visible": true,
+          "minimized": false
+        }
+      ],
+      "render_seconds": 5.579194600053597,
+      "reopen": {
+        "scene": "Example_10-low-poly-island",
+        "objects": 63,
+        "camera": "Presentation camera.007",
+        "render_path": "//result.png",
+        "resolution": [
+          1280,
+          720
+        ],
+        "screens": 12,
+        "libraries": 0,
+        "unpacked_images": []
+      },
+      "target_sha256": "17ccab796e48b758d3c21f9ecd3886fa3ecbbbd5e81568a007c690e2f587a3ad",
+      "total_bytes": 4833345
+    }
+  ],
+  "issues": [],
+  "fox": {
+    "frames": 16,
+    "sheet_size": [
+      512,
+      512
+    ],
+    "alpha_bounds": [
+      [
+        47,
+        25,
+        81,
+        105
+      ],
+      [
+        47,
+        25,
+        81,
+        105
+      ],
+      [
+        47,
+        25,
+        81,
+        105
+      ],
+      [
+        47,
+        25,
+        81,
+        105
+      ],
+      [
+        12,
+        28,
+        118,
+        101
+      ],
+      [
+        12,
+        28,
+        118,
+        101
+      ],
+      [
+        12,
+        28,
+        118,
+        101
+      ],
+      [
+        12,
+        28,
+        118,
+        101
+      ],
+      [
+        47,
+        23,
+        81,
+        102
+      ],
+      [
+        47,
+        23,
+        81,
+        102
+      ],
+      [
+        47,
+        23,
+        81,
+        102
+      ],
+      [
+        47,
+        23,
+        81,
+        102
+      ],
+      [
+        10,
+        28,
+        116,
+        101
+      ],
+      [
+        10,
+        28,
+        116,
+        101
+      ],
+      [
+        10,
+        28,
+        116,
+        101
+      ],
+      [
+        10,
+        28,
+        116,
+        101
+      ]
+    ],
+    "pivot": [
+      64,
+      110
+    ]
+  },
+  "gifs": {
+    "04-robot-greeting\\output\\greeting.gif": {
+      "frames": 24,
+      "frame_duration_ms": 80,
+      "loop": 0
+    },
+    "05-fox-sprite-sheet\\output\\idle.gif": {
+      "frames": 4,
+      "frame_duration_ms": 250,
+      "loop": 0
+    }
+  },
+  "notes": [
+    "GLBs reimported in Blender; binary inspection confirms embedded resources. No target-engine certification.",
+    "Examples 01/02 retain earlier execution evidence; 03?10 were freshly reopened and captured.",
+    "Example 02 feedback targets relocated to input/feedback-target/; all eight source hashes verified unchanged. Earlier iteration files remain preserved.",
+    "Current Reference table resides in reference-readme.md; that existing layout was preserved."
+  ]
+}

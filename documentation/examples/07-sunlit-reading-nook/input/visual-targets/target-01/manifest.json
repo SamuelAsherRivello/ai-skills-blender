@@ -1,0 +1,36 @@
+{
+  "target_id": "target-01",
+  "task_id": "example-07-sunlit-reading-nook",
+  "worker_id": "/root/target07",
+  "mode": "generated",
+  "status": "ready",
+  "image": {
+    "path": "target.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "56943f4c58fd0ec27b6d4ec25127e4e79da01f03250cc7145b82b824cfc9d9af"
+  },
+  "prompt": {
+    "path": "prompt.txt",
+    "original_generation_prompt": "recorded"
+  },
+  "brief": "brief.md",
+  "generation": {
+    "tool": "image_gen.imagegen",
+    "provider": null,
+    "model": null,
+    "seed": null
+  },
+  "provenance_note": "One built-in image generation call; copied original pixels to project. No Blender operation.",
+  "requested_output": {
+    "aspect_ratio": "16:9",
+    "resolution": null
+  },
+  "references": [],
+  "previous_target_id": null,
+  "unchanged_scene_features": [],
+  "inspection": {
+    "performed": true,
+    "findings": "All named furniture present and readable, warm window light and tactile material families. Extra dining-room/lamps/art not required. Plant crown crops at edge; build should favor complete framing. Actual dimensions 1672x941 approximately 16:9. No Blender comparison performed."
+  }
+}

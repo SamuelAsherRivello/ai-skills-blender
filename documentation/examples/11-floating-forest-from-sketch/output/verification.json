@@ -1,0 +1,81 @@
+{
+  "status": "verified",
+  "blender_version": "5.2.2 LTS",
+  "scene": "EX11 Floating Forest",
+  "seed": 291126,
+  "engine": "Cycles",
+  "device": "OptiX NVIDIA GeForce RTX 4070 Laptop GPU",
+  "samples": 96,
+  "mesh_polygons": 1147044,
+  "scene_objects": 1466,
+  "external_missing_files": [],
+  "external_dependencies_checked": 0,
+  "correction_passes": 2,
+  "visual_inspection": true,
+  "editor_screenshot_taken": false,
+  "game_engine_validation": false,
+  "files": [
+    {
+      "path": "input/sketch.png",
+      "bytes": 2425066,
+      "sha256": "886cc6e7595468d9219cbfe3b5806b62641b72d1f15fe2c4a6b91b6e8b22cc1f",
+      "width": 1254,
+      "height": 1254,
+      "bitDepth": 8,
+      "colorType": 2
+    },
+    {
+      "path": "input/visual-targets/target-01/target.png",
+      "bytes": 2257090,
+      "sha256": "a697e68c93a59f85c666c153de1eb5a0d1d786d2d15860f1a6e2323dd6a7a665",
+      "width": 1672,
+      "height": 941,
+      "bitDepth": 8,
+      "colorType": 2
+    },
+    {
+      "path": "output/preview-01.png",
+      "bytes": 855368,
+      "sha256": "3e3e9b1b6111c1e88c8452d01912d16b7ed7ebc18c0cda5f401e7d9707c25acd",
+      "width": 960,
+      "height": 540,
+      "bitDepth": 8,
+      "colorType": 6
+    },
+    {
+      "path": "output/preview-02.png",
+      "bytes": 795594,
+      "sha256": "c12e49af6f1bb98120546cd9719b46bcad682a3d19515351e35d18bedf6e8163",
+      "width": 960,
+      "height": 540,
+      "bitDepth": 8,
+      "colorType": 6
+    },
+    {
+      "path": "output/result.png",
+      "bytes": 3067694,
+      "sha256": "7266861f6b39769aa313731849003c0a88c73998d6d09dfa2402bb64a4e65b59",
+      "width": 1920,
+      "height": 1080,
+      "bitDepth": 8,
+      "colorType": 6
+    },
+    {
+      "path": "output/result.blend",
+      "bytes": 37947016,
+      "sha256": "ad9ea3b7fb6cd00f42c32bd60262ff0f457309b4f88427c7613376ade74555c0"
+    },
+    {
+      "path": "output/alternate-view.png",
+      "bytes": 751302,
+      "sha256": "979dc8747f853adcf417123f47e0e04ff0fa8d0fadd258ddf483eec43367049f",
+      "width": 960,
+      "height": 540,
+      "bitDepth": 8,
+      "colorType": 6
+    }
+  ],
+  "alternate_view_inspected": true,
+  "saved_blend_parsed": true,
+  "readme_local_links_valid": true
+}

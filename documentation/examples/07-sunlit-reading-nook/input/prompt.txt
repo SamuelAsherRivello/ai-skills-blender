@@ -1,0 +1,3 @@
+Create an inviting Scandinavian reading nook: oak floor, cream plaster walls, broad window, rust upholstered armchair, linen cushion, round side table, ceramic mug, books, leafy plant and woven rug. Warm afternoon window light with soft shadows. Architectural three-quarter perspective showing the open room and all key furnishings.
+
+One creative iteration only. Use prompt-specific visual target per skills. Deliver input/prompt.txt and output/result.blend, result.png, editor.png, review.md plus specified specialist outputs. Final still 1280x720, soft target under 30 seconds. Preserve exact prompt and report actual limits.

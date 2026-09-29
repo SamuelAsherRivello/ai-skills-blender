@@ -1,0 +1,16 @@
+{
+  "render_seconds": 3.3099992999923415,
+  "geometry": "Hollow cups and swept open spout; editable lathed ceramic bodies",
+  "limitation": "Stylized clean glaze and linen; no micro-crackle or cloth simulation.",
+  "scene": "Example_09-ceramic-tea-still-life",
+  "objects": 29,
+  "blender": "5.2.2 LTS",
+  "engine": "Cycles",
+  "device": "OptiX",
+  "samples": 32,
+  "resolution": [
+    1280,
+    720
+  ],
+  "iteration": 1
+}

@@ -1,0 +1,37 @@
+{
+  "task_id": "example-03-game-ready-treasure-chest",
+  "worker_id": "/root/target03",
+  "target_id": "target-01",
+  "mode": "generated",
+  "status": "ready",
+  "image": {
+    "path": "target.png",
+    "width": 1672,
+    "height": 941,
+    "format": "PNG",
+    "sha256": "92e2d660fd51e9eef283916c8e7ae43c3ec1e17bbecf45b7e8964945be5bc8dd"
+  },
+  "prompt": {
+    "path": "prompt.txt",
+    "original_generation_prompt": "recorded"
+  },
+  "brief": "brief.md",
+  "generation": {
+    "tool": "image_gen.imagegen",
+    "provider": null,
+    "model": null,
+    "seed": null
+  },
+  "provenance_note": "One built-in generation; copied without modification from Codex generated_images.",
+  "requested_output": {
+    "aspect_ratio": "landscape",
+    "resolution": null
+  },
+  "references": [],
+  "previous_target_id": null,
+  "unchanged_scene_features": [],
+  "inspection": {
+    "performed": true,
+    "findings": "Complete closed domed walnut chest with iron bands, brass hardware/feet and warm/cool studio light. Richer realism and extra bands/handle are optional cues; technical game-asset properties not inferable."
+  }
+}

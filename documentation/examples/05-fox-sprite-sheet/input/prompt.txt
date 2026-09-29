@@ -1,0 +1,3 @@
+Create a charming low-poly orange fox with ivory chest and tail tip, dark paws and expressive ears. Build full editable 3D with a simple bone-driven 4-frame idle loop. Deliver four directions with four 128x128 transparent frames each, sprite sheet, pivot/direction/timing metadata and a playable preview. Hero view: three-quarter clinical orthographic.
+
+One creative iteration only. Use prompt-specific visual target per skills. Deliver input/prompt.txt and output/result.blend, result.png, editor.png, review.md plus specified specialist outputs. Final still 1280x720, soft target under 30 seconds. Preserve exact prompt and report actual limits.

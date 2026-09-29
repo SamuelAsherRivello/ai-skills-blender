@@ -1,0 +1,13 @@
+{
+  "meshes": 37,
+  "rigs": 1,
+  "animations": [
+    {
+      "name": "Greeting_Wave.001",
+      "frames": [
+        1.0,
+        24.0
+      ]
+    }
+  ]
+}

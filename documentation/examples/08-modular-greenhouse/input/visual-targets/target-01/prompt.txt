@@ -1,0 +1,6 @@
+Use case: stylized-concept
+Asset type: 2D visual target for editable Blender garden diorama, not Blender output.
+Subject: An elegant small Victorian-inspired greenhouse with sage painted modular framing, transparent pitched glass roof and walls, brick plinth, central path and benches of terracotta pots and greenery.
+Composition: Complete three-quarter orthographic garden diorama on a simple rectangular landscaped base, all corners and roof fully visible with margins. Show the front doorway and one long side, with repeated clear structural bays. Landscape image.
+Materials and lighting: Realistic glass transmitting visible interior planting and warm terracotta, sage matte painted narrow structural members, textured reddish brick base, soft natural daylight and gentle contact shadows.
+Constraints: Clear readable pitched-roof greenhouse structure, modest decorative Victorian finials, accessible central path. No people, labels, lettering, UI or watermark. This is inspiration for one bounded 3D build, so prioritize major forms and legible material separation.

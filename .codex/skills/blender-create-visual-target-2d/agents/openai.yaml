@@ -1,0 +1,4 @@
+interface:
+  display_name: "Blender Create Visual Target 2D"
+  short_description: "Create image targets for Blender direction"
+  default_prompt: "Use $blender-create-visual-target-2d to create a visual target and a concise 3D direction brief for my subject."

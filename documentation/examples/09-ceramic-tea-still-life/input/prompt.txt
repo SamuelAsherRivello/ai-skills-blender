@@ -1,0 +1,3 @@
+Create a refined product still life: seafoam glazed ceramic teapot with curved spout and arched handle, two matching cups, honey-colored wood tray, folded linen and a small citrus fruit. Muted warm studio background, broad soft key with attractive glazed reflections. Clinical three-quarter orthographic view.
+
+One creative iteration only. Use prompt-specific visual target per skills. Deliver input/prompt.txt and output/result.blend, result.png, editor.png, review.md plus specified specialist outputs. Final still 1280x720, soft target under 30 seconds. Preserve exact prompt and report actual limits.

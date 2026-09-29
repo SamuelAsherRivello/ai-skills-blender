@@ -1,0 +1,28 @@
+{
+  "sourcePath": "documentation/examples/02-city-corner-firehouse/output/result.blend",
+  "sourceSha256": "6276cdddda097687b1f28d33d0f90ee8561b9374d14db917dbee23d0e5d7adcb",
+  "glbPath": "documentation/examples/02-city-corner-firehouse/output/result.glb",
+  "glbSha256": "b6e8231c8fb1cf890a32764b815731ec67b7076997dd372f9af0327911a2a3ec",
+  "byteSize": 19429000,
+  "warnings": [
+    "Blender world, compositor, and studio lighting are replaced by viewer lighting.",
+    "Procedural base color and tangent normals baked to 2048px atlas; microdetail is resolution-limited."
+  ],
+  "blenderVersion": "5.2.2 LTS",
+  "seconds": 15.51,
+  "exporterVersion": 3,
+  "view": {
+    "position": [
+      22.0,
+      3.4000000953674316,
+      32.0
+    ],
+    "target": [
+      1.590585708618164,
+      3.400003671646118,
+      -1.2116775512695312
+    ],
+    "frameHeight": 18.344251147043032,
+    "aspect": 1.7777777777777777
+  }
+}

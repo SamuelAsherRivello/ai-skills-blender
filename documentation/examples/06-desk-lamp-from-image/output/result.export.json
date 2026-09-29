@@ -1,0 +1,27 @@
+{
+  "sourcePath": "documentation/examples/06-desk-lamp-from-image/output/result.blend",
+  "sourceSha256": "78d17101af0199a69e06672614f10e68eec8ea184b2b846a31e03aec040ea5f3",
+  "glbPath": "documentation/examples/06-desk-lamp-from-image/output/result.glb",
+  "glbSha256": "9642d1bfe69db648b43bbeaf2e3fad81f8c383ec127dedfcca7c1dd9797932b4",
+  "byteSize": 285976,
+  "warnings": [
+    "Blender world, compositor, and studio lighting are replaced by viewer lighting."
+  ],
+  "blenderVersion": "5.2.2 LTS",
+  "seconds": 0.1,
+  "exporterVersion": 3,
+  "view": {
+    "position": [
+      2.0,
+      2.5999999046325684,
+      7.0
+    ],
+    "target": [
+      -0.26775312423706055,
+      1.002266526222229,
+      -0.2155771255493164
+    ],
+    "frameHeight": 2.7000001072883606,
+    "aspect": 1.7777777777777777
+  }
+}

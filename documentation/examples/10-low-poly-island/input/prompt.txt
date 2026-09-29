@@ -1,0 +1,3 @@
+Create a whimsical low-poly island diorama with turquoise water, layered rocky cliffs, sandy beach, a winding path, pine trees and a small red-roof lighthouse. Distinct faceted forms, rich controlled color, soft sunny shadows. Three-quarter orthographic composition with complete island silhouette.
+
+One creative iteration only. Use prompt-specific visual target per skills. Deliver input/prompt.txt and output/result.blend, result.png, editor.png, review.md plus specified specialist outputs. Final still 1280x720, soft target under 30 seconds. Preserve exact prompt and report actual limits.

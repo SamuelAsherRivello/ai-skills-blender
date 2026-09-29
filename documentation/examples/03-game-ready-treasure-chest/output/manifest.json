@@ -1,0 +1,18 @@
+{
+  "render_seconds": 5.473535400000401,
+  "bake_seconds": 2.1813996999990195,
+  "target_triangles": 10990,
+  "bake": "selected-to-active color and tangent normal, 1024, margin 12, cage .04m",
+  "limitation": "Single baked material uses uniform roughness; metallic map not baked.",
+  "scene": "Example_03-game-ready-treasure-chest",
+  "objects": 7,
+  "blender": "5.2.2 LTS",
+  "engine": "Cycles",
+  "device": "OptiX",
+  "samples": 32,
+  "resolution": [
+    1280,
+    720
+  ],
+  "iteration": 1
+}

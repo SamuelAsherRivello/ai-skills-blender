@@ -1,0 +1,36 @@
+PROMPT 1 — Initial creation request
+
+$blender-create-model
+
+Create a stylized boy getting ready for school, wearing a backpack and
+adjusting one shoulder strap. Give him a friendly, alert expression,
+deliberate character proportions, and readable hands and shoes.
+
+Render style: comic-book illustration interpreted as editable 3D, with
+simple graphic shapes, controlled bands of shading, and dark drawn details.
+Setting: a simple cozy bedroom corner with a small bed, books, and a window.
+Lighting: warm morning sunlight with enough fill to read the face clearly.
+Palette: muted blue and warm yellow, with restrained warm wood and skin tones.
+Camera: use the default clinical inspection view when no angle is specified:
+centered, full-body orthographic three-quarter view with comfortable margins.
+
+Use blender-setup, blender-materials, blender-light-camera, blender-render,
+and blender-review-optimize as appropriate alongside blender-create-model.
+Work through the verified official Blender Lab MCP in the open Blender app.
+Preserve unrelated Blender content and create an isolated example scene.
+
+Deliver:
+- result.blend: editable scene with final camera, lighting, and materials.
+- result.png: clean 1280x720 final camera Render Result, without any Blender UI.
+- editor.png: genuine Blender editor screenshot of the completed scene.
+- review.md: actual skills, settings, timings, checks, revisions, and limitations.
+
+Use 640x360 previews and target under 30 seconds per still, as a goal rather
+than a hard limit. Prefer EEVEE. Inspect the actual renders and reopen the
+saved scene to check portability before presenting it for human approval.
+This is a static character illustration; no rig or animation is requested.
+No external image reference is supplied for this pilot; use the textual style.
+
+Success criteria: clear complete silhouette; one hand visibly adjusting the
+backpack strap; friendly readable face; recognizable bedroom context; warm
+light without losing facial detail; no clipped head or feet; editable scene.

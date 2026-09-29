@@ -1,0 +1,36 @@
+{
+  "task_id": "example-05-fox-sprite-sheet",
+  "worker_id": "/root/target05",
+  "target_id": "target-01",
+  "mode": "generated",
+  "status": "ready",
+  "image": {
+    "path": "target.png",
+    "width": 1254,
+    "height": 1254,
+    "sha256": "ffc89e5a50a9a1719f146b4e388f42f40f467742f84beb91873dac3f737a272f"
+  },
+  "prompt": {
+    "path": "prompt.txt",
+    "original_generation_prompt": "exact submitted prompt"
+  },
+  "brief": "brief.md",
+  "generation": {
+    "tool": "image_gen.imagegen",
+    "provider": null,
+    "model": null,
+    "seed": null
+  },
+  "provenance_note": "Generated once with built-in image tool; original preserved in Codex generated_images.",
+  "requested_output": {
+    "aspect_ratio": "1:1",
+    "resolution": null
+  },
+  "references": [],
+  "previous_target_id": null,
+  "unchanged_scene_features": [],
+  "inspection": {
+    "performed": true,
+    "findings": "Full quadruped and tail visible; orange/ivory/dark-paw palette, faceted geometry, clear standing silhouette. Fine face details may be simplified at sprite scale. No animation or geometry validation claimed."
+  }
+}

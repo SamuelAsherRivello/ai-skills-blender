@@ -1,0 +1,35 @@
+[
+  {
+    "bays": 1,
+    "spacing": 0.7,
+    "objects": 63
+  },
+  {
+    "bays": 6,
+    "spacing": 1.4,
+    "objects": 223
+  },
+  {
+    "bays": 4,
+    "spacing": 1.0,
+    "objects": 159
+  },
+  {
+    "invalid_rejected": [
+      0,
+      1
+    ]
+  },
+  {
+    "invalid_rejected": [
+      7,
+      1
+    ]
+  },
+  {
+    "invalid_rejected": [
+      4,
+      -1
+    ]
+  }
+]

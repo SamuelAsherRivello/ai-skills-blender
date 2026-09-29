@@ -1,0 +1,3 @@
+Create a friendly rounded teal and yellow toy robot with screen eyes, antenna, articulated hands and boots. Rig it with editable bones and a named 2-second greeting wave at 12 fps. Deliver animated GLB, 24-frame playable preview and representative pose PNGs. Clinical full-body three-quarter studio view with generous framing for raised arm.
+
+One creative iteration only. Use prompt-specific visual target per skills. Deliver input/prompt.txt and output/result.blend, result.png, editor.png, review.md plus specified specialist outputs. Final still 1280x720, soft target under 30 seconds. Preserve exact prompt and report actual limits.

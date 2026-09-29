@@ -1,0 +1,17 @@
+{
+  "render_seconds": 6.436587699980009,
+  "seed": 31,
+  "layout": "4m open-corner room with a real window opening",
+  "limitation": "Studio-assisted window lighting and simplified textiles; no cloth simulation.",
+  "scene": "Example_07-sunlit-reading-nook",
+  "objects": 205,
+  "blender": "5.2.2 LTS",
+  "engine": "Cycles",
+  "device": "OptiX",
+  "samples": 32,
+  "resolution": [
+    1280,
+    720
+  ],
+  "iteration": 1
+}

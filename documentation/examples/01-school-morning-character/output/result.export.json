@@ -1,0 +1,28 @@
+{
+  "sourcePath": "documentation/examples/01-school-morning-character/output/result.blend",
+  "sourceSha256": "465ecf985f6065fed8263ae35702f29bf79dcef8c247728236c46e4a85f77bd3",
+  "glbPath": "documentation/examples/01-school-morning-character/output/result.glb",
+  "glbSha256": "11903688db682a18b5769adcb6f14c091abd8f2c7d817a295a09fc89f33b3eb1",
+  "byteSize": 1753296,
+  "warnings": [
+    "Blender world, compositor, and studio lighting are replaced by viewer lighting.",
+    "Eevee toon ramps approximated with their authored lit palette colors and neutral PBR shading: Backpack_pocket, Backpack_sunflower, Canvas_cream, Ear_and_lip, Eyes_and_socks, Hair_chestnut, Hair_warm_streak, Iris_hazel, Shirt_blue_trim, Shirt_muted_blue, Shorts_indigo, Skin_highlight, Skin_warm_peach"
+  ],
+  "blenderVersion": "5.2.2 LTS",
+  "seconds": 3.67,
+  "exporterVersion": 3,
+  "view": {
+    "position": [
+      4.400000095367432,
+      4.300000190734863,
+      8.0
+    ],
+    "target": [
+      -0.11931943893432617,
+      1.198103904724121,
+      -0.4737234115600586
+    ],
+    "frameHeight": 3.2062498927116394,
+    "aspect": 1.7777777777777777
+  }
+}

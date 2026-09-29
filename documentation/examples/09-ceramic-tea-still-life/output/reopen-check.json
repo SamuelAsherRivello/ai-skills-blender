@@ -1,0 +1,13 @@
+{
+  "scene": "Example_09-ceramic-tea-still-life",
+  "objects": 29,
+  "camera": "Presentation camera.006",
+  "render_path": "//result.png",
+  "resolution": [
+    1280,
+    720
+  ],
+  "screens": 12,
+  "libraries": 0,
+  "unpacked_images": []
+}

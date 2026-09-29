@@ -1,0 +1,4 @@
+interface:
+  display_name: "Blender Review Optimize"
+  short_description: "Audit and optimize Blender scenes"
+  default_prompt: "Use $blender-review-optimize to audit and optimize blender scenes for my request."

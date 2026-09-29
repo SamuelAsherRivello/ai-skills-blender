@@ -1,0 +1,27 @@
+{
+  "sourcePath": "documentation/examples/05-fox-sprite-sheet/output/result.blend",
+  "sourceSha256": "a9b813fbae2c6e81c947d3423fa40a06b1ca7e461b3d21ac3aa4cfc74a949d47",
+  "glbPath": "documentation/examples/05-fox-sprite-sheet/output/result.glb",
+  "glbSha256": "d1d96af7d472b54dd9788495887bd7c51d38084430bfc7a87c40bd94c1806e05",
+  "byteSize": 249112,
+  "warnings": [
+    "Blender world, compositor, and studio lighting are replaced by viewer lighting."
+  ],
+  "blenderVersion": "5.2.2 LTS",
+  "seconds": 0.2,
+  "exporterVersion": 3,
+  "view": {
+    "position": [
+      4.0,
+      3.299999952316284,
+      6.0
+    ],
+    "target": [
+      -0.12582826614379883,
+      0.9276480674743652,
+      -0.3434605598449707
+    ],
+    "frameHeight": 2.9249998927116394,
+    "aspect": 1.7777777777777777
+  }
+}

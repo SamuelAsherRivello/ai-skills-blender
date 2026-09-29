@@ -1,0 +1,2 @@
+Original generation prompt: unknown; not supplied.
+Current interpretation request: Use this user-supplied AI image purely as inspiration and comparison for the fictional daytime city-corner firehouse in input/prompt.txt. Preserve the two-bay brief and genuine Blender outputs.

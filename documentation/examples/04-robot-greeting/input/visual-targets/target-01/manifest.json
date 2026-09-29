@@ -1,0 +1,36 @@
+{
+  "target_id": "target-01",
+  "task_id": "04-robot-greeting",
+  "worker_id": "/root/target04",
+  "mode": "generated",
+  "status": "ready",
+  "image": {
+    "path": "target.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "b096adc02627388695caf2c59d49395530bc8a6d4154542ca1f80b12c8bd0607"
+  },
+  "prompt": {
+    "path": "prompt.txt",
+    "original_generation_prompt": "preserved exactly"
+  },
+  "brief": "brief.md",
+  "generation": {
+    "tool": "image_gen.imagegen",
+    "provider": null,
+    "model": null,
+    "seed": null
+  },
+  "provenance_note": "One built-in image generation; copied original PNG without edits.",
+  "requested_output": {
+    "aspect_ratio": "16:9",
+    "resolution": null
+  },
+  "references": [],
+  "unchanged_scene_features": [],
+  "previous_target_id": null,
+  "inspection": {
+    "performed": true,
+    "findings": "Complete robot and wave silhouette; clear teal/yellow toy design, planted boots and visible joints. Antenna top margin modest; parent should use more generous motion framing. Image cannot verify animation or rig."
+  }
+}

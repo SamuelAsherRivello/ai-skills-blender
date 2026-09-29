@@ -1,0 +1,7 @@
+Use case: stylized-concept
+Asset type: Single 2D visual target for later editable Blender modeling and rigging, not a Blender screenshot.
+Primary request: Create a friendly rounded teal and yellow toy robot with screen eyes, antenna, articulated hands and boots. Show a representative greeting wave pose, one hand raised. Design simple separable articulated limbs suited to a named 2-second greeting wave at 12 fps. Actual animation, rig, GLB and renders will be made separately in Blender; this image is only visual direction.
+Composition: Clinical full-body three-quarter studio view, landscape 16:9 composition with generous empty margins around the entire raised hand, antenna and both boots. Entire body visible, feet firmly grounded, no cropping.
+Style/materials: Rounded polished toy forms, teal main shell, yellow accents and boots, dark face screen with friendly luminous eyes. Readable mechanical finger segments and joints, approachable proportions.
+Lighting: Soft neutral studio lighting, gray seamless floor and background, readable contact shadows.
+Constraints: One robot only, no text, no labels, no UI, no border, no extra props. Clear forms reproducible as editable 3D components. One image only.

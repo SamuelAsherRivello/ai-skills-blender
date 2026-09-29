@@ -1,0 +1,37 @@
+{
+  "target_id": "target-01",
+  "task_id": "08-modular-greenhouse",
+  "worker_id": "/root/target08",
+  "mode": "generated",
+  "status": "ready",
+  "image": {
+    "path": "target.png",
+    "width": 1536,
+    "height": 1024,
+    "format": "PNG",
+    "sha256": "e8239ff12c701eb007c29ec87b57b8c5985517821fdd5bb7afddf1dfc6f8b4e3"
+  },
+  "prompt": {
+    "path": "prompt.txt",
+    "original_generation_prompt": "recorded exactly"
+  },
+  "brief": "brief.md",
+  "generation": {
+    "tool": "image_gen.imagegen",
+    "provider": null,
+    "model": null,
+    "seed": null
+  },
+  "provenance_note": "One built-in generation; original retained in Codex generated_images. Inspected displayed output.",
+  "requested_output": {
+    "aspect_ratio": "landscape",
+    "resolution": null
+  },
+  "references": [],
+  "previous_target_id": null,
+  "unchanged_scene_features": [],
+  "inspection": {
+    "performed": true,
+    "findings": "Greenhouse complete with sage bays, glass roof and brick plinth; terracotta pots visible. Garden base clipped at sides and tall finial close to edge; final Blender camera should leave margins. Additional ornament and garden props optional. Actual 1536x1024."
+  }
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Blender Setup"
+  short_description: "Check Blender MCP readiness and explain next steps"
+  default_prompt: "Use $blender-setup to check my official Blender MCP setup in order and report which steps pass and what I need to do next."

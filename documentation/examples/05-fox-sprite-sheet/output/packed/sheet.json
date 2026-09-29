@@ -1,0 +1,237 @@
+{
+  "image": "sheet.png",
+  "width": 512,
+  "height": 512,
+  "coordinates": "top-left",
+  "pivot": [
+    0.5,
+    0.859375
+  ],
+  "pivot_coordinates": "normalized top-left",
+  "frames": [
+    {
+      "path": "sprites/front-0.png",
+      "direction": "front",
+      "frame": 1,
+      "duration_ms": 250,
+      "pivot": [
+        64,
+        110
+      ],
+      "x": 0,
+      "y": 0,
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "sprites/front-1.png",
+      "direction": "front",
+      "frame": 4,
+      "duration_ms": 250,
+      "pivot": [
+        64,
+        110
+      ],
+      "x": 128,
+      "y": 0,
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "sprites/front-2.png",
+      "direction": "front",
+      "frame": 7,
+      "duration_ms": 250,
+      "pivot": [
+        64,
+        110
+      ],
+      "x": 256,
+      "y": 0,
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "sprites/front-3.png",
+      "direction": "front",
+      "frame": 10,
+      "duration_ms": 250,
+      "pivot": [
+        64,
+        110
+      ],
+      "x": 384,
+      "y": 0,
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "sprites/right-0.png",
+      "direction": "right",
+      "frame": 1,
+      "duration_ms": 250,
+      "pivot": [
+        64,
+        110
+      ],
+      "x": 0,
+      "y": 128,
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "sprites/right-1.png",
+      "direction": "right",
+      "frame": 4,
+      "duration_ms": 250,
+      "pivot": [
+        64,
+        110
+      ],
+      "x": 128,
+      "y": 128,
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "sprites/right-2.png",
+      "direction": "right",
+      "frame": 7,
+      "duration_ms": 250,
+      "pivot": [
+        64,
+        110
+      ],
+      "x": 256,
+      "y": 128,
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "sprites/right-3.png",
+      "direction": "right",
+      "frame": 10,
+      "duration_ms": 250,
+      "pivot": [
+        64,
+        110
+      ],
+      "x": 384,
+      "y": 128,
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "sprites/back-0.png",
+      "direction": "back",
+      "frame": 1,
+      "duration_ms": 250,
+      "pivot": [
+        64,
+        110
+      ],
+      "x": 0,
+      "y": 256,
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "sprites/back-1.png",
+      "direction": "back",
+      "frame": 4,
+      "duration_ms": 250,
+      "pivot": [
+        64,
+        110
+      ],
+      "x": 128,
+      "y": 256,
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "sprites/back-2.png",
+      "direction": "back",
+      "frame": 7,
+      "duration_ms": 250,
+      "pivot": [
+        64,
+        110
+      ],
+      "x": 256,
+      "y": 256,
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "sprites/back-3.png",
+      "direction": "back",
+      "frame": 10,
+      "duration_ms": 250,
+      "pivot": [
+        64,
+        110
+      ],
+      "x": 384,
+      "y": 256,
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "sprites/left-0.png",
+      "direction": "left",
+      "frame": 1,
+      "duration_ms": 250,
+      "pivot": [
+        64,
+        110
+      ],
+      "x": 0,
+      "y": 384,
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "sprites/left-1.png",
+      "direction": "left",
+      "frame": 4,
+      "duration_ms": 250,
+      "pivot": [
+        64,
+        110
+      ],
+      "x": 128,
+      "y": 384,
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "sprites/left-2.png",
+      "direction": "left",
+      "frame": 7,
+      "duration_ms": 250,
+      "pivot": [
+        64,
+        110
+      ],
+      "x": 256,
+      "y": 384,
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "sprites/left-3.png",
+      "direction": "left",
+      "frame": 10,
+      "duration_ms": 250,
+      "pivot": [
+        64,
+        110
+      ],
+      "x": 384,
+      "y": 384,
+      "width": 128,
+      "height": 128
+    }
+  ]
+}

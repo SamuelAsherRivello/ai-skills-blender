@@ -1,0 +1,36 @@
+{
+  "target_id": "target-01",
+  "task_id": "example-09-ceramic-tea-still-life",
+  "worker_id": "/root/target09",
+  "mode": "generated",
+  "status": "ready",
+  "image": {
+    "path": "target.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "1074f210e88ae8062cfef85fc06b7e29f01ce3210726436622ce539bb7cfb631"
+  },
+  "prompt": {
+    "path": "prompt.txt",
+    "original_generation_prompt": "exact submitted prompt recorded"
+  },
+  "brief": "brief.md",
+  "generation": {
+    "tool": "image_gen.imagegen",
+    "provider": null,
+    "model": null,
+    "seed": null
+  },
+  "provenance_note": "One built-in generation, inspected visually; no Blender operations.",
+  "requested_output": {
+    "aspect_ratio": "16:9",
+    "resolution": null
+  },
+  "references": [],
+  "previous_target_id": null,
+  "unchanged_scene_features": [],
+  "inspection": {
+    "performed": true,
+    "findings": "All requested subjects and full tray visible. Low three-quarter photographic view less diagnostic than strict orthographic; retain clinical camera in Blender. Incidentally includes fruit leaves; optional. Actual dimensions 1672x941 approximately 16:9."
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "target_id": "target-01",
+  "task_id": "floating-forest-11",
+  "worker_id": "/root/island_target",
+  "mode": "generated",
+  "status": "ready",
+  "image": {
+    "path": "target.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "a697e68c93a59f85c666c153de1eb5a0d1d786d2d15860f1a6e2323dd6a7a665",
+    "format": "PNG"
+  },
+  "prompt": {
+    "path": "prompt.txt",
+    "original_generation_prompt": "recorded verbatim"
+  },
+  "brief": "brief.md",
+  "generation": {
+    "tool": "image_gen.imagegen",
+    "provider": null,
+    "model": null,
+    "seed": null
+  },
+  "provenance_note": "Generated with the built-in image tool from the supplied sketch; saved output copied without modification.",
+  "requested_output": {
+    "aspect_ratio": "16:9",
+    "resolution": null
+  },
+  "references": [
+    {
+      "role": "layout sketch",
+      "path": "C:/Users/srive/AppData/Local/Temp/codex-clipboard-5182603c-89d9-4b7d-ace6-f77768ea33c9.png"
+    }
+  ],
+  "unchanged_scene_features": [
+    "roughly square floating island",
+    "broad open clearing",
+    "perimeter broadleaf trees and pines",
+    "right-side winding stream",
+    "elevated three-quarter framing",
+    "no skybox or ground"
+  ],
+  "previous_target_id": null,
+  "inspection": {
+    "performed": true,
+    "findings": "Whole island and debris visible on pale warm background, vivid natural material palette, right stream/waterfall and perimeter tree layout retained. Tight top and bottom margins; use more margin in Blender. Actual 1672x941 is near 16:9 and not final 1920x1080 resolution."
+  }
+}

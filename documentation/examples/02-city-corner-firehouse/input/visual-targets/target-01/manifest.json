@@ -1,0 +1,33 @@
+{
+  "target_id": "target-01",
+  "mode": "supplied",
+  "status": "ready",
+  "image": {
+    "path": "target.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "9400fbc5f15507487b4c0809812b51585c615c71bacf41ab2fa4e9dd87dd90d2"
+  },
+  "prompt": {
+    "path": "prompt.txt",
+    "original_generation_prompt": "unknown"
+  },
+  "brief": "brief.md",
+  "generation": {
+    "tool": null,
+    "provider": null,
+    "model": null,
+    "seed": null
+  },
+  "provenance_note": "User reports Codex image generation; original tool/model/prompt not provided. Source file preserved.",
+  "requested_output": {
+    "aspect_ratio": null,
+    "resolution": null
+  },
+  "references": [],
+  "previous_target_id": null,
+  "inspection": {
+    "performed": true,
+    "findings": "# Firehouse visual target - target-01\n\nOrigin: user-supplied image, reported by the user as generated with Codex. Original prompt, tool, provider, model and seed are unknown. This is a concept image, not a Blender render or a surveyed building.\n\nObserved: two red apparatus bays, a separate entry, tall hose tower, layered stone cornice and base, varied brick tones, dark recessed window frames with environment reflections, and a lively city corner. Street furniture, vegetation, foreground pavement and a distant skyline establish human scale and depth. Daylight creates distinct shadows and warm/cool surface separation.\n\n3D priorities: establish the facade/tower proportions and layered construction first; then window and door reveals, material-scale masonry, reflective environment, grounded paving and curbs. Secondary city layers and coherent vegetation should support the station. Spend detail on visible cornice, stone joints, doors and sidewalk response before tiny decorative marks.\n\nKeep the textual brief authoritative. Target station number 23, signage wording, flag, vehicles and exact window count are incidental; they are not new requirements. Some generated small lettering is unclear. Do not reproduce it as factual text. Our fictional number 07 and five-window control remain valid.\n\nUnknowns: true dimensions, backside geometry, structural details, room layout, exact optical/lens settings and physical material measurements. Infer editable proportions, not surveyed precision. A useful direction target cannot guarantee this image quality from a procedural scene or within 30 seconds.\n\nReady as inspiration. Preserve this target version during comparison; do not use its pixels as scene texture or substitute it for result.png.\n"
+  }
+}

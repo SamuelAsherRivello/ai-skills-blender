@@ -1,0 +1,20 @@
+{
+  "render_seconds": 7.640178499976173,
+  "batch_seconds": 30.939009100024123,
+  "clip": "Greeting_Wave",
+  "frames": 24,
+  "fps": 12,
+  "duration_seconds": 2,
+  "rig": "Rigid mechanical parts, one bone per part; not soft skin",
+  "scene": "Example_04-robot-greeting",
+  "objects": 42,
+  "blender": "5.2.2 LTS",
+  "engine": "Cycles",
+  "device": "OptiX",
+  "samples": 32,
+  "resolution": [
+    1280,
+    720
+  ],
+  "iteration": 1
+}

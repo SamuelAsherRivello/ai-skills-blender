@@ -1,0 +1,837 @@
+{
+  "schemaVersion": 1,
+  "models": [
+    {
+      "id": "documentation/examples/01-school-morning-character/output/result.blend",
+      "title": "School Morning Character",
+      "sourcePath": "documentation/examples/01-school-morning-character/output/result.blend",
+      "glbPath": "documentation/examples/01-school-morning-character/output/result.glb",
+      "byteSize": 1753296,
+      "sourceSha256": "465ecf985f6065fed8263ae35702f29bf79dcef8c247728236c46e4a85f77bd3",
+      "glbSha256": "11903688db682a18b5769adcb6f14c091abd8f2c7d817a295a09fc89f33b3eb1",
+      "warnings": [
+        "Blender world, compositor, and studio lighting are replaced by viewer lighting.",
+        "Eevee toon ramps approximated with their authored lit palette colors and neutral PBR shading: Backpack_pocket, Backpack_sunflower, Canvas_cream, Ear_and_lip, Eyes_and_socks, Hair_chestnut, Hair_warm_streak, Iris_hazel, Shirt_blue_trim, Shirt_muted_blue, Shorts_indigo, Skin_highlight, Skin_warm_peach"
+      ],
+      "metadata": [
+        {
+          "label": "Review",
+          "value": "Status: technically verified; **awaiting human approval for milestone 2**.\nRevision: pilot-v1, created 2026-09-29. No human approval has been recorded.",
+          "provenancePath": "documentation/examples/01-school-morning-character/output/review.md"
+        },
+        {
+          "label": "Example prompt",
+          "value": "PROMPT 1 — Initial creation request\n\n$blender-create-model\n\nCreate a stylized boy getting ready for school, wearing a backpack and\nadjusting one shoulder strap. Give him a friendly, alert expression,\ndeliberate character proportions, and readable hands and shoes.\n\nRender style: comic-book illustration interpreted as editable 3D, with\nsimple graphic shapes, controlled bands of shading, and dark drawn details.\nSetting: a simple cozy bedroom corner with a small bed, books, and a window.\nLighting: warm morning sunlight with enough fill to read the face clearly.\nPalette: muted blue and warm yellow, with restrained warm wood and skin tones.\nCamera: use the default clinical inspection view when no angle is specified:\ncentered, full-body orthographic three-quarter view with comfortable margins.\n\nUse blender-setup, blender-materials, blender-light-camera, blender-render,\nand blender-review-optimize as appropriate alongside blender-create-model.\nWork through the verified official Blender Lab MCP in the open Blender app.\nPreserve unrelated Blender content and create an isolated example scene.\n\nDeliver:\n- result.blend: editable scene with final camera, lighting, and materials.\n- result.png: clean 1280x720 final camera Render Result, without any Blender UI.\n- editor.png: genuine Blender editor screenshot of the completed scene.\n- review.md: actual skills, settings, timings, checks, revisions, and limitations.\n\nUse 640x360 previews and target under 30 seconds per still, as a goal rather\nthan a hard limit. Prefer EEVEE. Inspect the actual renders and reopen the\nsaved scene to check portability before presenting it for human approval.\nThis is a static character illustration; no rig or animation is requested.\nNo external image reference is supplied for this pilot; use the textual style.\n\nSuccess criteria: clear complete silhouette; one hand visibly adjusting the\nbackpack strap; friendly readable face; recognizable bedroom context; warm\nlight without losing facial detail; no clipped head or feet; editable scene.",
+          "provenancePath": "documentation/examples/01-school-morning-character/input/prompt.txt"
+        }
+      ],
+      "exported": {
+        "meshes": 154,
+        "materials": 19,
+        "animations": []
+      },
+      "view": {
+        "position": [
+          4.400000095367432,
+          4.300000190734863,
+          8
+        ],
+        "target": [
+          -0.11931943893432617,
+          1.198103904724121,
+          -0.4737234115600586
+        ],
+        "frameHeight": 3.2062498927116394,
+        "aspect": 1.7777777777777777
+      },
+      "previewPath": "documentation/examples/01-school-morning-character/output/result.png"
+    },
+    {
+      "id": "documentation/examples/02-city-corner-firehouse/output/result.blend",
+      "title": "City Corner Firehouse",
+      "sourcePath": "documentation/examples/02-city-corner-firehouse/output/result.blend",
+      "glbPath": "documentation/examples/02-city-corner-firehouse/output/result.glb",
+      "byteSize": 19429000,
+      "sourceSha256": "6276cdddda097687b1f28d33d0f90ee8561b9374d14db917dbee23d0e5d7adcb",
+      "glbSha256": "b6e8231c8fb1cf890a32764b815731ec67b7076997dd372f9af0327911a2a3ec",
+      "warnings": [
+        "Blender world, compositor, and studio lighting are replaced by viewer lighting.",
+        "Procedural base color and tangent normals baked to 2048px atlas; microdetail is resolution-limited."
+      ],
+      "metadata": [
+        {
+          "label": "Review",
+          "value": "Selected final firehouse with arched bays, detailed facade, and blue-sky/color treatment. Older attempts removed.",
+          "provenancePath": "documentation/examples/02-city-corner-firehouse/output/review.md"
+        },
+        {
+          "label": "Example prompt",
+          "value": "PROMPT 1 - Initial creation request\n\n$blender-create-environment\n\nCreate a realistic architectural visualization of a firehouse on a city\ncorner. Make it a detailed two-story red-brick station with two large\nfire-engine bays, a pedestrian entrance, stone trim, metal apparatus doors,\nreflective upper windows, a restrained station sign, and a hose-drying tower.\nInclude sidewalks, curbs, an intersection with crosswalks, streetlights,\na hydrant, and neighboring city buildings to establish the urban setting.\n\nUse realistic proportions and physically based masonry, stone, concrete,\npainted metal, asphalt, and glass. Add subtle surface texture and weathering.\nUse natural daytime lighting, balanced exposure, and believable shadows.\nCamera: clear architectural three-quarter perspective showing the front\nand side of the station and its relationship to the street corner. Keep\nthe complete building visible and avoid excessive wide-angle distortion.\n\nUse blender-setup, blender-procedural-geometry, blender-materials,\nblender-light-camera, blender-render, and blender-review-optimize alongside\nblender-create-environment. Keep repeated facade windows editable with\ndocumented controls and verify those controls within sensible limits.\nPreserve existing Blender content and use an isolated scene.\n\nDeliver all generated files inside output/:\n- result.blend: editable portable scene, camera, materials, lights, controls.\n- result.png: clean final camera Render Result at 1280x720, no UI or HUD.\n- editor.png: genuine Blender editor screenshot of the completed scene.\n- review.md: settings, actual skills, measured timings, verification,\n  corrective actions, assumptions, and remaining quality limitations.\n\nUse 640x360 previews. Target less than 30 seconds per still as a goal,\nnot a hard limit. Benchmark EEVEE or GPU Cycles and use denoising when useful.\nThe result should read as realistic architecture, not a cartoon miniature.\nNo external image reference is required: this is an original fictional\nfirehouse, not a survey or reconstruction of a particular real building.\nVerify the saved file by reopening it and inspect the actual output images.",
+          "provenancePath": "documentation/examples/02-city-corner-firehouse/input/prompt.txt"
+        }
+      ],
+      "exported": {
+        "meshes": 884,
+        "materials": 17,
+        "animations": []
+      },
+      "view": {
+        "position": [
+          22,
+          3.4000000953674316,
+          32
+        ],
+        "target": [
+          1.590585708618164,
+          3.400003671646118,
+          -1.2116775512695312
+        ],
+        "frameHeight": 18.344251147043032,
+        "aspect": 1.7777777777777777
+      },
+      "previewPath": "documentation/examples/02-city-corner-firehouse/output/result.png"
+    },
+    {
+      "id": "documentation/examples/03-game-ready-treasure-chest/output/result.blend",
+      "title": "Game Ready Treasure Chest",
+      "sourcePath": "documentation/examples/03-game-ready-treasure-chest/output/result.blend",
+      "glbPath": "documentation/examples/03-game-ready-treasure-chest/output/result.glb",
+      "byteSize": 1699924,
+      "sourceSha256": "22ccddebc57dcc116735952c13f652a5e7ae059a93073660a0dda8cb9746a980",
+      "glbSha256": "d49456853ec8521877e0328af811c21a933dfc378bd70fc0f76dc0cb00c42136",
+      "warnings": [
+        "Blender world, compositor, and studio lighting are replaced by viewer lighting."
+      ],
+      "metadata": [
+        {
+          "label": "Scene",
+          "value": "Example_03-game-ready-treasure-chest",
+          "provenancePath": "documentation/examples/03-game-ready-treasure-chest/output/manifest.json"
+        },
+        {
+          "label": "Blender",
+          "value": "5.2.2 LTS",
+          "provenancePath": "documentation/examples/03-game-ready-treasure-chest/output/manifest.json"
+        },
+        {
+          "label": "Engine",
+          "value": "Cycles",
+          "provenancePath": "documentation/examples/03-game-ready-treasure-chest/output/manifest.json"
+        },
+        {
+          "label": "Objects",
+          "value": "7",
+          "provenancePath": "documentation/examples/03-game-ready-treasure-chest/output/manifest.json"
+        },
+        {
+          "label": "Resolution",
+          "value": "[1280, 720]",
+          "provenancePath": "documentation/examples/03-game-ready-treasure-chest/output/manifest.json"
+        },
+        {
+          "label": "Render seconds",
+          "value": "5.473535400000401",
+          "provenancePath": "documentation/examples/03-game-ready-treasure-chest/output/manifest.json"
+        },
+        {
+          "label": "Samples",
+          "value": "32",
+          "provenancePath": "documentation/examples/03-game-ready-treasure-chest/output/manifest.json"
+        },
+        {
+          "label": "Iteration",
+          "value": "1",
+          "provenancePath": "documentation/examples/03-game-ready-treasure-chest/output/manifest.json"
+        },
+        {
+          "label": "Review",
+          "value": "One creative iteration, delivered for human artistic review on 2026-09-29. Technical corrections and required diagnostic/animation outputs belong to this same build.",
+          "provenancePath": "documentation/examples/03-game-ready-treasure-chest/output/review.md"
+        },
+        {
+          "label": "Example prompt",
+          "value": "Create a game-ready stylized treasure chest, rich walnut planks, dark iron straps, brass rivets and clasp, domed lid, small brass feet. Detailed source and efficient target under 12000 triangles. Bake 1024 color and normal maps, show UV/checker evidence and source comparison, export a GLB and reimport it. Clinical orthographic three-quarter studio view, warm key and cool fill.\n\nOne creative iteration only. Use prompt-specific visual target per skills. Deliver input/prompt.txt and output/result.blend, result.png, editor.png, review.md plus specified specialist outputs. Final still 1280x720, soft target under 30 seconds. Preserve exact prompt and report actual limits.",
+          "provenancePath": "documentation/examples/03-game-ready-treasure-chest/input/prompt.txt"
+        }
+      ],
+      "exported": {
+        "meshes": 2,
+        "materials": 2,
+        "animations": []
+      },
+      "view": {
+        "position": [
+          5,
+          4,
+          7
+        ],
+        "target": [
+          -0.17788124084472656,
+          0.7379360198974609,
+          -0.24903297424316406
+        ],
+        "frameHeight": 3.0375000536441803,
+        "aspect": 1.7777777777777777
+      },
+      "previewPath": "documentation/examples/03-game-ready-treasure-chest/output/result.png"
+    },
+    {
+      "id": "documentation/examples/04-robot-greeting/output/result.blend",
+      "title": "Robot Greeting",
+      "sourcePath": "documentation/examples/04-robot-greeting/output/result.blend",
+      "glbPath": "documentation/examples/04-robot-greeting/output/result.glb",
+      "byteSize": 730144,
+      "sourceSha256": "fbb0042792831679898f5d72acf8cb2c9a05585f2f5ee1dc5cd833a946613ebd",
+      "glbSha256": "eb87ae2eba9d358362d3bf7e8adb44c713207b1f71d7a867caa26f2f98317716",
+      "warnings": [
+        "Blender world, compositor, and studio lighting are replaced by viewer lighting."
+      ],
+      "metadata": [
+        {
+          "label": "Scene",
+          "value": "Example_04-robot-greeting",
+          "provenancePath": "documentation/examples/04-robot-greeting/output/manifest.json"
+        },
+        {
+          "label": "Blender",
+          "value": "5.2.2 LTS",
+          "provenancePath": "documentation/examples/04-robot-greeting/output/manifest.json"
+        },
+        {
+          "label": "Engine",
+          "value": "Cycles",
+          "provenancePath": "documentation/examples/04-robot-greeting/output/manifest.json"
+        },
+        {
+          "label": "Objects",
+          "value": "42",
+          "provenancePath": "documentation/examples/04-robot-greeting/output/manifest.json"
+        },
+        {
+          "label": "Resolution",
+          "value": "[1280, 720]",
+          "provenancePath": "documentation/examples/04-robot-greeting/output/manifest.json"
+        },
+        {
+          "label": "Render seconds",
+          "value": "7.640178499976173",
+          "provenancePath": "documentation/examples/04-robot-greeting/output/manifest.json"
+        },
+        {
+          "label": "Samples",
+          "value": "32",
+          "provenancePath": "documentation/examples/04-robot-greeting/output/manifest.json"
+        },
+        {
+          "label": "Clip",
+          "value": "Greeting_Wave",
+          "provenancePath": "documentation/examples/04-robot-greeting/output/manifest.json"
+        },
+        {
+          "label": "Duration seconds",
+          "value": "2",
+          "provenancePath": "documentation/examples/04-robot-greeting/output/manifest.json"
+        },
+        {
+          "label": "Rig",
+          "value": "Rigid mechanical parts, one bone per part; not soft skin",
+          "provenancePath": "documentation/examples/04-robot-greeting/output/manifest.json"
+        },
+        {
+          "label": "Iteration",
+          "value": "1",
+          "provenancePath": "documentation/examples/04-robot-greeting/output/manifest.json"
+        },
+        {
+          "label": "Review",
+          "value": "One creative iteration, delivered for human artistic review on 2026-09-29. Technical corrections and required diagnostic/animation outputs belong to this same build.",
+          "provenancePath": "documentation/examples/04-robot-greeting/output/review.md"
+        },
+        {
+          "label": "Example prompt",
+          "value": "Create a friendly rounded teal and yellow toy robot with screen eyes, antenna, articulated hands and boots. Rig it with editable bones and a named 2-second greeting wave at 12 fps. Deliver animated GLB, 24-frame playable preview and representative pose PNGs. Clinical full-body three-quarter studio view with generous framing for raised arm.\n\nOne creative iteration only. Use prompt-specific visual target per skills. Deliver input/prompt.txt and output/result.blend, result.png, editor.png, review.md plus specified specialist outputs. Final still 1280x720, soft target under 30 seconds. Preserve exact prompt and report actual limits.",
+          "provenancePath": "documentation/examples/04-robot-greeting/input/prompt.txt"
+        }
+      ],
+      "exported": {
+        "meshes": 37,
+        "materials": 6,
+        "animations": [
+          "Greeting_Wave"
+        ]
+      },
+      "view": {
+        "position": [
+          5,
+          4.5,
+          9
+        ],
+        "target": [
+          -0.18914461135864258,
+          1.5877277851104736,
+          -0.5310792922973633
+        ],
+        "frameHeight": 3.9937499463558197,
+        "aspect": 1.7777777777777777
+      },
+      "previewPath": "documentation/examples/04-robot-greeting/output/result.png"
+    },
+    {
+      "id": "documentation/examples/05-fox-sprite-sheet/output/result.blend",
+      "title": "Fox Sprite Sheet",
+      "sourcePath": "documentation/examples/05-fox-sprite-sheet/output/result.blend",
+      "glbPath": "documentation/examples/05-fox-sprite-sheet/output/result.glb",
+      "byteSize": 249112,
+      "sourceSha256": "a9b813fbae2c6e81c947d3423fa40a06b1ca7e461b3d21ac3aa4cfc74a949d47",
+      "glbSha256": "d1d96af7d472b54dd9788495887bd7c51d38084430bfc7a87c40bd94c1806e05",
+      "warnings": [
+        "Blender world, compositor, and studio lighting are replaced by viewer lighting."
+      ],
+      "metadata": [
+        {
+          "label": "Scene",
+          "value": "Example_05-fox-sprite-sheet",
+          "provenancePath": "documentation/examples/05-fox-sprite-sheet/output/manifest.json"
+        },
+        {
+          "label": "Blender",
+          "value": "5.2.2 LTS",
+          "provenancePath": "documentation/examples/05-fox-sprite-sheet/output/manifest.json"
+        },
+        {
+          "label": "Engine",
+          "value": "Cycles",
+          "provenancePath": "documentation/examples/05-fox-sprite-sheet/output/manifest.json"
+        },
+        {
+          "label": "Objects",
+          "value": "30",
+          "provenancePath": "documentation/examples/05-fox-sprite-sheet/output/manifest.json"
+        },
+        {
+          "label": "Resolution",
+          "value": "[1280, 720]",
+          "provenancePath": "documentation/examples/05-fox-sprite-sheet/output/manifest.json"
+        },
+        {
+          "label": "Render seconds",
+          "value": "5.134464700007811",
+          "provenancePath": "documentation/examples/05-fox-sprite-sheet/output/manifest.json"
+        },
+        {
+          "label": "Samples",
+          "value": "32",
+          "provenancePath": "documentation/examples/05-fox-sprite-sheet/output/manifest.json"
+        },
+        {
+          "label": "Rig",
+          "value": "Head and tail idle; planted legs",
+          "provenancePath": "documentation/examples/05-fox-sprite-sheet/output/manifest.json"
+        },
+        {
+          "label": "Iteration",
+          "value": "1",
+          "provenancePath": "documentation/examples/05-fox-sprite-sheet/output/manifest.json"
+        },
+        {
+          "label": "Review",
+          "value": "One creative iteration, delivered for human artistic review on 2026-09-29. Technical corrections and required diagnostic/animation outputs belong to this same build.",
+          "provenancePath": "documentation/examples/05-fox-sprite-sheet/output/review.md"
+        },
+        {
+          "label": "Example prompt",
+          "value": "Create a charming low-poly orange fox with ivory chest and tail tip, dark paws and expressive ears. Build full editable 3D with a simple bone-driven 4-frame idle loop. Deliver four directions with four 128x128 transparent frames each, sprite sheet, pivot/direction/timing metadata and a playable preview. Hero view: three-quarter clinical orthographic.\n\nOne creative iteration only. Use prompt-specific visual target per skills. Deliver input/prompt.txt and output/result.blend, result.png, editor.png, review.md plus specified specialist outputs. Final still 1280x720, soft target under 30 seconds. Preserve exact prompt and report actual limits.",
+          "provenancePath": "documentation/examples/05-fox-sprite-sheet/input/prompt.txt"
+        }
+      ],
+      "exported": {
+        "meshes": 25,
+        "materials": 6,
+        "animations": [
+          "Fox_Idle"
+        ]
+      },
+      "view": {
+        "position": [
+          4,
+          3.299999952316284,
+          6
+        ],
+        "target": [
+          -0.12582826614379883,
+          0.9276480674743652,
+          -0.3434605598449707
+        ],
+        "frameHeight": 2.9249998927116394,
+        "aspect": 1.7777777777777777
+      },
+      "previewPath": "documentation/examples/05-fox-sprite-sheet/output/result.png"
+    },
+    {
+      "id": "documentation/examples/06-desk-lamp-from-image/output/result.blend",
+      "title": "Desk Lamp From Image",
+      "sourcePath": "documentation/examples/06-desk-lamp-from-image/output/result.blend",
+      "glbPath": "documentation/examples/06-desk-lamp-from-image/output/result.glb",
+      "byteSize": 285976,
+      "sourceSha256": "78d17101af0199a69e06672614f10e68eec8ea184b2b846a31e03aec040ea5f3",
+      "glbSha256": "9642d1bfe69db648b43bbeaf2e3fad81f8c383ec127dedfcca7c1dd9797932b4",
+      "warnings": [
+        "Blender world, compositor, and studio lighting are replaced by viewer lighting."
+      ],
+      "metadata": [
+        {
+          "label": "Scene",
+          "value": "Example_06-desk-lamp-from-image",
+          "provenancePath": "documentation/examples/06-desk-lamp-from-image/output/manifest.json"
+        },
+        {
+          "label": "Blender",
+          "value": "5.2.2 LTS",
+          "provenancePath": "documentation/examples/06-desk-lamp-from-image/output/manifest.json"
+        },
+        {
+          "label": "Engine",
+          "value": "Cycles",
+          "provenancePath": "documentation/examples/06-desk-lamp-from-image/output/manifest.json"
+        },
+        {
+          "label": "Objects",
+          "value": "21",
+          "provenancePath": "documentation/examples/06-desk-lamp-from-image/output/manifest.json"
+        },
+        {
+          "label": "Resolution",
+          "value": "[1280, 720]",
+          "provenancePath": "documentation/examples/06-desk-lamp-from-image/output/manifest.json"
+        },
+        {
+          "label": "Render seconds",
+          "value": "5.928883499989752",
+          "provenancePath": "documentation/examples/06-desk-lamp-from-image/output/manifest.json"
+        },
+        {
+          "label": "Samples",
+          "value": "32",
+          "provenancePath": "documentation/examples/06-desk-lamp-from-image/output/manifest.json"
+        },
+        {
+          "label": "Iteration",
+          "value": "1",
+          "provenancePath": "documentation/examples/06-desk-lamp-from-image/output/manifest.json"
+        },
+        {
+          "label": "Review",
+          "value": "One creative iteration, delivered for human artistic review on 2026-09-29. Technical corrections and required diagnostic/animation outputs belong to this same build.",
+          "provenancePath": "documentation/examples/06-desk-lamp-from-image/output/review.md"
+        },
+        {
+          "label": "Example prompt",
+          "value": "Reconstruct a full editable desk lamp from the supplied identified lamp reference image. Inspect source first, record observed landmarks and inferred hidden geometry. Deliver matching-view comparison and two alternate views, coherent metal and painted surfaces, neutral studio light. Do not use the source as a billboard.\n\nOne creative iteration only. Use prompt-specific visual target per skills. Deliver input/prompt.txt and output/result.blend, result.png, editor.png, review.md plus specified specialist outputs. Final still 1280x720, soft target under 30 seconds. Preserve exact prompt and report actual limits.\n\nSource: input/source.png, copied unchanged from references/renders/render_desk_lamp_v1.png. Reconstruct the top-left Photorealistic panel only; full sheet preserved for provenance.",
+          "provenancePath": "documentation/examples/06-desk-lamp-from-image/input/prompt.txt"
+        }
+      ],
+      "exported": {
+        "meshes": 16,
+        "materials": 6,
+        "animations": []
+      },
+      "view": {
+        "position": [
+          2,
+          2.5999999046325684,
+          7
+        ],
+        "target": [
+          -0.26775312423706055,
+          1.002266526222229,
+          -0.2155771255493164
+        ],
+        "frameHeight": 2.7000001072883606,
+        "aspect": 1.7777777777777777
+      },
+      "previewPath": "documentation/examples/06-desk-lamp-from-image/output/result.png"
+    },
+    {
+      "id": "documentation/examples/07-sunlit-reading-nook/output/result.blend",
+      "title": "Sunlit Reading Nook",
+      "sourcePath": "documentation/examples/07-sunlit-reading-nook/output/result.blend",
+      "glbPath": "documentation/examples/07-sunlit-reading-nook/output/result.glb",
+      "byteSize": 2320748,
+      "sourceSha256": "2c8d3a07cab68f70ff998cc72713dc8b6a93f67a45188f8b72de4cb642b04309",
+      "glbSha256": "42c2cb199b107182d3353749608987239a69b228f3e7f86a43754edcf2bafa09",
+      "warnings": [
+        "Blender world, compositor, and studio lighting are replaced by viewer lighting."
+      ],
+      "metadata": [
+        {
+          "label": "Scene",
+          "value": "Example_07-sunlit-reading-nook",
+          "provenancePath": "documentation/examples/07-sunlit-reading-nook/output/manifest.json"
+        },
+        {
+          "label": "Blender",
+          "value": "5.2.2 LTS",
+          "provenancePath": "documentation/examples/07-sunlit-reading-nook/output/manifest.json"
+        },
+        {
+          "label": "Engine",
+          "value": "Cycles",
+          "provenancePath": "documentation/examples/07-sunlit-reading-nook/output/manifest.json"
+        },
+        {
+          "label": "Objects",
+          "value": "205",
+          "provenancePath": "documentation/examples/07-sunlit-reading-nook/output/manifest.json"
+        },
+        {
+          "label": "Resolution",
+          "value": "[1280, 720]",
+          "provenancePath": "documentation/examples/07-sunlit-reading-nook/output/manifest.json"
+        },
+        {
+          "label": "Render seconds",
+          "value": "6.436587699980009",
+          "provenancePath": "documentation/examples/07-sunlit-reading-nook/output/manifest.json"
+        },
+        {
+          "label": "Samples",
+          "value": "32",
+          "provenancePath": "documentation/examples/07-sunlit-reading-nook/output/manifest.json"
+        },
+        {
+          "label": "Iteration",
+          "value": "1",
+          "provenancePath": "documentation/examples/07-sunlit-reading-nook/output/manifest.json"
+        },
+        {
+          "label": "Review",
+          "value": "One creative iteration, delivered for human artistic review on 2026-09-29. Technical corrections and required diagnostic/animation outputs belong to this same build.",
+          "provenancePath": "documentation/examples/07-sunlit-reading-nook/output/review.md"
+        },
+        {
+          "label": "Example prompt",
+          "value": "Create an inviting Scandinavian reading nook: oak floor, cream plaster walls, broad window, rust upholstered armchair, linen cushion, round side table, ceramic mug, books, leafy plant and woven rug. Warm afternoon window light with soft shadows. Architectural three-quarter perspective showing the open room and all key furnishings.\n\nOne creative iteration only. Use prompt-specific visual target per skills. Deliver input/prompt.txt and output/result.blend, result.png, editor.png, review.md plus specified specialist outputs. Final still 1280x720, soft target under 30 seconds. Preserve exact prompt and report actual limits.",
+          "provenancePath": "documentation/examples/07-sunlit-reading-nook/input/prompt.txt"
+        }
+      ],
+      "exported": {
+        "meshes": 200,
+        "materials": 15,
+        "animations": []
+      },
+      "view": {
+        "position": [
+          7,
+          6,
+          9
+        ],
+        "target": [
+          -0.3131070137023926,
+          1.0897750854492188,
+          -0.40256214141845703
+        ],
+        "frameHeight": 4.21875,
+        "aspect": 1.7777777777777777
+      },
+      "previewPath": "documentation/examples/07-sunlit-reading-nook/output/result.png"
+    },
+    {
+      "id": "documentation/examples/08-modular-greenhouse/output/result.blend",
+      "title": "Modular Greenhouse",
+      "sourcePath": "documentation/examples/08-modular-greenhouse/output/result.blend",
+      "glbPath": "documentation/examples/08-modular-greenhouse/output/result.glb",
+      "byteSize": 1730128,
+      "sourceSha256": "40a420be749a4e9081fae592fe5218737ec297e07eb8317935dd4a76175881c6",
+      "glbSha256": "3a565fa9c67955c54b6ae6d208402a517cf73f16ae94b2205c6efd24a499ecde",
+      "warnings": [
+        "Blender world, compositor, and studio lighting are replaced by viewer lighting."
+      ],
+      "metadata": [
+        {
+          "label": "Scene",
+          "value": "Example_08-modular-greenhouse",
+          "provenancePath": "documentation/examples/08-modular-greenhouse/output/manifest.json"
+        },
+        {
+          "label": "Blender",
+          "value": "5.2.2 LTS",
+          "provenancePath": "documentation/examples/08-modular-greenhouse/output/manifest.json"
+        },
+        {
+          "label": "Engine",
+          "value": "Cycles",
+          "provenancePath": "documentation/examples/08-modular-greenhouse/output/manifest.json"
+        },
+        {
+          "label": "Objects",
+          "value": "170",
+          "provenancePath": "documentation/examples/08-modular-greenhouse/output/manifest.json"
+        },
+        {
+          "label": "Resolution",
+          "value": "[1280, 720]",
+          "provenancePath": "documentation/examples/08-modular-greenhouse/output/manifest.json"
+        },
+        {
+          "label": "Render seconds",
+          "value": "8.014203400001861",
+          "provenancePath": "documentation/examples/08-modular-greenhouse/output/manifest.json"
+        },
+        {
+          "label": "Samples",
+          "value": "32",
+          "provenancePath": "documentation/examples/08-modular-greenhouse/output/manifest.json"
+        },
+        {
+          "label": "Iteration",
+          "value": "1",
+          "provenancePath": "documentation/examples/08-modular-greenhouse/output/manifest.json"
+        },
+        {
+          "label": "Review",
+          "value": "One creative iteration, delivered for human artistic review on 2026-09-29. Technical corrections and required diagnostic/animation outputs belong to this same build.",
+          "provenancePath": "documentation/examples/08-modular-greenhouse/output/review.md"
+        },
+        {
+          "label": "Example prompt",
+          "value": "Create an elegant small Victorian-inspired greenhouse with sage painted framing, transparent pitched glass roof, brick plinth, central path and benches of terracotta pots and greenery. Expose editable procedural bay-count and spacing controls. Three-quarter orthographic garden diorama, soft daylight.\n\nOne creative iteration only. Use prompt-specific visual target per skills. Deliver input/prompt.txt and output/result.blend, result.png, editor.png, review.md plus specified specialist outputs. Final still 1280x720, soft target under 30 seconds. Preserve exact prompt and report actual limits.",
+          "provenancePath": "documentation/examples/08-modular-greenhouse/input/prompt.txt"
+        }
+      ],
+      "exported": {
+        "meshes": 166,
+        "materials": 9,
+        "animations": []
+      },
+      "view": {
+        "position": [
+          7,
+          6,
+          9
+        ],
+        "target": [
+          -0.43225717544555664,
+          0.9566807746887207,
+          -0.23723316192626953
+        ],
+        "frameHeight": 5.0625,
+        "aspect": 1.7777777777777777
+      },
+      "previewPath": "documentation/examples/08-modular-greenhouse/output/result.png"
+    },
+    {
+      "id": "documentation/examples/09-ceramic-tea-still-life/output/result.blend",
+      "title": "Ceramic Tea Still Life",
+      "sourcePath": "documentation/examples/09-ceramic-tea-still-life/output/result.blend",
+      "glbPath": "documentation/examples/09-ceramic-tea-still-life/output/result.glb",
+      "byteSize": 404396,
+      "sourceSha256": "044eabcba7dc6400feb1a1e38d9065fb8dfef7b5c8e78723c0cbef5728348193",
+      "glbSha256": "6d19a6eea3e2915d2fdc2d836079ef5185b70e02d24f042048251341d94d83c2",
+      "warnings": [
+        "Blender world, compositor, and studio lighting are replaced by viewer lighting."
+      ],
+      "metadata": [
+        {
+          "label": "Scene",
+          "value": "Example_09-ceramic-tea-still-life",
+          "provenancePath": "documentation/examples/09-ceramic-tea-still-life/output/manifest.json"
+        },
+        {
+          "label": "Blender",
+          "value": "5.2.2 LTS",
+          "provenancePath": "documentation/examples/09-ceramic-tea-still-life/output/manifest.json"
+        },
+        {
+          "label": "Engine",
+          "value": "Cycles",
+          "provenancePath": "documentation/examples/09-ceramic-tea-still-life/output/manifest.json"
+        },
+        {
+          "label": "Objects",
+          "value": "29",
+          "provenancePath": "documentation/examples/09-ceramic-tea-still-life/output/manifest.json"
+        },
+        {
+          "label": "Resolution",
+          "value": "[1280, 720]",
+          "provenancePath": "documentation/examples/09-ceramic-tea-still-life/output/manifest.json"
+        },
+        {
+          "label": "Render seconds",
+          "value": "3.3099992999923415",
+          "provenancePath": "documentation/examples/09-ceramic-tea-still-life/output/manifest.json"
+        },
+        {
+          "label": "Samples",
+          "value": "32",
+          "provenancePath": "documentation/examples/09-ceramic-tea-still-life/output/manifest.json"
+        },
+        {
+          "label": "Iteration",
+          "value": "1",
+          "provenancePath": "documentation/examples/09-ceramic-tea-still-life/output/manifest.json"
+        },
+        {
+          "label": "Review",
+          "value": "One creative iteration, delivered for human artistic review on 2026-09-29. Technical corrections and required diagnostic/animation outputs belong to this same build.",
+          "provenancePath": "documentation/examples/09-ceramic-tea-still-life/output/review.md"
+        },
+        {
+          "label": "Example prompt",
+          "value": "Create a refined product still life: seafoam glazed ceramic teapot with curved spout and arched handle, two matching cups, honey-colored wood tray, folded linen and a small citrus fruit. Muted warm studio background, broad soft key with attractive glazed reflections. Clinical three-quarter orthographic view.\n\nOne creative iteration only. Use prompt-specific visual target per skills. Deliver input/prompt.txt and output/result.blend, result.png, editor.png, review.md plus specified specialist outputs. Final still 1280x720, soft target under 30 seconds. Preserve exact prompt and report actual limits.",
+          "provenancePath": "documentation/examples/09-ceramic-tea-still-life/input/prompt.txt"
+        }
+      ],
+      "exported": {
+        "meshes": 25,
+        "materials": 7,
+        "animations": []
+      },
+      "view": {
+        "position": [
+          5,
+          4,
+          7
+        ],
+        "target": [
+          -0.12809371948242188,
+          0.5128967761993408,
+          -0.17932987213134766
+        ],
+        "frameHeight": 3.65625,
+        "aspect": 1.7777777777777777
+      },
+      "previewPath": "documentation/examples/09-ceramic-tea-still-life/output/result.png"
+    },
+    {
+      "id": "documentation/examples/10-low-poly-island/output/result.blend",
+      "title": "Low Poly Island",
+      "sourcePath": "documentation/examples/10-low-poly-island/output/result.blend",
+      "glbPath": "documentation/examples/10-low-poly-island/output/result.glb",
+      "byteSize": 712316,
+      "sourceSha256": "f70f110231bd3ad8a34bfbe5d8b7e693ddc388b033f325cd2b04a5e20932c8bc",
+      "glbSha256": "d47e78c431416ac38d10989a71a1f042eb5ba999c6a4288414f808f7dd9c5e35",
+      "warnings": [
+        "Blender world, compositor, and studio lighting are replaced by viewer lighting."
+      ],
+      "metadata": [
+        {
+          "label": "Scene",
+          "value": "Example_10-low-poly-island",
+          "provenancePath": "documentation/examples/10-low-poly-island/output/manifest.json"
+        },
+        {
+          "label": "Blender",
+          "value": "5.2.2 LTS",
+          "provenancePath": "documentation/examples/10-low-poly-island/output/manifest.json"
+        },
+        {
+          "label": "Engine",
+          "value": "Cycles",
+          "provenancePath": "documentation/examples/10-low-poly-island/output/manifest.json"
+        },
+        {
+          "label": "Objects",
+          "value": "63",
+          "provenancePath": "documentation/examples/10-low-poly-island/output/manifest.json"
+        },
+        {
+          "label": "Resolution",
+          "value": "[1280, 720]",
+          "provenancePath": "documentation/examples/10-low-poly-island/output/manifest.json"
+        },
+        {
+          "label": "Render seconds",
+          "value": "5.579194600053597",
+          "provenancePath": "documentation/examples/10-low-poly-island/output/manifest.json"
+        },
+        {
+          "label": "Samples",
+          "value": "32",
+          "provenancePath": "documentation/examples/10-low-poly-island/output/manifest.json"
+        },
+        {
+          "label": "Iteration",
+          "value": "1",
+          "provenancePath": "documentation/examples/10-low-poly-island/output/manifest.json"
+        },
+        {
+          "label": "Review",
+          "value": "One creative iteration, delivered for human artistic review on 2026-09-29. Technical corrections and required diagnostic/animation outputs belong to this same build.",
+          "provenancePath": "documentation/examples/10-low-poly-island/output/review.md"
+        },
+        {
+          "label": "Example prompt",
+          "value": "Create a whimsical low-poly island diorama with turquoise water, layered rocky cliffs, sandy beach, a winding path, pine trees and a small red-roof lighthouse. Distinct faceted forms, rich controlled color, soft sunny shadows. Three-quarter orthographic composition with complete island silhouette.\n\nOne creative iteration only. Use prompt-specific visual target per skills. Deliver input/prompt.txt and output/result.blend, result.png, editor.png, review.md plus specified specialist outputs. Final still 1280x720, soft target under 30 seconds. Preserve exact prompt and report actual limits.",
+          "provenancePath": "documentation/examples/10-low-poly-island/input/prompt.txt"
+        }
+      ],
+      "exported": {
+        "meshes": 59,
+        "materials": 13,
+        "animations": []
+      },
+      "view": {
+        "position": [
+          7,
+          7,
+          9
+        ],
+        "target": [
+          -0.30816078186035156,
+          0.8924636840820312,
+          -0.3962106704711914
+        ],
+        "frameHeight": 5.287499785423279,
+        "aspect": 1.7777777777777777
+      },
+      "previewPath": "documentation/examples/10-low-poly-island/output/result.png"
+    },
+    {
+      "id": "documentation/examples/11-floating-forest-from-sketch/output/result.blend",
+      "title": "Floating Forest From Sketch",
+      "sourcePath": "documentation/examples/11-floating-forest-from-sketch/output/result.blend",
+      "glbPath": "documentation/examples/11-floating-forest-from-sketch/output/result.glb",
+      "byteSize": 82209960,
+      "sourceSha256": "ad9ea3b7fb6cd00f42c32bd60262ff0f457309b4f88427c7613376ade74555c0",
+      "glbSha256": "3194adc9990c847e0abca5237645adbe682b51b64277156fd76e49d652b3151b",
+      "warnings": [
+        "Blender world, compositor, and studio lighting are replaced by viewer lighting.",
+        "Dense procedural scene uses per-corner baked colors to preserve foliage palettes without texture-atlas loss. Geometry is retained; sub-vertex color variation and procedural bump microdetail are not represented.",
+        "Lossless EXT_meshopt_compression; decoded vertex attributes and triangle topology verified unchanged. Requires Meshopt decoder."
+      ],
+      "metadata": [
+        {
+          "label": "Review",
+          "value": "The user supplied `../input/sketch.png`. Its visible landmarks are a roughly square island, an open grassy clearing, nine perimeter trees mixing broadleaf and conifer silhouettes, a stream following one edge, fractured sides, and detached rock fragments.",
+          "provenancePath": "documentation/examples/11-floating-forest-from-sketch/output/review.md"
+        },
+        {
+          "label": "Example prompt",
+          "value": "Turn the supplied sketch into an editable 3D floating forest game island. Preserve its grassy clearing, perimeter trees, winding stream, and elevated three-quarter composition. Use stylized forms, realistic materials, and bright, vivid natural colors. Expose torn soil, fractured rock and roots underneath, with falling dirt and rock fragments. No skybox or ground below. Create a 2D visual target first, then deliver an editable Blender scene and a 1920×1080 PNG render.",
+          "provenancePath": "documentation/examples/11-floating-forest-from-sketch/input/prompt.txt"
+        }
+      ],
+      "exported": {
+        "meshes": 1,
+        "materials": 5,
+        "animations": []
+      },
+      "view": {
+        "position": [
+          20.028697967529297,
+          20.815479278564453,
+          28.11855125427246
+        ],
+        "target": [
+          0.05402374267578125,
+          -0.2577972412109375,
+          0.15401077270507812
+        ],
+        "frameHeight": 18.46236562728882,
+        "aspect": 1.7777777777777777
+      },
+      "previewPath": "documentation/examples/11-floating-forest-from-sketch/output/result.png"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "sourcePath": "documentation/examples/04-robot-greeting/output/result.blend",
+  "sourceSha256": "fbb0042792831679898f5d72acf8cb2c9a05585f2f5ee1dc5cd833a946613ebd",
+  "glbPath": "documentation/examples/04-robot-greeting/output/result.glb",
+  "glbSha256": "eb87ae2eba9d358362d3bf7e8adb44c713207b1f71d7a867caa26f2f98317716",
+  "byteSize": 730144,
+  "warnings": [
+    "Blender world, compositor, and studio lighting are replaced by viewer lighting."
+  ],
+  "blenderVersion": "5.2.2 LTS",
+  "seconds": 0.41,
+  "exporterVersion": 3,
+  "view": {
+    "position": [
+      5.0,
+      4.5,
+      9.0
+    ],
+    "target": [
+      -0.18914461135864258,
+      1.5877277851104736,
+      -0.5310792922973633
+    ],
+    "frameHeight": 3.9937499463558197,
+    "aspect": 1.7777777777777777
+  }
+}

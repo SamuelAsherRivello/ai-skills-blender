@@ -1,0 +1,30 @@
+{
+  "sourcePath": "documentation/examples/11-floating-forest-from-sketch/output/result.blend",
+  "sourceSha256": "ad9ea3b7fb6cd00f42c32bd60262ff0f457309b4f88427c7613376ade74555c0",
+  "glbPath": "documentation/examples/11-floating-forest-from-sketch/output/result.glb",
+  "glbSha256": "3194adc9990c847e0abca5237645adbe682b51b64277156fd76e49d652b3151b",
+  "byteSize": 82209960,
+  "warnings": [
+    "Blender world, compositor, and studio lighting are replaced by viewer lighting.",
+    "Dense procedural scene uses per-corner baked colors to preserve foliage palettes without texture-atlas loss. Geometry is retained; sub-vertex color variation and procedural bump microdetail are not represented.",
+    "Lossless EXT_meshopt_compression; decoded vertex attributes and triangle topology verified unchanged. Requires Meshopt decoder."
+  ],
+  "blenderVersion": "5.2.2 LTS",
+  "seconds": 30.7,
+  "exporterVersion": 3,
+  "view": {
+    "position": [
+      20.028697967529297,
+      20.815479278564453,
+      28.11855125427246
+    ],
+    "target": [
+      0.05402374267578125,
+      -0.2577972412109375,
+      0.15401077270507812
+    ],
+    "frameHeight": 18.46236562728882,
+    "aspect": 1.7777777777777777
+  },
+  "optimized": true
+}

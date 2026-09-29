@@ -1,0 +1,19 @@
+{
+  "task_id": "add-examples-10-low-poly-island",
+  "worker_id": "/root/target10",
+  "target_id": "target-01",
+  "mode": "generated",
+  "status": "ready",
+  "image": {"path": "target.png", "width": 1672, "height": 941, "format": "PNG", "sha256": "17ccab796e48b758d3c21f9ecd3886fa3ecbbbd5e81568a007c690e2f587a3ad"},
+  "prompt": {"path": "prompt.txt", "original_generation_prompt": "preserved verbatim"},
+  "brief": "brief.md",
+  "generation": {"tool": "image_gen.imagegen", "provider": null, "model": null, "seed": null},
+  "provenance_note": "One built-in generation; copied without pixel modification from the tool's generated image output.",
+  "requested_output": {"aspect_ratio": "16:9", "resolution": null},
+  "references": [],
+  "previous_target_id": null,
+  "unchanged_scene_features": [],
+  "inspection": {"performed": true, "findings": "Complete island and lighthouse silhouette; requested faceted cliffs, beach, winding path, pine trees and turquoise water all visible. Extra waterfall, arch, dock, boat, fences, keeper house and outlying stacks are optional, not requirements. Lighthouse height can be reduced to honor small. Approximately 16:9 output."},
+  "comparison_performed": false,
+  "iteration_budget": 1
+}

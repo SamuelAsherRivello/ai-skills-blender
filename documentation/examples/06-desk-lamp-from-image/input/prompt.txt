@@ -1,0 +1,5 @@
+Reconstruct a full editable desk lamp from the supplied identified lamp reference image. Inspect source first, record observed landmarks and inferred hidden geometry. Deliver matching-view comparison and two alternate views, coherent metal and painted surfaces, neutral studio light. Do not use the source as a billboard.
+
+One creative iteration only. Use prompt-specific visual target per skills. Deliver input/prompt.txt and output/result.blend, result.png, editor.png, review.md plus specified specialist outputs. Final still 1280x720, soft target under 30 seconds. Preserve exact prompt and report actual limits.
+
+Source: input/source.png, copied unchanged from references/renders/render_desk_lamp_v1.png. Reconstruct the top-left Photorealistic panel only; full sheet preserved for provenance.

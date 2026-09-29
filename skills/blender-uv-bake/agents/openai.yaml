@@ -1,0 +1,4 @@
+interface:
+  display_name: "Blender Uv Bake"
+  short_description: "Unwrap meshes and verify baked maps"
+  default_prompt: "Use $blender-uv-bake to unwrap meshes and verify baked maps for my request."

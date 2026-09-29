@@ -1,4 +1,7 @@
-![Samuel Asher Rivello](https://raw.githubusercontent.com/SamuelAsherRivello/github-repository-template/main/project-name/documentation/samuel-asher-rivello-banner.png)
+<p>
+<img src="https://raw.githubusercontent.com/SamuelAsherRivello/github-repository-template/main/project-name/documentation/samuel-asher-rivello-banner.png" alt="Samuel Asher Rivello" width="100%" /><br />
+<img src="docs/images/youtube-thumbnail.png" alt="Blender AI skills YouTube thumbnail" width="100%" />
+</p>
 
 # Blender Skills for Codex and Claude Code
 

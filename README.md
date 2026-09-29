@@ -30,7 +30,7 @@ Reference sheets from the optional gallery (inspiration, not generated project o
 
 ## Live Demo
 
-These skills run locally in Codex with Blender. There is no hosted demo. See the [live Blender acceptance results](docs/acceptance.md) and [validation instructions](docs/helpers.md#maintainer-validation).
+Coming Soon...
 
 ## Table of Contents
 

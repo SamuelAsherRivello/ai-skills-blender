@@ -85,12 +85,12 @@ Windows/Codex has live Blender validation. Claude packaging and installation are
 
 ### 📝 Structure
 
-- skills/: shared authoring sources for thirteen skills.
-- .codex/skills/: generated Codex package with OpenAI metadata.
-- .claude/skills/: generated Claude package with a client-specific setup workflow.
-- scripts/: installation and development validation tools.
-- references/: the original camera, colors, lighting and renders directories.
-- docs/: input guidance, helper interfaces, source provenance and validation evidence.
+- `skills/`: shared authoring sources for thirteen skills.
+- `.codex/skills/`: generated Codex package with OpenAI metadata.
+- `.claude/skills/`: generated Claude package with a client-specific setup workflow.
+- `scripts/`: installation and development validation tools.
+- `references/`: the original camera, colors, lighting and renders directories.
+- `docs/`: input guidance, helper interfaces, source provenance and validation evidence.
 
 Local tests, OpenSpec planning, generated acceptance outputs, environments and caches are excluded from Git. Intentional future PNG references and Blender source assets are not blanket-ignored.
 

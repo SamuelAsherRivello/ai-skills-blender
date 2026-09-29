@@ -35,8 +35,9 @@ Coming Soon...
 ## Table of Contents
 
 1. [Getting Started](#getting-started)
-2. [Project Details](#project-details)
-3. [Credits](#credits)
+2. [Use Skills](#use-skills)
+3. [Project Details](#project-details)
+4. [Credits](#credits)
 
 ## Getting Started
 
@@ -72,10 +73,61 @@ Or run this command from the repository in PowerShell:
 ./scripts/install-claude.ps1 -Scope User -Skills all
 ```
 
-### 4. 🛠 Use Skills
+### 4. 🛠 Test Blender Connection
 
 1. Run `$blender-setup` in Codex or `/blender-setup` in Claude Code.
 2. Request a task, such as `Render the current scene.`
+
+## Use Skills
+
+Claude uses `/skill-name` for the same catalog shown below with Codex `$skill-name` syntax.
+
+## Skills
+
+| Name | Comment | Call Directly? |
+|---|---|---|
+| `$blender-setup` | Check the Blender connection and diagnose setup issues | ![Yes](https://img.shields.io/badge/Yes-2ea44f?style=flat) |
+| `$blender-create-model` | Create a prop or character | ![Yes](https://img.shields.io/badge/Yes-2ea44f?style=flat) |
+| `$blender-create-environment` | Build a room, landscape, or modular scene | ![Yes](https://img.shields.io/badge/Yes-2ea44f?style=flat) |
+| `$blender-procedural-geometry` | Build editable generators and repeated geometry | ![Optional](https://img.shields.io/badge/Optional-f2cc60?style=flat) |
+| `$blender-materials` | Create or refine surface materials | ![Optional](https://img.shields.io/badge/Optional-f2cc60?style=flat) |
+| `$blender-uv-bake` | Unwrap meshes and bake texture maps | ![Optional](https://img.shields.io/badge/Optional-f2cc60?style=flat) |
+| `$blender-light-camera` | Refine lighting and camera composition | ![Optional](https://img.shields.io/badge/Optional-f2cc60?style=flat) |
+| `$blender-render` | Render the current scene and verify outputs | ![Yes](https://img.shields.io/badge/Yes-2ea44f?style=flat) |
+| `$blender-rig-animate` | Rig an asset or create animation clips | ![Yes](https://img.shields.io/badge/Yes-2ea44f?style=flat) |
+| `$blender-game-export` | Export an asset for a game engine | ![Yes](https://img.shields.io/badge/Yes-2ea44f?style=flat) |
+| `$blender-review-optimize` | Review asset quality and reduce rendering or geometry cost | ![Optional](https://img.shields.io/badge/Optional-f2cc60?style=flat) |
+| `$blender-convert-3d-2d` | Render a model into sprites or other 2D views | ![Yes](https://img.shields.io/badge/Yes-2ea44f?style=flat) |
+| `$blender-convert-2d-3d` | Reconstruct a model from an image | ![Yes](https://img.shields.io/badge/Yes-2ea44f?style=flat) |
+
+**Yes** marks a common starting point. **Optional** marks a specialist task that can also support a larger workflow. All skills can be called directly; these labels are guidance, not invocation restrictions. The AI can select relevant installed skills, but there is no fixed automatic chain between them.
+
+## Reference
+
+Click a thumbnail to open the full-size image.
+
+| Name | Comment | Image |
+|---|---|---|
+| Camera Angles V1 | Camera angle reference | <a href="references/camera/camera_angles_v1.png"><img src="references/camera/camera_angles_v1.png" width="30" height="30" alt="Camera Angles V1" /></a> |
+| Colors Hand V1 | Color reference | <a href="references/colors/colors_hand_v1.png"><img src="references/colors/colors_hand_v1.png" width="30" height="30" alt="Colors Hand V1" /></a> |
+| Colors Leaves V1 | Color reference | <a href="references/colors/colors_leaves_v1.png"><img src="references/colors/colors_leaves_v1.png" width="30" height="30" alt="Colors Leaves V1" /></a> |
+| Lighting Character V1 | Character lighting reference | <a href="references/lighting/lighting_character_v1.png"><img src="references/lighting/lighting_character_v1.png" width="30" height="30" alt="Lighting Character V1" /></a> |
+| Render Architecture V1 | Render style reference | <a href="references/renders/render_architecture_v1.png"><img src="references/renders/render_architecture_v1.png" width="30" height="30" alt="Render Architecture V1" /></a> |
+| Render Car V1 | Render style reference | <a href="references/renders/render_car_v1.png"><img src="references/renders/render_car_v1.png" width="30" height="30" alt="Render Car V1" /></a> |
+| Render Character V1 | Render style reference | <a href="references/renders/render_character_v1.png"><img src="references/renders/render_character_v1.png" width="30" height="30" alt="Render Character V1" /></a> |
+| Render Character V2 | Render style reference | <a href="references/renders/render_character_v2.png"><img src="references/renders/render_character_v2.png" width="30" height="30" alt="Render Character V2" /></a> |
+| Render Desk Lamp V1 | Render style reference | <a href="references/renders/render_desk_lamp_v1.png"><img src="references/renders/render_desk_lamp_v1.png" width="30" height="30" alt="Render Desk Lamp V1" /></a> |
+| Render Desk Lamp V2 | Render style reference | <a href="references/renders/render_desk_lamp_v2.png"><img src="references/renders/render_desk_lamp_v2.png" width="30" height="30" alt="Render Desk Lamp V2" /></a> |
+| Render Food V1 | Render style reference | <a href="references/renders/render_food_v1.png"><img src="references/renders/render_food_v1.png" width="30" height="30" alt="Render Food V1" /></a> |
+| Render Food V2 | Render style reference | <a href="references/renders/render_food_v2.png"><img src="references/renders/render_food_v2.png" width="30" height="30" alt="Render Food V2" /></a> |
+| Render Forest V1 | Render style reference | <a href="references/renders/render_forest_v1.png"><img src="references/renders/render_forest_v1.png" width="30" height="30" alt="Render Forest V1" /></a> |
+| Render Fox V1 | Render style reference | <a href="references/renders/render_fox_v1.png"><img src="references/renders/render_fox_v1.png" width="30" height="30" alt="Render Fox V1" /></a> |
+| Render Fox V2 | Render style reference | <a href="references/renders/render_fox_v2.png"><img src="references/renders/render_fox_v2.png" width="30" height="30" alt="Render Fox V2" /></a> |
+| Render Interior V1 | Render style reference | <a href="references/renders/render_interior_v1.png"><img src="references/renders/render_interior_v1.png" width="30" height="30" alt="Render Interior V1" /></a> |
+| Render Landscape V1 | Render style reference | <a href="references/renders/render_landscape_v1.png"><img src="references/renders/render_landscape_v1.png" width="30" height="30" alt="Render Landscape V1" /></a> |
+| Render Robot V1 | Render style reference | <a href="references/renders/render_robot_v1.png"><img src="references/renders/render_robot_v1.png" width="30" height="30" alt="Render Robot V1" /></a> |
+| Render Sword V1 | Render style reference | <a href="references/renders/render_sword_v1.png"><img src="references/renders/render_sword_v1.png" width="30" height="30" alt="Render Sword V1" /></a> |
+| Render Treasure Chest V1 | Render style reference | <a href="references/renders/render_treasure_chest_v1.png"><img src="references/renders/render_treasure_chest_v1.png" width="30" height="30" alt="Render Treasure Chest V1" /></a> |
 
 ## Project Details
 
@@ -97,28 +149,6 @@ Local tests, OpenSpec planning, generated acceptance outputs, environments and c
 Both clients use `SKILL.md` and supporting resources. The Codex package also includes `agents/openai.yaml`; the Claude package adapts setup to Claude MCP and omits Codex-only metadata. Run `python scripts/sync-client-skills.py` after editing shared sources, and `python scripts/sync-client-skills.py --check` to verify the mirrors. Supporting resources stay with their owning skill so individual installation works.
 
 The optional shared gallery is loaded only when useful. Select a reference by filename and inspect the image before applying its visual characteristics. See [input conventions](docs/inputs.md) and [helper interfaces](docs/helpers.md).
-
-Claude uses `/skill-name` for the same catalog shown below with Codex `$skill-name` syntax.
-
-#### Skill Catalog
-
-| Name | Comment | Call Directly? |
-|---|---|---|
-| `$blender-setup` | Check the Blender connection and diagnose setup issues | ![Yes](https://img.shields.io/badge/Yes-2ea44f?style=flat) |
-| `$blender-create-model` | Create a prop or character | ![Yes](https://img.shields.io/badge/Yes-2ea44f?style=flat) |
-| `$blender-create-environment` | Build a room, landscape, or modular scene | ![Yes](https://img.shields.io/badge/Yes-2ea44f?style=flat) |
-| `$blender-procedural-geometry` | Build editable generators and repeated geometry | ![Optional](https://img.shields.io/badge/Optional-f2cc60?style=flat) |
-| `$blender-materials` | Create or refine surface materials | ![Optional](https://img.shields.io/badge/Optional-f2cc60?style=flat) |
-| `$blender-uv-bake` | Unwrap meshes and bake texture maps | ![Optional](https://img.shields.io/badge/Optional-f2cc60?style=flat) |
-| `$blender-light-camera` | Refine lighting and camera composition | ![Optional](https://img.shields.io/badge/Optional-f2cc60?style=flat) |
-| `$blender-render` | Render the current scene and verify outputs | ![Yes](https://img.shields.io/badge/Yes-2ea44f?style=flat) |
-| `$blender-rig-animate` | Rig an asset or create animation clips | ![Yes](https://img.shields.io/badge/Yes-2ea44f?style=flat) |
-| `$blender-game-export` | Export an asset for a game engine | ![Yes](https://img.shields.io/badge/Yes-2ea44f?style=flat) |
-| `$blender-review-optimize` | Review asset quality and reduce rendering or geometry cost | ![Optional](https://img.shields.io/badge/Optional-f2cc60?style=flat) |
-| `$blender-convert-3d-2d` | Render a model into sprites or other 2D views | ![Yes](https://img.shields.io/badge/Yes-2ea44f?style=flat) |
-| `$blender-convert-2d-3d` | Reconstruct a model from an image | ![Yes](https://img.shields.io/badge/Yes-2ea44f?style=flat) |
-
-**Yes** marks a common starting point. **Optional** marks a specialist task that can also support a larger workflow. All skills can be called directly; these labels are guidance, not invocation restrictions. The AI can select relevant installed skills, but there is no fixed automatic chain between them.
 
 ### 📦 Dependencies
 

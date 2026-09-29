@@ -2,7 +2,11 @@
 
 # Blender Skills for Codex and Claude Code
 
-Thirteen focused skills for the official Blender Lab MCP connection. Shared sources live in [skills/](skills/), with client packages in [.codex/](.codex/INSTALL.md) and [.claude/](.claude/INSTALL.md).
+Create, refine, and render 3D assets with thirteen reusable Blender skills.
+Shared sources live in [skills/](skills/), with client packages in [.codex/](.codex/INSTALL.md) and [.claude/](.claude/INSTALL.md).
+
+> [!IMPORTANT]
+> Skills designed to work with the existing [official Blender Lab MCP](https://www.blender.org/lab/mcp-server/).
 
 ## Images
 

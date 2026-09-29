@@ -72,19 +72,15 @@ result = audit(bpy.data.collections["MyAsset"].objects)
 
 Returns version, object dimensions, evaluated vertices/triangles, base vertices, material slots and modifier types. It is read-only and does not provide a GPU memory measurement.
 
-## Live acceptance fixture
+## Maintainer validation
 
-From the verified official MCP execution tool:
+The live acceptance fixture and offline tests are maintained locally under the Git-ignored tests/ directory. They are not included in this distribution. Recorded results and coverage limits are in [acceptance.md](acceptance.md).
 
-```python
-import runpy
-result = runpy.run_path(
-    "/absolute/checkout/tests/blender_acceptance.py",
-    init_globals={
-        "REPO": "/absolute/checkout",
-        "OUTPUT": "/absolute/checkout/.acceptance/fresh-run"
-    }
-)["result"]
+Consumers can validate packages with:
+
+```powershell
+python -m pip install -r requirements-dev.txt
+python scripts/validate-skills.py .codex/skills
+python scripts/validate-skills.py .claude/skills --client claude
+python scripts/sync-client-skills.py --check
 ```
-
-Choose a fresh run name. This writes a checkpoint, creates isolated test scenes, renders small previews, and restores the original active scene. It leaves test scenes available for review. It does not install skills or change MCP configuration.

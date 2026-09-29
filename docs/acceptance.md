@@ -6,7 +6,7 @@ Validated on 2026-09-29 with local Codex on Windows, Blender 5.2.2 LTS and offic
 
 - Thirteen skill entrypoints, names, ten-step workflows, metadata and local resources validate.
 - Nine setup regression tests pass, including scene-only failure after successful handshake.
-- Nine repository helper/installer tests pass, including invalid PNG/output conditions, metadata/resource failures, installation dry runs, conflicts/backups, legacy preservation and independently installed copies, overlapping gallery destination rejection and cache exclusion.
+- Twelve local repository helper/installer/package tests pass, including invalid PNG/output conditions, metadata/resource failures, installation dry runs, conflicts/backups, legacy preservation and independently installed copies, overlapping gallery destination rejection and cache exclusion.
 - The live diagnostic passes all six checks; native scene access is also confirmed.
 - Twelve final PNG outputs pass manifest checks for 128x128 dimensions, RGBA channels, source existence and recorded settings.
 - Blender sprite tests pass deterministic packing, size/missing-input rejection and existing-output preservation. Both packed tiles match source pixels exactly; alpha includes transparent and opaque pixels.
@@ -14,7 +14,7 @@ Validated on 2026-09-29 with local Codex on Windows, Blender 5.2.2 LTS and offic
 
 ## Live exercise matrix
 
-Run `tests/blender_acceptance.py` through the official MCP with `REPO` set to this checkout and `OUTPUT` set to a fresh local run directory. The accepted local run was `.acceptance/run-05`; source is `acceptance.blend`, structured results are `evidence.json`, and output settings are `render-manifest.json`. These generated files are deliberately ignored by Git.
+The maintainer ran the local, Git-ignored `tests/blender_acceptance.py` through the official MCP with `REPO` set to this checkout and `OUTPUT` set to a fresh local run directory. The accepted local run was `.acceptance/run-05`; source is `acceptance.blend`, structured results are `evidence.json`, and output settings are `render-manifest.json`. These generated files are deliberately ignored by Git.
 
 | Skill | Exercise and evidence | Observed result / limit |
 |---|---|---|
@@ -54,4 +54,4 @@ The source scene remained active after each fixture. Its original objects/transf
 
 Install development requirements, run the commands in the root README, then execute the Blender fixture only against a verified official connection. Use a fresh output directory each time. It checkpoints before mutation and restores the original active scene in a finally block. It adds isolated test scenes; it does not delete arbitrary existing scenes.
 
-Other clients/platforms, complex assets, production animation rigs and game-engine imports need their own validation. The initial acceptance run used empty galleries. Afterward, 20 user-supplied reference PNGs were copied into the gallery and verified against their source SHA-256 hashes.
+Claude packaging and installation are tested; full Claude runtime execution remains unverified. Other platforms, complex assets, production animation rigs and game-engine imports need their own validation. The initial acceptance run used empty galleries. Afterward, 20 user-supplied reference PNGs were copied into the gallery and verified against their source SHA-256 hashes.

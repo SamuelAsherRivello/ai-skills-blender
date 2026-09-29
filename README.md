@@ -1,6 +1,6 @@
-# Blender Skills for Codex
+# Blender Skills for Codex and Claude Code
 
-Thirteen focused skills for the official Blender Lab MCP connection. Canonical sources live in [skills/](skills/); installed Codex skills go into `.agents/skills` in a project or the user's home.
+Thirteen focused skills for the official Blender Lab MCP connection. Shared sources live in [skills/](skills/), with client packages in [.codex/](.codex/INSTALL.md) and [.claude/](.claude/INSTALL.md).
 
 ## Images
 
@@ -8,14 +8,14 @@ Thirteen focused skills for the official Blender Lab MCP connection. Canonical s
 
 Reference sheets from the optional gallery (inspiration, not generated project output):
 
-<a href="references/render-styles/renders/render_architecture_v1.png"><img src="references/render-styles/renders/render_architecture_v1.png" width="400" alt="Architectural render reference sheet" /></a>
-<a href="references/render-styles/renders/render_character_v1.png"><img src="references/render-styles/renders/render_character_v1.png" width="400" alt="Character render reference sheet" /></a>
+<a href="references/renders/render_architecture_v1.png"><img src="references/renders/render_architecture_v1.png" width="400" alt="Architectural render reference sheet" /></a>
+<a href="references/renders/render_character_v1.png"><img src="references/renders/render_character_v1.png" width="400" alt="Character render reference sheet" /></a>
 
-[Visual references](references/render-styles/README.md) contains 20 user-supplied PNGs organized into camera, colors, lighting and renders, with architectural and character indexes. Textual styles remain usable without the optional gallery.
+[Visual references](references/) contains the original 20 PNGs in camera, colors, lighting and renders. Textual styles remain usable without the optional gallery.
 
 ## Live Demo
 
-These skills run locally in Codex with Blender. There is no hosted demo. See the [live Blender acceptance results](docs/acceptance.md) and [reproducible test instructions](docs/helpers.md#live-acceptance-fixture).
+These skills run locally in Codex with Blender. There is no hosted demo. See the [live Blender acceptance results](docs/acceptance.md) and [validation instructions](docs/helpers.md#maintainer-validation).
 
 ## Table of Contents
 
@@ -29,30 +29,56 @@ These skills run locally in Codex with Blender. There is no hosted demo. See the
 
 Here are the steps.
 
-1. **Install Blender:** [blender.org](https://www.blender.org/download/)
-2. **Setup Blender MCP:** [Official setup](https://www.blender.org/lab/mcp-server/)
-3. **Install Skills:** Run `./scripts/install-codex.ps1 -Scope User -Skills all` from this repository in PowerShell.
-4. **Use Skills:** In Codex, run `$blender-setup`, then request a task such as `$blender-render Render the current scene.`
+### 1. 🛠 Install Blender
+
+1. Install Blender from [blender.org](https://www.blender.org/download/).
+
+### 2. 🛠 Setup Blender MCP
+
+1. Follow the [official Blender MCP setup](https://www.blender.org/lab/mcp-server/) for your AI client.
+
+### 3. 🛠 Install Skills
+
+1. **For Codex:** Copy the skill folders from [.codex/skills](.codex/skills/) into `~/.agents/skills/`.
+2. **For Claude Code:** Copy the skill folders from [.claude/skills](.claude/skills/) into `~/.claude/skills/`.
+
+Or run this command from the repository in PowerShell:
+
+```powershell
+# For Codex
+./scripts/install-codex.ps1 -Scope User -Skills all
+
+# For Claude Code
+./scripts/install-claude.ps1 -Scope User -Skills all
+```
+
+### 4. 🛠 Use Skills
+
+1. Run `$blender-setup` in Codex or `/blender-setup` in Claude Code.
+2. Request a task, such as `Render the current scene.`
 
 ## Project Details
 
-Windows/Codex is the first support target. Other clients and platforms are not yet verified. Source content remains portable and avoids personal configuration paths.
+Windows/Codex has live Blender validation. Claude packaging and installation are tested; a full Claude session is not yet verified. Other platforms are not yet verified. Source content remains portable and avoids personal configuration paths.
 
 ### 📝 Structure
 
-- skills/: the thirteen independently installable skill folders.
+- skills/: shared authoring sources for thirteen skills.
+- .codex/skills/: generated Codex package with OpenAI metadata.
+- .claude/skills/: generated Claude package with a client-specific setup workflow.
 - scripts/: installation and development validation tools.
-- references/render-styles/: optional visual references and contribution conventions.
+- references/: the original camera, colors, lighting and renders directories.
 - docs/: input guidance, helper interfaces, source provenance and validation evidence.
-- tests/: maintained offline tests and the reproducible Blender acceptance fixture.
 
-Local OpenSpec planning, generated acceptance outputs, environments and caches are excluded from Git. Intentional future PNG references and Blender source assets are not blanket-ignored.
+Local tests, OpenSpec planning, generated acceptance outputs, environments and caches are excluded from Git. Intentional future PNG references and Blender source assets are not blanket-ignored.
 
 ### 📦 AI
 
-Each skill includes `SKILL.md`, Codex metadata in `agents/openai.yaml`, and any required scripts or references. Supporting resources stay with their owning skill so individual installation works.
+Both clients use `SKILL.md` and supporting resources. The Codex package also includes `agents/openai.yaml`; the Claude package adapts setup to Claude MCP and omits Codex-only metadata. Run `python scripts/sync-client-skills.py` after editing shared sources, and `python scripts/sync-client-skills.py --check` to verify the mirrors. Supporting resources stay with their owning skill so individual installation works.
 
 The optional shared gallery is loaded only when useful. Select a reference by filename and inspect the image before applying its visual characteristics. See [input conventions](docs/inputs.md) and [helper interfaces](docs/helpers.md).
+
+Claude uses `/skill-name` for the same catalog shown below with Codex `$skill-name` syntax.
 
 #### Skill Catalog
 

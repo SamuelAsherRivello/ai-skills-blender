@@ -8,7 +8,7 @@ import yaml
 CATALOG = ["blender-setup","blender-create-model","blender-create-environment","blender-procedural-geometry","blender-materials","blender-uv-bake","blender-light-camera","blender-render","blender-rig-animate","blender-game-export","blender-review-optimize","blender-convert-3d-2d","blender-convert-2d-3d"]
 
 
-def validate(skill):
+def validate(skill, client="codex"):
     skill = Path(skill)
     errors = []
     entry = skill / "SKILL.md"
@@ -24,11 +24,12 @@ def validate(skill):
             errors.append("invalid or mismatched name")
         if not isinstance(meta.get("description"), str) or not meta["description"].strip():
             errors.append("missing description")
-        ui = yaml.safe_load((skill / "agents/openai.yaml").read_text(encoding="utf-8"))["interface"]
-        if not ui.get("display_name") or not 25 <= len(ui["short_description"]) <= 64:
-            errors.append("invalid UI metadata")
-        if "$" + skill.name not in ui["default_prompt"]:
-            errors.append("default prompt must name skill")
+        if client == "codex":
+            ui = yaml.safe_load((skill / "agents/openai.yaml").read_text(encoding="utf-8"))["interface"]
+            if not ui.get("display_name") or not 25 <= len(ui["short_description"]) <= 64:
+                errors.append("invalid UI metadata")
+            if "$" + skill.name not in ui["default_prompt"]:
+                errors.append("default prompt must name skill")
     except (OSError, ValueError, KeyError, TypeError, AttributeError, yaml.YAMLError) as exc:
         errors.append("invalid metadata: " + str(exc))
     steps = re.findall(r"^(\d+)\. ", text, re.M)
@@ -47,6 +48,7 @@ def validate(skill):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("path", nargs="?", default=str(Path(__file__).resolve().parents[1] / "skills"))
+    parser.add_argument("--client", choices=["codex", "claude"], default="codex")
     args = parser.parse_args()
     root = Path(args.path)
     skills = [root] if (root / "SKILL.md").exists() else sorted(p for p in root.iterdir() if p.is_dir() and not p.name.startswith("."))
@@ -54,7 +56,7 @@ def main():
     if root.name == "skills" and {p.name for p in skills} != set(CATALOG):
         problems.append("catalog does not match thirteen planned skills")
     for skill in skills:
-        problems.extend(f"{skill.name}: {e}" for e in validate(skill))
+        problems.extend(f"{skill.name}: {e}" for e in validate(skill, args.client))
     print("\n".join(problems) if problems else f"Validated {len(skills)} skills.")
     return bool(problems)
 

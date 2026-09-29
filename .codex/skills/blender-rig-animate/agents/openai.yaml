@@ -1,0 +1,4 @@
+interface:
+  display_name: "Blender Rig Animate"
+  short_description: "Rig assets and review animation"
+  default_prompt: "Use $blender-rig-animate to rig assets and review animation for my request."

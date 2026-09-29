@@ -1,0 +1,4 @@
+interface:
+  display_name: "Blender Create Environment"
+  short_description: "Build modular Blender environments"
+  default_prompt: "Use $blender-create-environment to build modular blender environments for my request."

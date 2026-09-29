@@ -1,0 +1,4 @@
+interface:
+  display_name: "Blender Convert 3d 2d"
+  short_description: "Convert Blender models into 2D sprites"
+  default_prompt: "Use $blender-convert-3d-2d to convert blender models into 2d sprites for my request."

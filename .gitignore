@@ -2,7 +2,12 @@
 /.acceptance/
 /openspec/
 /.agents/
-/.codex/
+/.codex/*
+!/.codex/INSTALL.md
+!/.codex/skills/
+/.claude/*
+!/.claude/INSTALL.md
+!/.claude/skills/
 
 # Python environments and generated test/cache files
 __pycache__/
@@ -27,3 +32,6 @@ htmlcov/
 .DS_Store
 Thumbs.db
 Desktop.ini
+
+# Local evaluation fixtures
+/tests/

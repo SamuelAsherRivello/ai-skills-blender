@@ -8,4 +8,4 @@ param(
     [switch]$Replace,
     [string]$GalleryDestination
 )
-& (Join-Path $PSScriptRoot 'install-skills.ps1') -Client codex @PSBoundParameters
+& (Join-Path $PSScriptRoot 'install-skills.ps1') -Client claude @PSBoundParameters

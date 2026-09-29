@@ -1,0 +1,4 @@
+interface:
+  display_name: "Blender Convert 2d 3d"
+  short_description: "Reconstruct Blender models from images"
+  default_prompt: "Use $blender-convert-2d-3d to reconstruct blender models from images for my request."

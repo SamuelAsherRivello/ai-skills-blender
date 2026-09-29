@@ -106,28 +106,28 @@ Claude uses `/skill-name` for the same catalog shown below with Codex `$skill-na
 
 Click a thumbnail to open the full-size image.
 
-| Name | Comment | Image |
-|---|---|---|
-| Camera Angles V1 | Camera angle reference | <a href="references/camera/camera_angles_v1.png"><img src="references/camera/camera_angles_v1.png" width="30" height="30" alt="Camera Angles V1" /></a> |
-| Colors Hand V1 | Color reference | <a href="references/colors/colors_hand_v1.png"><img src="references/colors/colors_hand_v1.png" width="30" height="30" alt="Colors Hand V1" /></a> |
-| Colors Leaves V1 | Color reference | <a href="references/colors/colors_leaves_v1.png"><img src="references/colors/colors_leaves_v1.png" width="30" height="30" alt="Colors Leaves V1" /></a> |
-| Lighting Character V1 | Character lighting reference | <a href="references/lighting/lighting_character_v1.png"><img src="references/lighting/lighting_character_v1.png" width="30" height="30" alt="Lighting Character V1" /></a> |
-| Render Architecture V1 | Render style reference | <a href="references/renders/render_architecture_v1.png"><img src="references/renders/render_architecture_v1.png" width="30" height="30" alt="Render Architecture V1" /></a> |
-| Render Car V1 | Render style reference | <a href="references/renders/render_car_v1.png"><img src="references/renders/render_car_v1.png" width="30" height="30" alt="Render Car V1" /></a> |
-| Render Character V1 | Render style reference | <a href="references/renders/render_character_v1.png"><img src="references/renders/render_character_v1.png" width="30" height="30" alt="Render Character V1" /></a> |
-| Render Character V2 | Render style reference | <a href="references/renders/render_character_v2.png"><img src="references/renders/render_character_v2.png" width="30" height="30" alt="Render Character V2" /></a> |
-| Render Desk Lamp V1 | Render style reference | <a href="references/renders/render_desk_lamp_v1.png"><img src="references/renders/render_desk_lamp_v1.png" width="30" height="30" alt="Render Desk Lamp V1" /></a> |
-| Render Desk Lamp V2 | Render style reference | <a href="references/renders/render_desk_lamp_v2.png"><img src="references/renders/render_desk_lamp_v2.png" width="30" height="30" alt="Render Desk Lamp V2" /></a> |
-| Render Food V1 | Render style reference | <a href="references/renders/render_food_v1.png"><img src="references/renders/render_food_v1.png" width="30" height="30" alt="Render Food V1" /></a> |
-| Render Food V2 | Render style reference | <a href="references/renders/render_food_v2.png"><img src="references/renders/render_food_v2.png" width="30" height="30" alt="Render Food V2" /></a> |
-| Render Forest V1 | Render style reference | <a href="references/renders/render_forest_v1.png"><img src="references/renders/render_forest_v1.png" width="30" height="30" alt="Render Forest V1" /></a> |
-| Render Fox V1 | Render style reference | <a href="references/renders/render_fox_v1.png"><img src="references/renders/render_fox_v1.png" width="30" height="30" alt="Render Fox V1" /></a> |
-| Render Fox V2 | Render style reference | <a href="references/renders/render_fox_v2.png"><img src="references/renders/render_fox_v2.png" width="30" height="30" alt="Render Fox V2" /></a> |
-| Render Interior V1 | Render style reference | <a href="references/renders/render_interior_v1.png"><img src="references/renders/render_interior_v1.png" width="30" height="30" alt="Render Interior V1" /></a> |
-| Render Landscape V1 | Render style reference | <a href="references/renders/render_landscape_v1.png"><img src="references/renders/render_landscape_v1.png" width="30" height="30" alt="Render Landscape V1" /></a> |
-| Render Robot V1 | Render style reference | <a href="references/renders/render_robot_v1.png"><img src="references/renders/render_robot_v1.png" width="30" height="30" alt="Render Robot V1" /></a> |
-| Render Sword V1 | Render style reference | <a href="references/renders/render_sword_v1.png"><img src="references/renders/render_sword_v1.png" width="30" height="30" alt="Render Sword V1" /></a> |
-| Render Treasure Chest V1 | Render style reference | <a href="references/renders/render_treasure_chest_v1.png"><img src="references/renders/render_treasure_chest_v1.png" width="30" height="30" alt="Render Treasure Chest V1" /></a> |
+| Name | Image |
+|---|---|
+| Camera Angles V1 | <a href="references/camera/camera_angles_v1.png"><img src="references/camera/camera_angles_v1.png" width="50" height="50" alt="Camera Angles V1" /></a> |
+| Colors Hand V1 | <a href="references/colors/colors_hand_v1.png"><img src="references/colors/colors_hand_v1.png" width="50" height="50" alt="Colors Hand V1" /></a> |
+| Colors Leaves V1 | <a href="references/colors/colors_leaves_v1.png"><img src="references/colors/colors_leaves_v1.png" width="50" height="50" alt="Colors Leaves V1" /></a> |
+| Lighting Character V1 | <a href="references/lighting/lighting_character_v1.png"><img src="references/lighting/lighting_character_v1.png" width="50" height="50" alt="Lighting Character V1" /></a> |
+| Render Architecture V1 | <a href="references/renders/render_architecture_v1.png"><img src="references/renders/render_architecture_v1.png" width="50" height="50" alt="Render Architecture V1" /></a> |
+| Render Car V1 | <a href="references/renders/render_car_v1.png"><img src="references/renders/render_car_v1.png" width="50" height="50" alt="Render Car V1" /></a> |
+| Render Character V1 | <a href="references/renders/render_character_v1.png"><img src="references/renders/render_character_v1.png" width="50" height="50" alt="Render Character V1" /></a> |
+| Render Character V2 | <a href="references/renders/render_character_v2.png"><img src="references/renders/render_character_v2.png" width="50" height="50" alt="Render Character V2" /></a> |
+| Render Desk Lamp V1 | <a href="references/renders/render_desk_lamp_v1.png"><img src="references/renders/render_desk_lamp_v1.png" width="50" height="50" alt="Render Desk Lamp V1" /></a> |
+| Render Desk Lamp V2 | <a href="references/renders/render_desk_lamp_v2.png"><img src="references/renders/render_desk_lamp_v2.png" width="50" height="50" alt="Render Desk Lamp V2" /></a> |
+| Render Food V1 | <a href="references/renders/render_food_v1.png"><img src="references/renders/render_food_v1.png" width="50" height="50" alt="Render Food V1" /></a> |
+| Render Food V2 | <a href="references/renders/render_food_v2.png"><img src="references/renders/render_food_v2.png" width="50" height="50" alt="Render Food V2" /></a> |
+| Render Forest V1 | <a href="references/renders/render_forest_v1.png"><img src="references/renders/render_forest_v1.png" width="50" height="50" alt="Render Forest V1" /></a> |
+| Render Fox V1 | <a href="references/renders/render_fox_v1.png"><img src="references/renders/render_fox_v1.png" width="50" height="50" alt="Render Fox V1" /></a> |
+| Render Fox V2 | <a href="references/renders/render_fox_v2.png"><img src="references/renders/render_fox_v2.png" width="50" height="50" alt="Render Fox V2" /></a> |
+| Render Interior V1 | <a href="references/renders/render_interior_v1.png"><img src="references/renders/render_interior_v1.png" width="50" height="50" alt="Render Interior V1" /></a> |
+| Render Landscape V1 | <a href="references/renders/render_landscape_v1.png"><img src="references/renders/render_landscape_v1.png" width="50" height="50" alt="Render Landscape V1" /></a> |
+| Render Robot V1 | <a href="references/renders/render_robot_v1.png"><img src="references/renders/render_robot_v1.png" width="50" height="50" alt="Render Robot V1" /></a> |
+| Render Sword V1 | <a href="references/renders/render_sword_v1.png"><img src="references/renders/render_sword_v1.png" width="50" height="50" alt="Render Sword V1" /></a> |
+| Render Treasure Chest V1 | <a href="references/renders/render_treasure_chest_v1.png"><img src="references/renders/render_treasure_chest_v1.png" width="50" height="50" alt="Render Treasure Chest V1" /></a> |
 
 ## Project Details
 

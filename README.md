@@ -106,19 +106,24 @@ Claude uses `/skill-name` for the same catalog shown below with Codex `$skill-na
 
 ## Credits
 
+<!-- AI: Preserve established attribution and ownership. Customize the following subsections only from confirmed contributor, contact, and license information; do not infer a new owner from the repository name. -->
 ### 💡 Contributors
 
-- Samuel Asher Rivello - Over 25 years of game development XP (2026).
-- Workflow research and inspiration are recorded in [sources and boundaries](docs/sources.md).
-- Reference images were supplied by the repository owner; their original creators and licenses have not been supplied.
+<!-- AI: Preserve existing contributor credit and add contributors only when confirmed. Do not automatically advance experience counts or their reference year. -->
+- Samuel Asher Rivello - Over 25 years of game development XP (2026)
 
 ### 💡 Contact
 
-- [LinkedIn.com/in/SamuelAsherRivello](https://Linkedin.com/in/SamuelAsherRivello) ⭐
+<!-- AI: Preserve confirmed contact destinations and their order unless requested otherwise. Use readable display URLs without a protocol or trailing slash while keeping the real link target intact. Do not invent accounts or change target capitalization based on display styling. -->
+- [LinkedIn.com/in/SamuelAsherRivello](https://Linkedin.com/in/SamuelAsherRivello) ⭐ 
 - [GitHub.com/SamuelAsherRivello](https://github.com/SamuelAsherRivello/)
 - [Twitter.com/srivello](https://twitter.com/srivello/)
 - Resume / Portfolio: [SamuelAsherRivello.com](http://www.SamuelAsherRivello.com)
 
+
 ### 💡 License
 
-A distribution license has not yet been selected for this repository. Reference-image attribution and licensing are recorded as unknown until supplied. No third-party license is implied by inclusion in the gallery.
+<!-- AI: Keep the license name linked to the actual relative license file and verify that its terms match this statement. Keep the copyright holder and year consistent with that file. Do not change license terms, ownership, or dates without an explicit request. -->
+- Provided as-is under the [MIT License](LICENSE).
+
+- Copyright © 2026 Rivello Multimedia Consulting, LLC.

@@ -82,21 +82,23 @@ Claude uses `/skill-name` for the same catalog shown below with Codex `$skill-na
 
 #### Skill Catalog
 
-| Command | Purpose |
-|---|---|
-| `$blender-setup` | Read-only chronological connection diagnosis |
-| `$blender-create-model` | Model a scoped prop or character |
-| `$blender-create-environment` | Build modular Blender environments |
-| `$blender-procedural-geometry` | Create reproducible Blender geometry |
-| `$blender-materials` | Create and inspect Blender materials |
-| `$blender-uv-bake` | Unwrap meshes and verify baked maps |
-| `$blender-light-camera` | Compose cameras and shape lighting |
-| `$blender-render` | Render and verify Blender outputs |
-| `$blender-rig-animate` | Rig assets and review animation |
-| `$blender-game-export` | Export Blender assets for game engines |
-| `$blender-review-optimize` | Audit and optimize Blender scenes |
-| `$blender-convert-3d-2d` | Convert Blender models into 2D sprites |
-| `$blender-convert-2d-3d` | Reconstruct Blender models from images |
+| Name | Comment | Call Directly? |
+|---|---|---|
+| `$blender-setup` | Check the Blender connection and diagnose setup issues | Yes |
+| `$blender-create-model` | Create a prop or character | Yes |
+| `$blender-create-environment` | Build a room, landscape, or modular scene | Yes |
+| `$blender-procedural-geometry` | Build editable generators and repeated geometry | When needed |
+| `$blender-materials` | Create or refine surface materials | When needed |
+| `$blender-uv-bake` | Unwrap meshes and bake texture maps | When needed |
+| `$blender-light-camera` | Refine lighting and camera composition | When needed |
+| `$blender-render` | Render the current scene and verify outputs | Yes |
+| `$blender-rig-animate` | Rig an asset or create animation clips | Yes |
+| `$blender-game-export` | Export an asset for a game engine | Yes |
+| `$blender-review-optimize` | Review asset quality and reduce rendering or geometry cost | When needed |
+| `$blender-convert-3d-2d` | Render a model into sprites or other 2D views | Yes |
+| `$blender-convert-2d-3d` | Reconstruct a model from an image | Yes |
+
+**Yes** marks a common starting point. **When needed** marks a specialist task that can also support a larger workflow. All skills can be called directly; these labels are guidance, not invocation restrictions. The AI can select relevant installed skills, but there is no fixed automatic chain between them.
 
 ### 📦 Dependencies
 

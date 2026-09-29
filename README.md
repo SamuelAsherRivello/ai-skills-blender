@@ -11,7 +11,7 @@
 
 # Blender Skills for Codex and Claude Code
 
-Create, refine, and render 3D assets with thirteen reusable Blender skills.
+Create, refine, and render 3D assets with thirteen reusable Blender skills.<br />
 Shared sources live in [skills/](skills/), with client packages in [.codex/](.codex/INSTALL.md) and [.claude/](.claude/INSTALL.md).
 
 > [!IMPORTANT]

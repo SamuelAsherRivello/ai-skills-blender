@@ -39,9 +39,37 @@ Shared sources live in [skills/](skills/), with client packages in [.codex/](.co
 
 ## Getting Started
 
-Set up Blender, connect MCP, and install the skills for your AI client.
+### 1. Get the skills
 
-- [Read the getting started guide](documentation/getting-started-readme.md)
+From your project directory, run:
+
+```sh
+npx skills@latest add SamuelAsherRivello/ai-skills-blender --copy
+```
+
+Choose the Blender skills you want and the agents to install them for, including Codex and Claude Code. Project-local installation is the recommended default. `--copy` installs ordinary files you can edit.
+
+To install globally instead, add `--global`:
+
+```sh
+npx skills@latest add SamuelAsherRivello/ai-skills-blender --copy --global
+```
+
+### 2. Update the skills
+
+For project-local installations:
+
+```sh
+npx skills update --project
+```
+
+For global installations:
+
+```sh
+npx skills update --global
+```
+
+Before using Blender skills, install Blender and configure the official Blender MCP connection. See the [getting started guide](documentation/getting-started-readme.md) for prerequisites and setup. The [Codex](.codex/INSTALL.md) and [Claude Code](.claude/INSTALL.md) package installers remain available as advanced options.
 
 ## Use Skills
 

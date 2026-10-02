@@ -1,5 +1,6 @@
 <p>
 <img src="https://raw.githubusercontent.com/SamuelAsherRivello/github-repository-template/main/project-name/documentation/samuel-asher-rivello-banner.png" alt="Samuel Asher Rivello" width="600" /><br />
+  
 <img src="documentation/marketing/images/youtube-thumbnail.png" alt="Blender AI skills YouTube thumbnail" width="600" />
 </p>
 

@@ -21,10 +21,11 @@ import tomllib
 import platform_checks
 from windowless import LaunchBlocked, run as run_windowless
 
-STEPS = ('AI agent available', 'AI agent configured', 'Python available',
-         'Python configured', 'Blender installed', 'Blender running',
-         'Blender open', 'Official add-on / bridge', 'MCP handshake / tools',
-         'Live Blender communication')
+STEPS = ('AI Agent Available', 'AI Agent Configured', 'Python Available',
+         'Python Configured', 'Blender Installed', 'Blender Running',
+         'Blender Open', 'Official MCP Installed', 'Official MCP Configured',
+         'Official MCP Running', 'MCP Handshake / Tools',
+         'Live Blender Communication')
 
 # Use only with an allowed native execute tool; it queries the existing scene.
 QUERY = '''import bpy, os, sys, pathlib, tomllib
@@ -289,6 +290,11 @@ def build_report(cfg, native, info, python_info=None, config_error=None):
 
     bridge = endpoint(cfg)
     addons = scene.get('addons', []) if live else []
+    if addons:
+        versions = ', '.join(str(a.get('version') or 'unknown') for a in addons)
+        row(7, 'PASS', f'Official Blender Lab MCP add-on {versions} identified in Blender.')
+    else:
+        row(7, 'BLOCKED', 'Official add-on installation is unknown. Open Blender Preferences and verify that the Blender Lab MCP add-on is installed.')
     if live and addons:
         minimum_ok = None
         try:
@@ -296,29 +302,34 @@ def build_report(cfg, native, info, python_info=None, config_error=None):
         except (KeyError, TypeError, ValueError):
             pass
         if minimum_ok is False:
-            row(7, 'FAIL', 'Use a Blender version meeting the enabled official add-on\'s minimum; review compatible releases before any upgrade.')
+            row(8, 'FAIL', 'Use a Blender version meeting the enabled official add-on\'s minimum; review compatible releases before any upgrade.')
         elif minimum_ok is None:
-            row(7, 'BLOCKED', 'Bridge responds; inspect the official add-on manifest to verify identity/minimum version.')
+            row(8, 'BLOCKED', 'Bridge responds; inspect the official add-on manifest to verify its minimum Blender version.')
         else:
-            versions = ', '.join(str(a.get('version') or 'unknown') for a in addons)
-            row(7, 'PASS', f'Enabled official Blender Lab add-on {versions}; bridge answered the fresh query.')
+            row(8, 'PASS', 'Official add-on enabled; Blender meets its minimum version.')
     elif bridge is None:
-        row(7, 'FAIL', 'Correct BLENDER_MCP_HOST / BLENDER_MCP_PORT in the effective client environment; port must be 1..65535.')
+        row(8, 'FAIL', 'Correct BLENDER_MCP_HOST / BLENDER_MCP_PORT in the effective client environment; port must be 1..65535.')
+    else:
+        row(8, 'BLOCKED', 'Official add-on enablement or compatibility is unknown. Inspect its enable checkbox, minimum Blender version and expected bridge host/port.')
+    if live and addons:
+        row(9, 'PASS', 'Official bridge answered the fresh Blender query.')
     elif live:
-        row(7, 'BLOCKED', 'Live Blender responds; official add-on identity/version unverified. Inspect its enabled manifest or Preferences checkbox.')
+        row(9, 'BLOCKED', 'A Blender bridge answered, but its official identity is unknown. Verify the Blender Lab MCP add-on before identifying this as the official running bridge.')
+    elif bridge is None:
+        row(9, 'BLOCKED', 'Correct the bridge host/port before checking whether the official MCP bridge is running.')
     elif processes == [] or processes is None:
-        row(7, 'BLOCKED', 'Inspect running Blender first, then verify the official add-on checkbox and bridge.')
+        row(9, 'BLOCKED', 'Inspect running Blender first, then verify the official add-on checkbox and bridge.')
     elif info.get('listeners') is None:
-        row(7, 'BLOCKED', 'Bridge ownership unknown or unsupported; inspect the official MCP checkbox and bridge status in Blender.')
+        row(9, 'BLOCKED', 'Bridge ownership unknown or unsupported; inspect the official MCP checkbox and bridge status in Blender.')
     else:
         owned = [x for x in info['listeners'] if listener_matches(x, bridge) and x['pid'] in {p['pid'] for p in processes}]
         if owned:
-            row(7, 'BLOCKED', f'Blender owns a listener at {bridge[0]}:{bridge[1]}; official add-on identity still needs native/UI evidence.')
+            row(9, 'BLOCKED', f'Blender owns a listener at {bridge[0]}:{bridge[1]}; official add-on identity still needs native/UI evidence.')
         else:
-            row(7, 'FAIL', f'Check the official MCP enable checkbox, then Start MCP Server at {bridge[0]}:{bridge[1]}. Absence cannot distinguish disabled add-on from stopped bridge; a browser page is not required.')
-    row(8, 'PASS' if tools_ok else ('FAIL' if native.get('handshake_error') else 'BLOCKED'),
+            row(9, 'FAIL', f'Check the official MCP enable checkbox, then Start MCP Server at {bridge[0]}:{bridge[1]}. Absence cannot distinguish disabled add-on from stopped bridge; a browser page is not required.')
+    row(10, 'PASS' if tools_ok else ('FAIL' if native.get('handshake_error') else 'BLOCKED'),
         f'{tool_count} official native tools exposed in the current session; tool discovery is separate from scene access.' if tools_ok else 'Reconnect the official server in the active AI agent and inspect its current tool catalog. ' + sdk_launch_support()[1])
-    row(9, 'PASS' if live else ('FAIL' if native.get('scene_error') else 'BLOCKED'),
+    row(11, 'PASS' if live else ('FAIL' if native.get('scene_error') else 'BLOCKED'),
         f"Blender {scene['blender_version']}; scene {scene['scene']!r}, {scene.get('object_count', 'unknown')} object(s)." if live else 'Run an allowed read-only native scene query; inspect the official add-on and configured bridge if it fails. Preserve a successful handshake result.')
     warnings = []
     version = python_info.get('package_version')
@@ -327,7 +338,7 @@ def build_report(cfg, native, info, python_info=None, config_error=None):
     if info.get('platform') == 'darwin':
         warnings.append('macOS support limited: process adapter untested live; editor/listener and import-subprocess diagnostics unsupported here.')
     return {'transport': 'Native-session evidence plus read-only local inspection; no helper MCP connection.',
-            'checks': rows, 'mcp_readiness': rows[9]['status'], 'editor_readiness': rows[6]['status'],
+            'checks': rows, 'mcp_readiness': rows[11]['status'], 'editor_readiness': rows[6]['status'],
             'all_passed': all(r['status'] == 'PASS' for r in rows), 'warnings': warnings,
             'target_pid': info.get('target_pid')}
 
@@ -378,7 +389,7 @@ def render_report(report, output_format):
         if item['evidence'] == 'inferred' and not comment.startswith('Inferred'):
             comment = 'Inferred: ' + comment
         lines.append(f"| {cell(item['step'])} | {labels[item['status']]} | {cell(comment)} |")
-    lines += ['', f"MCP readiness: {labels[report['mcp_readiness']]}. Editor readiness: {labels[report['editor_readiness']]}."]
+    lines += ['', f"MCP Readiness: {labels[report['mcp_readiness']]}. Editor Readiness: {labels[report['editor_readiness']]}."]
     lines += ['\n' + cell(w) for w in report['warnings']]
     return '\n'.join(lines)
 

@@ -7,7 +7,7 @@ Give users an evidence-based, read-only way to diagnose whether their active AI 
 ## Requirements
 
 ### Requirement: Ordered setup report separates prerequisites
-The audit SHALL report ten checks in order: AI agent available, AI agent configured, Python available, Python configured, Blender installed, Blender running, Blender open, official add-on / bridge, MCP handshake / tools, and live Blender communication. Each check SHALL report PASS, FAIL, or BLOCKED with evidence and a next action for non-passing results. Independent checks SHALL continue after a failure.
+The audit SHALL report twelve checks in order: AI Agent Available, AI Agent Configured, Python Available, Python Configured, Blender Installed, Blender Running, Blender Open, Official MCP Installed, Official MCP Configured, Official MCP Running, MCP Handshake / Tools, and Live Blender Communication. Each check SHALL report PASS, FAIL, or BLOCKED with evidence and a next action for non-passing results. Independent checks SHALL continue after a failure. Display labels SHALL use title case, statuses SHALL use Pass, Fail or Blocked, and comments SHALL use sentence case while preserving identifiers and quoted UI text.
 
 #### Scenario: Client-neutral labels use actual client evidence
 - **WHEN** a Codex or Claude setup adapter renders the report
@@ -15,14 +15,14 @@ The audit SHALL report ten checks in order: AI agent available, AI agent configu
 
 #### Scenario: Python is installed but lacks the package
 - **WHEN** the configured Python interpreter exists but cannot import the official MCP package
-- **THEN** Python available is PASS, Python configured is FAIL, and the report identifies that configured interpreter's environment as the installation target
+- **THEN** Python Available is PASS, Python Configured is FAIL, and the report identifies that configured interpreter's environment as the installation target
 
 #### Scenario: Blender is not running
 - **WHEN** process inspection succeeds and finds no Blender process
-- **THEN** Blender running is FAIL with the action to open Blender, while Blender installed evidence is BLOCKED or unknown rather than claiming Blender is absent
+- **THEN** Blender Running is FAIL with the action to open Blender, while Blender Installed evidence is BLOCKED or unknown rather than claiming Blender is absent
 
 ### Requirement: Each invocation starts with a fresh quick pass
-The audit SHALL begin with fresh lightweight evidence and a bounded native read-only Blender query when available. It SHALL display all ten rows, identify direct, inferred, and unknown evidence, and perform a targeted second pass for failed, conflicting, or necessary missing evidence. Previous reports SHALL NOT act as a readiness cache.
+The audit SHALL begin with fresh lightweight evidence and a bounded native read-only Blender query when available. It SHALL display all twelve rows, identify direct, inferred, and unknown evidence, and perform a targeted second pass for failed, conflicting, or necessary missing evidence. Previous reports SHALL NOT act as a readiness cache.
 
 #### Scenario: Setup is already working
 - **WHEN** fresh session and live Blender evidence confirm the connection is healthy
@@ -36,7 +36,7 @@ The audit SHALL begin with fresh lightweight evidence and a bounded native read-
 - **WHEN** live scene access succeeds but an exact server interpreter version, persisted configuration field, or editor visibility has not been inspected
 - **THEN** the audit does not claim those details were verified and distinguishes the server interpreter from Blender's embedded Python
 
-### Requirement: MCP readiness and editor readiness have separate verdicts
+### Requirement: MCP Readiness and editor readiness have separate verdicts
 The audit SHALL present separate MCP communication and editor-readiness verdicts, each derived from its own evidence. A failing or unknown editor-visibility check SHALL NOT invalidate an observed working MCP connection.
 
 #### Scenario: Working connection with a minimized editor
@@ -56,14 +56,14 @@ The audit SHALL NOT search disks, registries, installation directories, or PATH 
 
 #### Scenario: Process inspection is unavailable
 - **WHEN** permissions or platform support prevent reliable process inspection
-- **THEN** Blender running and installed evidence are BLOCKED as unknown, and the report gives a safe next step without scanning for the executable
+- **THEN** Blender Running and installed evidence are BLOCKED as unknown, and the report gives a safe next step without scanning for the executable
 
 ### Requirement: Python checks follow the active client's configured environment
 When deeper Python diagnostics are needed, the audit SHALL inspect the interpreter selected by the active client's MCP configuration, distinguish interpreter availability from package readiness, and validate supported command forms without requiring one literal spelling. It SHALL NOT install packages or modify environments. Quick-pass runtime inferences SHALL be explicitly labeled.
 
 #### Scenario: Configured virtual environment is ready
 - **WHEN** the active client's configuration points to a virtual-environment interpreter and the official MCP package and required imports are available there
-- **THEN** Python available and Python configured pass using that interpreter's evidence
+- **THEN** Python Available and Python Configured pass using that interpreter's evidence
 
 #### Scenario: Base interpreter is externally managed
 - **WHEN** package installation guidance or diagnostics encounter an externally managed Python environment
@@ -71,25 +71,25 @@ When deeper Python diagnostics are needed, the audit SHALL inspect the interpret
 
 #### Scenario: Configuration has duplicate or inconsistent server entries
 - **WHEN** the active Codex TOML contains duplicate server tables or the configured interpreter differs from the inspected interpreter
-- **THEN** AI agent configured or Python configured fails with the conflicting entry identified without exposing secrets
+- **THEN** AI Agent Configured or Python Configured fails with the conflicting entry identified without exposing secrets
 
 #### Scenario: Launcher environment cannot be inspected
 - **WHEN** the configuration uses `uvx` and the managed interpreter or package environment cannot be inspected safely
 - **THEN** the Python checks report limited evidence as BLOCKED, do not test imports in unrelated shell Python, and do not run `uvx` to download or install dependencies
 
 ### Requirement: Blender process and editor visibility are distinct
-The audit SHALL report Blender running separately from whether a visible, non-minimized Blender editor window is verified. It SHALL never restore, focus, minimize, hide, or close a user's Blender window during a read-only audit.
+The audit SHALL report Blender Running separately from whether a visible, non-minimized Blender editor window is verified. It SHALL never restore, focus, minimize, hide, or close a user's Blender window during a read-only audit.
 
 #### Scenario: Blender runs with a visible editor
 - **WHEN** the process and window inspectors can associate a visible, non-minimized editor with a running Blender process
-- **THEN** Blender running and Blender editor open pass
+- **THEN** Blender Running and Blender editor open pass
 
 #### Scenario: Blender is minimized or visibility cannot be inspected
 - **WHEN** the editor is minimized or platform permissions prevent visibility inspection
 - **THEN** the editor-open result fails with a restore/show instruction or is blocked as unknown, while independent MCP checks continue
 
 ### Requirement: MCP stages preserve separate evidence
-The audit SHALL distinguish active-client registration, official add-on/bridge evidence, MCP initialization and tool discovery, and a read-only live Blender query. A successful MCP handshake SHALL remain successful if the later scene query fails.
+The audit SHALL distinguish active-client registration, official add-on/bridge evidence, MCP initialization and tool discovery, and a read-only live Blender query. The report SHALL distinguish official add-on installation, enablement and Blender compatibility, and a responding official bridge. A successful MCP handshake SHALL remain successful if the later scene query fails.
 
 #### Scenario: MCP handshake succeeds but scene query fails
 - **WHEN** the active client initializes the server and discovers tools but a read-only Blender query fails
@@ -97,7 +97,7 @@ The audit SHALL distinguish active-client registration, official add-on/bridge e
 
 #### Scenario: Local bridge URL has no browser page
 - **WHEN** the user expects a local bridge address to render a browser page
-- **THEN** the audit explains that browser-page availability is not proof of MCP readiness and diagnoses the configured MCP transport and bridge evidence instead
+- **THEN** the audit explains that browser-page availability is not proof of MCP Readiness and diagnoses the configured MCP transport and bridge evidence instead
 
 ### Requirement: Instance checks target the Blender process reached by MCP
 The audit SHALL associate instance-specific process and editor checks with the Blender instance reached by MCP or verified bridge ownership. It SHALL NOT substitute a different instance's visible window. If target identity remains ambiguous, instance-specific checks SHALL be blocked pending clarification while proven connection results are preserved.

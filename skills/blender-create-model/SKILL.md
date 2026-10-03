@@ -27,7 +27,7 @@ When it returns, inspect the target and compare a genuine current preview, prior
 4. Block out primary masses with primitives or a low-resolution mesh.
 5. Inspect front, side and three-quarter views; resolve proportion errors before topology detail. For a grounded pose or placed prop, verify the actual lowest visible contact against its support surface; nominal centers or bounding boxes can leave rounded feet or bases floating. Preserve intentional hovering or airborne poses.
 6. Refine silhouette and secondary forms; choose modifiers for editable construction.
-7. Add only detail visible at the intended viewing distance; separate reusable parts. Check how secondary forms meet: supports, frames, trim, and accessories must not accidentally cross openings or conceal defining features. Judge thickness and contact at final image size, not only in a close viewport.
+7. Add only detail visible at the intended viewing distance; separate reusable parts. Check how secondary forms meet: supports, frames, trim, and accessories must not accidentally cross openings or conceal defining features. For containers and enclosed props, inspect the end panels, interior walls, lid closure and all sides after assembly; a hero angle can hide missing surfaces. Judge thickness and contact at final image size, not only in a close viewport.
 8. Check normals, accidental internal faces, transforms and topology appropriate to deformation/export. Ngons are not universally invalid.
 9. Render modest final views and inspect them against the brief at intended display size.
 10. Save the editable blend and provide object names, dimensions, previews and unresolved limitations.

@@ -4,6 +4,8 @@
 
 Eleven integrated workflows, ready for visual review. Click a render to open it at full size. Examples 03–10 each use one creative iteration; review notes identify remaining artistic issues. Examples 03–10 use 1280×720 main renders with a soft target below 30 seconds. Example 11 delivers a 1920×1080 sketch-to-3D render after two correction passes.
 
+See the [style coverage map](style-coverage.md) for the intended and observed look of each example and the initial refresh candidates.
+
 | Name | Image | Files |
 |---|---|---|
 | [01 — School Morning Character](01-school-morning-character/) | <a href="01-school-morning-character/output/result.png"><img src="01-school-morning-character/output/result.png" width="100" alt="School Morning Character render" /></a> | [Prompt](01-school-morning-character/input/prompt.txt) · [Render](01-school-morning-character/output/result.png) · [Blend](01-school-morning-character/output/result.blend) · [Editor](01-school-morning-character/output/editor.png) · [Review](01-school-morning-character/output/review.md) |

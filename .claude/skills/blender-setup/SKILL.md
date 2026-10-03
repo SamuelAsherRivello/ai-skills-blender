@@ -14,36 +14,42 @@ Use the existing MCP connection whenever it can perform the operation. On Window
 1. Identify the platform and active Claude session. Check session availability directly; use client-neutral AI agent labels in the report.
 2. Inspect the actual native tool catalog and perform one allowed read-only Blender query. Inspect MCP and nested Blender errors; a successful handshake remains separate from scene access.
 3. Inspect Claude's registration through /mcp or safe read-only claude mcp list / claude mcp get when available. Never substitute Codex TOML/helper evidence for Claude's configuration. Print no secrets.
-4. Report Python available and Python configured separately. Infer runtime readiness only from a fresh working official Python stdio connection, labeling the inference. Diagnose the configured interpreter on failure rather than unrelated terminal Python. Recognize uvx as limited/isolated; do not provision it during an audit.
+4. Report Python Available and Python Configured separately. Infer runtime readiness only from a fresh working official Python stdio connection, labeling the inference. Diagnose the configured interpreter on failure rather than unrelated terminal Python. Recognize uvx as limited/isolated; do not provision it during an audit.
 5. Identify Blender only from currently running programs. Never search disk, registry, installation directories or PATH for its executable or use BLENDER_PATH discovery. With no running process, installation is unknown.
 6. Target the Blender instance reached by MCP, using a read-only process ID query or verified bridge owner. Never substitute another instance's visible window; ask which is intended only when identity remains ambiguous.
 7. Freshly inspect the target editor's visible/non-minimized state without restoring or focusing it. Maximization is unnecessary. Unavailable inspection is unknown/Blocked and does not erase a working MCP connection.
-8. Verify enabled official add-on identity, minimum Blender version and bridge evidence at the effective host/port. A listener alone does not prove identity; an expanded Preferences entry does not prove enablement.
+8. Check official MCP installation, enablement/compatibility and bridge runtime as three distinct report rows at the effective host/port. A listener alone does not prove identity; an expanded Preferences entry does not prove enablement.
 9. Begin each invocation with quick fresh evidence; deepen only failed, conflicting or necessary missing evidence in one bounded second pass. Preserve independent passes, retry once only for a clearly transient scene error, and never reuse saved/cached setup status or start another unreviewed client.
-10. Display all ten rows plus separate MCP and editor verdicts, concrete solutions and platform limitations. Do not invent unobserved versions or save reports automatically.
+10. Display all twelve rows plus separate MCP and editor verdicts, concrete solutions and platform limitations. Do not invent unobserved versions or save reports automatically.
 
 ## Report
+
+Use **title case** for report step labels, headings and readiness labels; preserve **AI**, **MCP** and **Python** spelling. Use **Pass**, **Fail** and **Blocked** for displayed statuses, and **sentence case** for comments and next actions. Preserve exact casing in names, identifiers, paths, versions and quoted UI text.
+
+Official MCP Installed means the official Blender Lab add-on is present. Official MCP Configured means it is enabled and compatible with Blender; verify the expected endpoint separately. Official MCP Running means the official bridge is responding. An installed add-on does not prove enablement, and an enabled add-on does not prove bridge startup. If identity or state is unverified, report Blocked; a socket listener alone does not establish an official running bridge. With direct Preferences evidence, an installed but unchecked add-on passes Installed and fails Configured with **Check the box beside MCP**; an enabled entry showing **Start MCP Server** fails Running with that startup action.
 
 Use exact headers **Step**, **Status**, **Comment** and these rows:
 
 | Step | Status | Comment |
 |---|---|---|
-| 1. AI agent available | observed status | Current Claude session evidence |
-| 2. AI agent configured | observed status | Claude official MCP registration |
-| 3. Python available | observed status | Registered runtime available; label inference |
-| 4. Python configured | observed status | Libraries in that runtime; label inference or unknown |
-| 5. Blender installed | observed status | Running-program evidence; otherwise unknown |
-| 6. Blender running | observed status | Current process evidence |
-| 7. Blender open | observed status | Target editor visible and not minimized |
-| 8. Official add-on / bridge | observed status | Official enabled identity and bridge evidence |
-| 9. MCP handshake / tools | observed status | Current session initialization/tool discovery |
-| 10. Live Blender communication | observed status | Fresh read-only scene query |
+| 1. AI Agent Available | observed status | Current Claude session evidence |
+| 2. AI Agent Configured | observed status | Claude official MCP registration |
+| 3. Python Available | observed status | Registered runtime available; label inference |
+| 4. Python Configured | observed status | Libraries in that runtime; label inference or unknown |
+| 5. Blender Installed | observed status | Running-program evidence; otherwise unknown |
+| 6. Blender Running | observed status | Current process evidence |
+| 7. Blender Open | observed status | Target editor visible and not minimized |
+| 8. Official MCP Installed | observed status | Official Blender Lab add-on installation evidence |
+| 9. Official MCP Configured | observed status | Add-on enabled and compatible with Blender |
+| 10. Official MCP Running | observed status | Official bridge responding at the expected endpoint |
+| 11. MCP Handshake / Tools | observed status | Current session initialization/tool discovery |
+| 12. Live Blender Communication | observed status | Fresh read-only scene query |
 
 Replace placeholders with **✅ Pass**, **❌ Fail**, **⛔ Blocked**. Every failed row includes its solution; blocked rows identify unknown evidence and the next safe step. Label inferred passes. If Blender is absent from running programs, installed is Blocked/unknown, running fails with **Open Blender**, and editor open is Blocked.
 
-Report **MCP readiness** and **Editor readiness** separately. A minimized editor requires **Restore Blender from the taskbar** before capture while live MCP access may still pass. Preserve handshake success when a scene query fails. A working scene query does not prove an unread persisted configuration, exact host interpreter/version, or visible window. Blender's embedded Python is not the host MCP server interpreter.
+Report **MCP Readiness** and **Editor Readiness** separately. A minimized editor requires **Restore Blender from the taskbar** before capture while live MCP access may still pass. Preserve handshake success when a scene query fails. A working scene query does not prove an unread persisted configuration, exact host interpreter/version, or visible window. Blender's embedded Python is not the host MCP server interpreter.
 
-## Troubleshooting and compatibility
+## Troubleshooting and Compatibility
 
 Check required libraries in the interpreter Claude actually launches. If PEP 668/externally managed Python rejects an installation, guide the user to a dedicated venv; do not bypass that protection. An environment can use the same host Python as hobby work and does not require another Blender version. Do not install, switch interpreters or rewrite a working registration as an audit side effect.
 
@@ -53,7 +59,7 @@ The local add-on TCP bridge need not serve a browser page at localhost:9876. Tes
 
 Windows 10/11 share relevant Win32 inspection APIs; inspect the real desktop only through available supported read-only tools. Sandbox isolation or permission gaps can make visibility unknown. macOS support is limited and untested live in this repository's Windows validation: use available native MCP and running-program evidence, report unsupported editor/listener/interpreter diagnostics as Blocked, and do not grant permissions or invent platform support. The Claude package intentionally does not ship the Codex TOML helper.
 
-## Editor readiness and screenshots
+## Editor Readiness and Screenshots
 
 Before **every** editor/window/area screenshot, freshly check that the target process has a visible, non-minimized editor. If closed, ask the user to open Blender. If minimized/hidden, say **Restore Blender from the taskbar** or ask them to show it; maximization is unnecessary. If inspection is unavailable, report unknown and ask the user to make it visible. Pause attempts until resolved, then repeat the check. Do not restore, focus or maximize it automatically.
 

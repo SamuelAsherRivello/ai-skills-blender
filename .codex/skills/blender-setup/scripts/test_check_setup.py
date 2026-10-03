@@ -47,7 +47,7 @@ class SetupTests(unittest.TestCase):
             launch.assert_not_called()
         return report, proc, win, listen, py
 
-    def test_healthy_quick_pass_has_ten_rows_and_no_second_client(self):
+    def test_healthy_quick_pass_has_twelve_rows_and_no_second_client(self):
         report, _, _, listen, py = self.audit()
         self.assertTrue(report['all_passed'])
         self.assertEqual([r['step'].split('. ', 1)[1] for r in report['checks']], list(checker.STEPS))
@@ -124,7 +124,7 @@ class SetupTests(unittest.TestCase):
         report, _, win, *_ = self.audit(native={'agent_available': True, 'tool_count': 26, 'scene_error': True},
             processes=PROCESSES + [{'pid': 43, 'name': 'Blender'}])
         win.assert_called_once_with({42}, 'win32')
-        self.assertEqual(report['checks'][8]['status'], 'PASS')
+        self.assertEqual(report['checks'][10]['status'], 'PASS')
         self.assertEqual(report['mcp_readiness'], 'FAIL')
 
     def test_remote_host_does_not_match_a_coincidentally_equal_local_pid(self):
@@ -236,26 +236,26 @@ class SetupTests(unittest.TestCase):
 
     def test_stopped_bridge_is_distinct_from_successful_handshake(self):
         report, *_ = self.audit(native={'agent_available': True, 'tool_count': 26, 'scene_error': True}, listeners=[])
-        self.assertEqual(report['checks'][7]['status'], 'FAIL')
-        self.assertIn('cannot distinguish', report['checks'][7]['comment'])
-        self.assertIn('browser page is not required', report['checks'][7]['comment'])
-        self.assertEqual(report['checks'][8]['status'], 'PASS')
+        self.assertEqual(report['checks'][9]['status'], 'FAIL')
+        self.assertIn('cannot distinguish', report['checks'][9]['comment'])
+        self.assertIn('browser page is not required', report['checks'][9]['comment'])
+        self.assertEqual(report['checks'][10]['status'], 'PASS')
 
     def test_wrong_owner_and_wrong_address_do_not_prove_bridge(self):
         for listeners in ([{'pid': 99, 'port': 9876, 'host': '127.0.0.1'}],
                           [{'pid': 42, 'port': 9876, 'host': '192.0.2.1'}]):
             report, *_ = self.audit(native={}, listeners=listeners)
-            self.assertEqual(report['checks'][7]['status'], 'FAIL')
+            self.assertEqual(report['checks'][9]['status'], 'FAIL')
 
     def test_configured_port_and_ipv6_are_honored(self):
         report, *_ = self.audit(cfg={**CFG, 'env': {'BLENDER_MCP_HOST': '::1', 'BLENDER_MCP_PORT': '12345'}},
             native={}, listeners=[{'pid': 42, 'host': '::1', 'port': 12345}])
-        self.assertEqual(report['checks'][7]['status'], 'BLOCKED')
-        self.assertIn('12345', report['checks'][7]['comment'])
+        self.assertEqual(report['checks'][9]['status'], 'BLOCKED')
+        self.assertIn('12345', report['checks'][9]['comment'])
 
     def test_invalid_port_is_not_silently_defaulted(self):
         report, *_ = self.audit(cfg={**CFG, 'env': {'BLENDER_MCP_PORT': '0'}}, native={})
-        self.assertEqual(report['checks'][7]['status'], 'FAIL')
+        self.assertEqual(report['checks'][8]['status'], 'FAIL')
 
     def test_version_warning_does_not_erase_actual_scene_success(self):
         info = {'platform': 'win32', 'processes': PROCESSES, 'target_pid': 42, 'windows': WINDOWS}
@@ -266,8 +266,8 @@ class SetupTests(unittest.TestCase):
     def test_minimum_version_problem_does_not_erase_handshake(self):
         scene = {**SCENE, 'version_tuple': [4, 0, 0]}
         report, *_ = self.audit(native={**NATIVE, 'scene': scene})
-        self.assertEqual(report['checks'][7]['status'], 'FAIL')
-        self.assertEqual(report['checks'][8]['status'], 'PASS')
+        self.assertEqual(report['checks'][8]['status'], 'FAIL')
+        self.assertEqual(report['checks'][10]['status'], 'PASS')
 
     def test_macos_unknown_window_state_does_not_invent_success(self):
         report, *_ = self.audit(platform='darwin', window_error=platform_checks.InspectionUnavailable())
@@ -282,7 +282,7 @@ class SetupTests(unittest.TestCase):
     def test_standalone_helper_does_not_claim_agent_session_availability(self):
         report, *_ = self.audit(native={})
         self.assertEqual(report['checks'][0]['status'], 'BLOCKED')
-        self.assertEqual(report['checks'][8]['status'], 'BLOCKED')
+        self.assertEqual(report['checks'][10]['status'], 'BLOCKED')
 
     def test_sdk_fallback_remains_blocked(self):
         with patch.object(checker, 'run_windowless') as launch:
@@ -294,10 +294,10 @@ class SetupTests(unittest.TestCase):
         report, *_ = self.audit()
         markdown = checker.render_report(report, 'markdown')
         self.assertIn('| Step | Status | Comment |', markdown)
-        self.assertIn('| 1. AI agent available | ✅ Pass |', markdown)
-        self.assertIn('| 10. Live Blender communication | ✅ Pass |', markdown)
-        self.assertIn('MCP readiness:', markdown)
-        self.assertIn('Editor readiness:', markdown)
+        self.assertIn('| 1. AI Agent Available | ✅ Pass |', markdown)
+        self.assertIn('| 12. Live Blender Communication | ✅ Pass |', markdown)
+        self.assertIn('MCP Readiness:', markdown)
+        self.assertIn('Editor Readiness:', markdown)
         self.assertNotIn('Codex configured', markdown)
 
     def test_exception_diagnostics_never_echo_secrets(self):
@@ -312,7 +312,7 @@ class SetupTests(unittest.TestCase):
             code = checker.main()
         self.assertEqual(code, 0)
         self.assertEqual(audit.call_args.args[1], NATIVE)
-        self.assertEqual(len(json.loads(output.getvalue())['checks']), 10)
+        self.assertEqual(len(json.loads(output.getvalue())['checks']), 12)
 
 
 class PlatformTests(unittest.TestCase):

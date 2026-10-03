@@ -1,59 +1,95 @@
 ---
 name: blender-setup
-description: Check the official Blender Lab MCP setup in chronological order, verify a read-only connection to the open Blender scene, and report completed steps, missing steps, and exact next actions. Use for Blender connection setup checks and troubleshooting.
+description: Quickly check the official Blender Lab MCP connection with fresh evidence, deepen failed checks, and report AI agent, Python, Blender and editor readiness with exact next actions. Use for setup and troubleshooting.
 ---
 
 # Blender Setup
 
-Audit the official Blender Lab add-on and MCP bridge used by Codex. Default to a read-only dry run: do not install, upgrade, start or stop apps, change configuration, create objects, switch scenes, or save files. If the user requests repairs too, repair within that scope and rerun affected checks.
+Audit the active AI agent's official Blender Lab MCP connection. Default to a read-only check. Repairs, installations, configuration edits, application startup and Blender scene changes require the user's requested scope. Do not restore or focus the user's editor during an audit.
 
 Use the existing MCP connection whenever it can perform the operation. On Windows, auxiliary execution MUST remain windowless, including brief flashes, during setup, diagnostics, rendering, export, and verification. Before launching, establish suppression for the complete process chain, including client-owned and dependency-owned startup. Use explicit no-console creation (such as subprocess.CREATE_NO_WINDOW) and captured output for reviewed console-only commands. If any required boundary is unknown or unsupported, do not launch: report BLOCKED with the reason and next action, and continue independent safe work. Never retry through a visible terminal, toggle Blender's system console, or weaken suppression. An absolute executable path, cmd /c, Blender --background, or Start-Process -WindowStyle Hidden alone is not proof of no flashes. Keep exit status, bounded timeouts, useful diagnostics without secrets, and cleanup of owned descendants. Do not hide, minimize, restore, focus, or close the existing Blender editor to suppress auxiliary windows. Preserve fresh editor-readiness checks before screenshots.
 
-## Run the checks
+## Fresh quick pass, then targeted diagnostics
 
-Use native session MCP tools first. Only when supplemental diagnostics are needed and the outer client launch is established as windowless, run [scripts/check_setup.py](scripts/check_setup.py) with Python 3.11 or newer. Its installed [windowless runner](scripts/windowless.py) captures output and owns helper cleanup. The SDK probe is blocked until its exact transport has reviewed suppression and cleanup support; MCP SDK 1.30.0 has an unsafe retry and is not supported for this fallback. It uses the current Codex home (`CODEX_HOME`, otherwise `~/.codex`), the configured `blender` MCP server, and a bounded MCP SDK probe. Use `--server NAME` when the connection has a different name. This helper targets Windows and the official Python stdio setup; report unsupported configurations rather than silently replacing them.
+Every invocation starts fresh. Check the active session, actual native tool catalog, and one allowed read-only Blender query; collect lightweight configuration and running-program/window evidence when available. Display all ten rows even when some evidence is unknown. Use `execute_blender_code` with the read-only `QUERY` in [scripts/check_setup.py](scripts/check_setup.py), or an allowed summary tool if execution is excluded. Check both MCP errors and nested Blender errors. Never use a CLI/background execution tool to bypass the existing connection.
 
-Use `python scripts/check_setup.py --format markdown` for a ready-to-present **Step / Status / Comment** table, or omit `--format` for JSON with `comment` fields. Resolve script paths relative to this skill directory. Exit code 0 means all checks passed; 1 means a failure or blocked check, not necessarily a script crash. The helper cannot inspect this conversation's native tool catalog; perform that check separately.
+A healthy connection should not trigger another MCP client, package-import subprocess, installer, release search, or repeated full audit. Identify evidence as **direct**, **inferred**, or **unknown**. A working official Python stdio server can establish that its runtime works; it does not prove an unread TOML field, the exact host Python path/version, or editor visibility. Blender's embedded Python is separate from the MCP server's host interpreter. Recognize `uvx` as an isolated launcher with limited environment diagnostics; do not test its imports in unrelated shell Python.
 
-After changing the helper, run `python scripts/test_check_setup.py` (see [test helper](scripts/test_check_setup.py)). These offline regression tests simulate healthy, closed-Blender, stopped-bridge, missing-configuration, inspection-error, version-mismatch, and server-startup-failure states without altering Blender. Then use native MCP tools for a read-only live check once; never launch a blocked SDK probe to complete validation.
+If fresh evidence fails, contradicts a prerequisite, or leaves necessary readiness evidence unresolved, perform one bounded second pass on only those affected checks. Preserve independent successful results. Unsupported inspection remains BLOCKED with a useful next action. Retry a scene query once only for a clearly transient error. No saved report, previous success, or cached setup state establishes current readiness. Display results; do not automatically save diagnostic reports.
 
 ## Workflow
 
-1. Identify Windows, the active Codex home and named server configuration.
-2. Locate the configured or running Blender executable and inspect its version.
-3. Inspect the Blender process and its editor window. Require a visible, non-minimized editor for the bridge-owning process when identifiable; maximization is not required. Failed inspection means unknown, not closed.
-4. Check official add-on identity evidence; do not infer enablement from an expanded Preferences entry.
-5. Probe the configured bridge listener and identify its owning process.
-6. Validate the enabled official Python stdio registration and environment.
-7. Initialize the MCP connection with a bounded timeout.
-8. Discover tools and honor allowed/disabled tool policies.
-9. Query Blender version, enabled add-on, active scene and object count read-only; preserve successful handshake status if this fails.
-10. Present the six-row report below with observed evidence and actionable solutions, distinguishing helper access from native tools.
+1. Identify the platform, active AI client/session and available native diagnostics. For Codex, identify the actual Codex home and named MCP registration; do not assume this helper can inspect another client.
+2. Inspect the current tool catalog and perform one allowed read-only native scene query. Preserve initialization/tool discovery separately from successful live communication.
+3. Inspect the active client's supported configuration without printing secrets. Accept direct Python/venv `-m blmcp` with optional `--transport stdio`, `-t stdio` or `--transport=stdio`; recognize `uvx` as limited. Explain duplicate tables and unsupported forms without replacing working registrations.
+4. Report Python available and Python configured separately. On a failing connection, resolve the configured interpreter using its effective environment/working directory, then check version and required imports only through a reviewed safe launch. Never assume terminal Python is the same interpreter.
+5. Identify Blender only through currently running programs. Never search its executable on disk, PATH, registry or installation directories, or use `BLENDER_PATH` to discover it. No process means installation unknown, not uninstalled.
+6. Match the process reached by MCP using the native query's PID or verified bridge ownership. If several processes remain ambiguous, block instance-specific checks and ask which is intended. Do not substitute another instance's visible window.
+7. Inspect that process's editor window read-only. Require a visible, non-minimized editor; maximization is unnecessary. Closed, minimized, hidden and unknown states have different next actions. This check is independent of MCP access.
+8. Verify enabled official add-on identity/minimum version and bridge evidence. Use the effective configured host/port, including inherited environment values. A listener alone does not prove add-on identity; socket refusal cannot distinguish a disabled add-on from a stopped bridge.
+9. Deepen only failed, conflicting or necessary missing evidence in a bounded second pass. Honor platform permissions and tool policy; keep unsafe SDK launching blocked. Report version discrepancies for compatibility review without automatic upgrades or erasing observed live access.
+10. Present the ten-row Step / Status / Comment table, the separate MCP and editor verdicts, platform limits, and exact next actions. Do not invent unobserved interpreter, package, add-on or Blender versions.
 
-Report rows: Blender installed; Blender open; official add-on/bridge; Codex configured; MCP handshake/tools; live Blender communication. Verify minimum Blender version and matching add-on/server releases, reporting compatibility mismatches without automatic upgrades.
+## Report
 
-The helper continues independent checks after failures. Dependent checks become BLOCKED; they must not be marked successful. Status values are PASS, FAIL, and BLOCKED. Each non-PASS row needs a concrete next action, starting with the earliest missing prerequisite. Retry once only for a clearly transient connection error; do not loop indefinitely.
+Use the exact headers **Step**, **Status**, **Comment**, with these rows in order. Replace the descriptions with this invocation's evidence.
 
-A refused connection cannot distinguish a disabled add-on from an enabled add-on with its server stopped. Report the observable failure, and use available UI evidence to identify which condition applies; otherwise explain both checks without claiming either as proven. A successful MCP initialization/tool listing stays PASS even when the subsequent Blender scene call fails.
+| Step | Status | Comment |
+|---|---|---|
+| 1. AI agent available | observed status | Current client/session evidence |
+| 2. AI agent configured | observed status | That client's official MCP registration |
+| 3. Python available | observed status | Configured runtime available; label runtime inference |
+| 4. Python configured | observed status | Required libraries in that runtime; label inference or unknown metadata |
+| 5. Blender installed | observed status | Inferred from running programs; otherwise unknown |
+| 6. Blender running | observed status | Current Blender process evidence |
+| 7. Blender open | observed status | Connected editor visible and not minimized |
+| 8. Official add-on / bridge | observed status | Enabled official identity and bridge evidence |
+| 9. MCP handshake / tools | observed status | Current session initialization/tool discovery |
+| 10. Live Blender communication | observed status | Fresh read-only scene query |
 
-When the user supplies a Preferences screenshot, inspect the checkbox beside **MCP**, not the disclosure arrow or the presence of its version/details. An expanded entry with an unchecked checkbox means **installed but disabled**. Report step 3 as FAIL with the next action **check the box beside MCP**; only then start its server if needed. An enabled checkbox with a **Start MCP Server** button instead indicates an enabled add-on with a stopped bridge. Treat screenshots as evidence at capture time, not proof of the current live state. Do not recommend reinstalling a visibly installed add-on for either case.
+Display statuses as **✅ Pass**, **❌ Fail**, **⛔ Blocked**. Each Fail comment must contain its concrete solution. Each Blocked comment names the missing evidence/prerequisite and safe next step. Keep passing evidence short; label inferred passes explicitly. Failed process inspection means unknown, not closed. When no Blender process is found, step 5 is Blocked/installation unknown, step 6 fails with **Open Blender**, and step 7 is Blocked.
 
-For a supplied `.snagx` capture, inspect its ZIP entries and extract the full-resolution image to a temporary location for viewing; use its metadata if multiple images or annotations need interpretation. Preserve the original capture.
+Below the table report **MCP readiness** and **Editor readiness** separately. A minimized editor can require **Restore Blender from the taskbar** while MCP remains working. A successful handshake stays Pass if the scene query fails. A helper that verifies configuration or local bridge evidence does not prove that native tools are exposed in this conversation. If tools are absent, explain that reconnecting/restarting the AI client or starting a new thread may be needed; do not describe it as currently connected.
 
-## Interpret and report
+## Supplemental helper and compatibility
 
-Present an ordered table with the exact headers **Step**, **Status**, and **Comment**. Display statuses as **✅ Pass**, **❌ Fail**, and **⛔ Blocked**. In every red ❌ Fail row, put the concrete solution directly in the Comment cell (for example, **Open Blender**), rather than only describing the failure. For passing rows, give short evidence; for blocked rows, name the prerequisite to complete. If Blender is closed, step 2 is FAIL with **Open Blender**, and steps 3 and 6 are BLOCKED pending step 2. Include actual Blender/add-on/server versions and active scene when available. Do not promise every step will pass just because an earlier run did.
+Use native session tools first. [scripts/check_setup.py](scripts/check_setup.py) requires Python 3.11+ for the helper itself and reads Codex TOML (`CODEX_HOME`, otherwise `~/.codex`); its display labels remain neutral. It cannot inspect the current tool catalog by itself. The Claude adapter must use Claude's configuration/status instead.
 
-Distinguish **configured bridge verified by the helper** from **tools available directly in this conversation**. Inspect the session's actual tool catalog separately. If native Blender MCP tools are exposed, prefer a direct read-only scene tool call too. If absent but the helper passes, report the bridge as working and say that a new Codex thread/restart may be needed to expose native tools; do not describe the current conversation as natively connected.
+Resolve paths relative to the installed skill. Only when the outer launch is verified safe, invoke the helper with `--format markdown` or use its default JSON. `--server NAME` selects a named registration; `--config PATH` explicitly selects the applicable TOML when defaults or project/CLI overrides do not describe the active session. Do not claim an effective override was inspected unless you actually inspected it.
 
-For missing prerequisites, guide the user in order: install/open Blender, enable the official extension in Preferences and start its bridge, install a compatible official MCP Python package, register it with Codex, then retest. Use the configured host/port instead of assuming defaults. Discover the registered interpreter from the active configuration rather than assuming an installation directory.
+The native API [platform adapter](scripts/platform_checks.py) checks process names/PIDs without a PowerShell child launch or Blender binary lookup. Fresh normalized native evidence can be passed directly to `audit(native=...)` or via `--native-stdin` from the current invocation. Keys are `agent_available`, actual `tool_count`, and `scene` containing the unwrapped QUERY result; use `scene_error` or `handshake_error` for observed failures. Never feed an old report or hard-coded success values back as current evidence.
 
-Use [Blender's official MCP page](https://www.blender.org/lab/mcp-server/) and [official source/releases](https://projects.blender.org/lab/blender_mcp) when repair or compatibility research is needed. The working architecture is Codex → official Python MCP server over stdio → official Blender add-on over local TCP. Llama.cpp is an alternative client and is not required. Do not add community add-ons, other Blender workflows, or upgrade to an untagged development revision as a setup-check side effect. A known working version is evidence, not proof that it remains the latest release.
+On a failing direct-Python setup, `--allow-python-probe` permits the import-only second pass **after** the outer launch and complete child chain have been reviewed. The existing [windowless runner](scripts/windowless.py) captures diagnostics, sets no-console creation and owns descendants through a Windows Job. An unknown launch boundary remains Blocked. The SDK fallback remains disabled: an SDK upgrade alone is not evidence that its retry/cancellation/cleanup paths are safe.
+
+| Platform | Local helper support | Validation limit |
+|---|---|---|
+| Windows 10 / Windows 11 | Shared native Win32 process, listener and editor checks; reviewed import-only diagnostics | Validate on the available Windows host; do not claim live Windows 10 tests if none ran. Isolated/sandbox desktops may block real window inspection. |
+| macOS | Native MCP access and configuration evidence when available; best-effort libproc process-name adapter | macOS support is limited and untested live here. Editor/listener ownership and import-subprocess diagnostics are missing; report Blocked and use supported fresh evidence. Do not grant permissions or launch a generic fallback automatically. |
+| Other platforms | Native connection checks where available | Local adapters are unsupported; report each unavailable check honestly. |
+
+## Troubleshooting from observed failures
+
+| Evidence | Concrete next action |
+|---|---|
+| Python runs, but `blmcp` or a dependency is missing | Install the official package into the **configured** interpreter/venv; register that same interpreter. Do not install into a different shell Python by accident. |
+| Base Python rejects installation as externally managed / PEP 668 | Create a dedicated venv using a compatible installed Python and install there. Do not bypass the managed-environment protection. One host Python can serve hobby work and this venv; a venv does not require another Blender version. |
+| Duplicate TOML server tables or competing command/args examples | Keep one complete registration per server, with one command/args pair. For Windows paths, use valid TOML literal strings or correctly escaped backslashes. |
+| Configured Python resolves to a Windows app alias | Configure a real installed/venv interpreter; do not launch an alias that may open the Store. |
+| Expanded Preferences MCP entry has an unchecked enable box | **Check the box beside MCP.** Expanded details prove neither enablement nor a running bridge; do not reinstall a visibly installed add-on. |
+| MCP enabled but **Start MCP Server** is shown | Start its bridge using the expected host/port when repairs/startup are authorized; otherwise give this next action. |
+| Bridge refuses connection, without reliable UI evidence | Check both add-on enablement and bridge startup. Do not assert which one failed. |
+| `http://localhost:9876/` does not render in a browser | Check MCP/live scene communication. The add-on's local TCP bridge is not a required browser page; stdio is the AI client-to-server transport. |
+| MCP tools appear but the scene query fails | Preserve the handshake Pass; diagnose the configured Blender bridge and add-on. |
+| Previously worked, now fails | Recollect fresh runtime evidence and examine only the failed prerequisites; never trust a previous success as current state. |
+
+Use [Blender's official MCP setup](https://www.blender.org/lab/mcp-server/) and [official source/releases](https://projects.blender.org/lab/blender_mcp) when compatibility or repairs need research. Architecture: AI client → official Python MCP server over stdio → official add-on inside Blender over local TCP. The host MCP server is launched by the AI client; the user does not need to run another LLM client inside Blender. Llama.cpp is an optional alternative client. Do not install community replacements or untagged development revisions as an audit side effect.
 
 ## Editor readiness and screenshots
 
-Step 2 requires Blender to be running with a visible editor window that is not minimized. A minimized editor is FAIL: **Restore Blender from the taskbar; leave its editor open and not minimized.** A background-only process is insufficient. Failed window-state inspection is BLOCKED, not PASS. Do not restore, focus, or maximize the window during a read-only audit. A minimized editor does not prevent independent bridge/handshake/scene checks from passing.
+Screenshot capture is authorized as part of requested Blender work. Before **every** editor/window/area screenshot call, freshly inspect the connected process's visible, non-minimized editor; do not reuse an earlier setup result. If closed, ask the user to open Blender. If minimized or hidden, say **Restore Blender from the taskbar** or ask them to show it; maximization is unnecessary. If inspection is unavailable, report unknown and ask the user to make the editor visible. Pause capture until resolved, then check again. Never restore, focus or maximize it yourself.
 
-Screenshot capture is already authorized when part of requested Blender work, but authorization does not prove technical capability. Both official full-window and area captures returned black while minimized on this workstation. Prefer a restored editor, inspect actual pixels, and report failed captures honestly; a visible window is a readiness prerequisite, not a guarantee of a valid screenshot. Never present an old screenshot or a clean render as fresh editor evidence.
+Inspect captured pixels. Both official full-window and area captures have returned black while minimized on the observed Windows workstation. Visibility is a prerequisite, not a guarantee: report black/stale captures and request show/restore before a fresh check and retry. Never substitute a render or old screenshot as fresh editor evidence. This prerequisite applies to editor screenshots, not saved render output.
 
-Before **every** Blender editor/window/area screenshot call, freshly check that the relevant Blender process has a visible, non-minimized editor window; do not reuse an earlier setup result. If Blender is closed, prompt the user to open it. If minimized or hidden, prompt the user to restore/show it (maximization is unnecessary). If inspection is unavailable, report the unknown state and ask the user to make the editor visible. Pause screenshot attempts until the issue is resolved, then repeat the window-state check before capturing. Do not automatically restore/focus the window. This prerequisite applies to editor screenshots, not saved render output. A passing check still requires inspection of the captured pixels; if the image is black or stale, report the failure and prompt the user to restore/show the editor before a fresh check and retry.
+For supplied `.snagx` files, inspect ZIP entries, extract the original full-resolution image to a temporary location, inspect it and use metadata if needed. Preserve the original archive. User-supplied screenshots are evidence at capture time, not current live proof; keep multiple or accidentally concatenated paths distinct.
+
+After changes, run [scripts/test_check_setup.py](scripts/test_check_setup.py) through a reviewed safe outer launcher. Offline failure fixtures and Windows safety checks must not alter Blender. Use one native read-only live query for integration; never enable a blocked SDK probe to complete validation.

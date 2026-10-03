@@ -1,248 +1,414 @@
-"""Read-only Windows readiness check for the official Blender Lab MCP bridge."""
+"""Fresh read-only setup evidence with a targeted diagnostic second pass.
+
+The configuration adapter is Codex-specific; displayed labels are client-neutral.
+Native session evidence must be collected by the agent during THIS invocation.
+Never start Blender, install packages, or start another MCP client/server.
+"""
 import argparse
-import asyncio
+import importlib
+import importlib.metadata
+import inspect
 import json
 import os
 from pathlib import Path
+import re
+import shutil
 import subprocess
 import sys
+import sysconfig
 import tomllib
+
+import platform_checks
 from windowless import LaunchBlocked, run as run_windowless
 
+STEPS = ('AI agent available', 'AI agent configured', 'Python available',
+         'Python configured', 'Blender installed', 'Blender running',
+         'Blender open', 'Official add-on / bridge', 'MCP handshake / tools',
+         'Live Blender communication')
 
-def sdk_launch_support():
-    """Fail closed: no installed SDK transport has full-chain approval yet.
-
-    MCP 1.30.0 retries without creationflags on both Windows spawn paths and
-    treats Job assignment as optional. Do not infer safety from a version bump
-    or a substring check. Supporting a transport requires source review and
-    runtime evidence for startup, fallback, cancellation and owned cleanup.
-    """
-    return False, ('SDK fallback launch is not verified windowless. Use the existing '
-                   'session MCP tools; review transport suppression and cleanup before enabling a helper probe.')
-
-
-def diagnostic(exc):
-    # Exception text and arbitrary stderr can contain configuration secrets.
-    if isinstance(exc, LaunchBlocked):
-        return 'BLOCKED: windowless process ownership unavailable; review Job support before retrying.'
-    if isinstance(exc, subprocess.TimeoutExpired):
-        return 'Timed out; owned helper processes were stopped. Check responsiveness before retrying.'
-    if isinstance(exc, subprocess.CalledProcessError):
-        return f'Helper exited with status {exc.returncode}; check interpreter and dependencies.'
-    if isinstance(exc, OSError):
-        return f'Startup failed (OS error {exc.errno}); verify executable path and access.'
-    return f'Invalid helper response ({type(exc).__name__}); check the configured interpreter.'
-
-QUERY = '''import bpy
+# Use only with an allowed native execute tool; it queries the existing scene.
+QUERY = '''import bpy, os, sys, pathlib, tomllib
 addons = []
 for key in bpy.context.preferences.addons.keys():
-    module = __import__('sys').modules.get(key)
+    module = sys.modules.get(key)
     if module is None or not getattr(module, '__file__', None):
         continue
-    path = __import__('pathlib').Path(module.__file__).parent / 'blender_manifest.toml'
-    if path.is_file():
-        manifest = __import__('tomllib').loads(path.read_text(encoding='utf-8'))
+    manifest_path = pathlib.Path(module.__file__).parent / 'blender_manifest.toml'
+    if manifest_path.is_file():
+        try:
+            manifest = tomllib.loads(manifest_path.read_text(encoding='utf-8'))
+        except (OSError, ValueError):
+            continue
         if manifest.get('id') == 'mcp' and manifest.get('maintainer') == 'Blender Lab':
             addons.append({'version': manifest.get('version'), 'minimum': manifest.get('blender_version_min')})
-result = {'blender_version': bpy.app.version_string, 'version_tuple': list(bpy.app.version), 'addons': addons, 'scene': bpy.context.scene.name, 'object_count': len(bpy.context.scene.objects)}
+result = {'pid': os.getpid(), 'blender_version': bpy.app.version_string, 'version_tuple': list(bpy.app.version), 'addons': addons, 'scene': bpy.context.scene.name, 'object_count': len(bpy.context.scene.objects)}
 '''
 
 
-def config(name):
-    root = Path(os.environ.get('CODEX_HOME') or Path.home() / '.codex')
-    with (root / 'config.toml').open('rb') as handle:
-        return tomllib.load(handle).get('mcp_servers', {}).get(name, {})
+def sdk_launch_support():
+    return False, 'SDK fallback launch is not verified windowless. Use the existing session MCP tools; review transport suppression and owned cleanup before enabling another client.'
 
 
 async def probe(cfg):
-    supported, reason = sdk_launch_support()
-    if not supported:
-        return {'probe_blocked': reason}
-    from importlib.metadata import version
-    from mcp import ClientSession, StdioServerParameters
-    from mcp.client.stdio import stdio_client
-    result = {'package_version': version('blender-mcp')}
+    # Fail closed: never import/spawn the SDK, even on a healthy workstation.
+    return {'probe_blocked': sdk_launch_support()[1]}
+
+
+def diagnostic(exc):
+    # Arbitrary exception text/stderr/arguments/environment can contain secrets.
+    if isinstance(exc, LaunchBlocked):
+        return 'Safe launch/owned cleanup unavailable; use native tools or establish the launch boundary before retrying.'
+    if isinstance(exc, subprocess.TimeoutExpired):
+        return 'Timed out; owned probe processes were stopped. Check responsiveness before retrying.'
+    if isinstance(exc, subprocess.CalledProcessError):
+        return f'Helper exited with status {exc.returncode}; check the configured interpreter and libraries.'
+    if isinstance(exc, OSError):
+        return f'Inspection/startup failed (OS error {exc.errno}); verify access and rerun.'
+    return f'Evidence unavailable ({type(exc).__name__}); rerun the affected check.'
+
+
+def config(name, path=None):
+    root = Path(os.environ.get('CODEX_HOME') or Path.home() / '.codex')
+    with (Path(path) if path else root / 'config.toml').open('rb') as handle:
+        servers = tomllib.load(handle).get('mcp_servers', {})
+    if not isinstance(servers, dict) or not isinstance(servers.get(name, {}), dict):
+        raise ValueError('Invalid server configuration')
+    return servers.get(name, {})
+
+
+def config_kind(cfg):
+    """Validate structure without running the command or printing secret values."""
+    if not cfg or cfg.get('enabled', True) is False:
+        return 'FAIL', 'missing', 'Enable one official Blender MCP registration in the active AI client.'
+    command, args, env, cwd = (cfg.get('command'), cfg.get('args', []),
+                               cfg.get('env', {}), cfg.get('cwd'))
+    if (not isinstance(command, str) or not command.strip()
+            or not isinstance(args, list) or not all(isinstance(a, str) for a in args)
+            or not isinstance(env, dict) or not all(isinstance(k, str) and isinstance(v, str) for k, v in env.items())
+            or (cwd is not None and (not isinstance(cwd, str) or not Path(cwd).is_dir()))
+            or not isinstance(cfg.get('enabled', True), bool)):
+        return 'FAIL', 'invalid', 'Correct the server command, arguments, environment or working directory in the active client configuration.'
+    name = re.split(r'[/\\]', command)[-1].casefold()
+    if name in ('uvx', 'uvx.exe') or (name in ('uv', 'uv.exe') and args[:2] == ['tool', 'run']):
+        return 'BLOCKED', 'uvx', 'Launcher registration recognized; uvx environment diagnostics are limited. Verify official package identity with current native tools.'
+    if not re.fullmatch(r'python(?:w)?(?:\d+(?:\.\d+)*)?(?:\.exe)?', name):
+        return 'BLOCKED', 'unsupported', 'This configuration adapter supports direct Python stdio and recognizes uvx. Inspect this launcher with client-native evidence.'
+    module_args = list(args)
+    while module_args and module_args[0] in ('-u', '-B'):
+        module_args.pop(0)
+    if module_args[:2] != ['-m', 'blmcp']:
+        return 'FAIL', 'invalid', 'Use the official Python module entry: -m blmcp, optionally followed by --transport stdio.'
+    if module_args[2:] not in ([], ['--transport', 'stdio'], ['-t', 'stdio'], ['--transport=stdio']):
+        return 'BLOCKED', 'unsupported', 'This helper supports official stdio arguments. Inspect other transports/options with active-client tools; do not replace a working registration.'
+    return 'PASS', 'python', 'Enabled official blmcp stdio registration; interpreter execution is checked separately.'
+
+
+def resolve_interpreter(cfg):
+    """Resolve only configured Python, never any Blender executable."""
     env = dict(os.environ)
     env.update(cfg.get('env', {}))
-    params = StdioServerParameters(command=cfg['command'], args=cfg.get('args', []), env=env, cwd=cfg.get('cwd'))
-    async with stdio_client(params) as (read, write):
-        async with ClientSession(read, write) as session:
-            await session.initialize()
-            catalog = await session.list_tools()
-            result['tool_count'] = len(catalog.tools)
-            tool_names = {tool.name for tool in catalog.tools}
-            name = 'execute_blender_code'
-            if name not in tool_names:
-                result['scene_error'] = 'Official execution tool is unavailable; check the registered server capabilities.'
-                return result
-            allowed = cfg.get('enabled_tools')
-            if name in cfg.get('disabled_tools', []) or (allowed is not None and name not in allowed):
-                result['scene_error'] = 'Read-only execution probe is excluded by tool policy; use an allowed scene-summary tool.'
-                return result
+    command = cfg['command']
+    if '/' in command or '\\' in command:
+        path = Path(command)
+        if not path.is_absolute():
+            path = Path(cfg.get('cwd') or Path.cwd()) / path
+        return str(path.resolve()) if path.is_file() else None
+    if cfg.get('cwd'):
+        candidate = Path(cfg['cwd']) / command
+        if candidate.is_file():
+            return str(candidate.resolve())
+    return shutil.which(command, path=env.get('PATH', os.defpath))
+
+
+def python_details():
+    """Reviewed import-only check; never calls blmcp.main or an MCP client."""
+    missing = []
+    for module in ('blmcp', 'mcp', 'yaml'):
+        try:
+            importlib.import_module(module)
+        except Exception:
+            missing.append(module)
+    try:
+        version = importlib.metadata.version('blender-mcp')
+    except importlib.metadata.PackageNotFoundError:
+        version = None
+    return {'python_version': sys.version.split()[0], 'executable': sys.executable, 'missing': missing,
+            'package_version': version,
+            'externally_managed': (Path(sysconfig.get_path('stdlib')) / 'EXTERNALLY-MANAGED').is_file(),
+            'venv': sys.prefix != sys.base_prefix}
+
+
+def inspect_python(executable, cfg, allow_launch=False, platform=None):
+    if not allow_launch:
+        return {'blocked': 'Establish a reviewed no-console outer launch and owned cleanup before the import-only second pass; do not probe unrelated shell Python.'}
+    if (platform or sys.platform) != 'win32':
+        return {'blocked': 'Import subprocess diagnostics are limited on this platform; live macOS validation is unavailable.'}
+    if '\\microsoft\\windowsapps\\' in executable.replace('/', '\\').casefold():
+        return {'blocked': 'Python resolves to a Windows app alias. Configure a real installed/venv interpreter; do not launch the alias.'}
+    env = dict(os.environ)
+    env.update(cfg.get('env', {}))
+    # Standalone preflight: the server interpreter need not meet the helper's
+    # Python 3.11+ tomllib requirement just to report its own version.
+    code = ('import importlib, importlib.metadata, json, sys, sysconfig\n'
+            'from pathlib import Path\n' + inspect.getsource(python_details)
+            + '\nprint(json.dumps(python_details()))\n')
+    try:
+        completed = run_windowless([executable, '-B', '-c', code],
+                                   cwd=cfg.get('cwd'), env=env, timeout=15, check=True)
+        details = json.loads(completed.stdout)
+        if not isinstance(details.get('missing'), list) or not isinstance(details.get('python_version'), str):
+            raise ValueError('Invalid interpreter evidence')
+        return details
+    except Exception as exc:
+        return {'blocked' if isinstance(exc, LaunchBlocked) else 'error': diagnostic(exc)}
+
+
+def endpoint(cfg):
+    env = dict(os.environ)
+    override = cfg.get('env', {})
+    if isinstance(override, dict):
+        env.update(override)
+    host = env.get('BLENDER_MCP_HOST', 'localhost')
+    try:
+        port = int(env.get('BLENDER_MCP_PORT', 9876))
+        if not 1 <= port <= 65535 or not isinstance(host, str) or not re.fullmatch(r'[A-Za-z0-9_.:-]+', host):
+            raise ValueError('Invalid bridge endpoint')
+    except (ValueError, TypeError):
+        return None
+    return host, port
+
+
+def local_host(host):
+    return host.casefold() in ('localhost', '127.0.0.1', '::1')
+
+
+def listener_matches(listener, bridge):
+    host, port = bridge
+    addresses = {'127.0.0.1', '::1'} if host.casefold() == 'localhost' else {host}
+    return listener.get('port') == port and listener.get('host') in addresses | {'0.0.0.0', '::'}
+
+
+def choose_target(processes, listeners, bridge, scene_pid=None):
+    pids = {p['pid'] for p in processes}
+    if bridge and not local_host(bridge[0]):
+        return None, 'Bridge host is not local; local windows cannot prove remote editor visibility.'
+    if scene_pid is not None:
+        if scene_pid in pids:
+            return scene_pid, None
+        return None, 'Live Blender PID is absent from local running programs; recheck process state and bridge host.'
+    owners = {x['pid'] for x in listeners or [] if bridge and listener_matches(x, bridge)} & pids
+    if len(owners) == 1:
+        return next(iter(owners)), None
+    if len(pids) == 1:
+        return next(iter(pids)), None
+    if not pids:
+        return None, 'Open Blender.'
+    return None, 'Multiple Blender instances are running; identify the intended MCP-connected process before editor checks.'
+
+
+def collect_local(platform, scene_pid=None, bridge=None):
+    info = {'platform': platform, 'processes': None, 'listeners': None, 'windows': None}
+    try:
+        info['processes'] = platform_checks.running_blender(platform)
+    except Exception as exc:
+        info['process_error'] = diagnostic(exc)
+    if scene_pid is None and bridge and local_host(bridge[0]):
+        try:
+            info['listeners'] = platform_checks.bridge_listeners(platform)
+        except Exception as exc:
+            info['listener_error'] = diagnostic(exc)
+    if info['processes'] is not None:
+        target, reason = choose_target(info['processes'], info['listeners'], bridge, scene_pid)
+        info['target_pid'], info['target_error'] = target, reason
+        if target is not None:
             try:
-                response = await session.call_tool(name, {'code': QUERY})
+                info['windows'] = platform_checks.editor_windows({target}, platform)
             except Exception as exc:
-                result['scene_error'] = 'Scene query failed ({}). Check the Blender bridge and rerun.'.format(type(exc).__name__)
-                return result
-            if response.isError:
-                result['scene_error'] = 'The MCP server responds, but the Blender scene query failed. Check that the add-on is enabled and its server is started at the configured host/port.'
-                return result
-            data = response.structuredContent
-            if data is None:
-                try:
-                    data = json.loads(next(c.text for c in response.content if c.type == 'text'))
-                except (ValueError, StopIteration):
-                    result['scene_error'] = 'The scene response was invalid. Check official add-on/server compatibility and rerun.'
-                    return result
-            if response.isError or data.get('status') != 'ok' or data.get('result', {}).get('status') == 'error':
-                result['scene_error'] = 'Blender returned an error; confirm the official add-on is enabled and its bridge is started.'
-            else:
-                result['scene'] = data['result']
-    return result
+                info['window_error'] = diagnostic(exc)
+    return info
+
+
+def build_report(cfg, native, info, python_info=None, config_error=None):
+    """Combine this invocation's evidence; no persistent state or subprocesses."""
+    rows = []
+    def row(index, status, comment, evidence='direct'):
+        rows.append({'step': f'{index + 1}. {STEPS[index]}', 'status': status,
+                     'comment': comment, 'evidence': evidence if status != 'BLOCKED' else 'unknown'})
+    available = native.get('agent_available')
+    row(0, 'PASS' if available is True else ('FAIL' if available is False else 'BLOCKED'),
+        'Current AI agent session responds.' if available is True else 'Use the active AI agent to collect fresh session evidence; a standalone helper cannot verify it.')
+    cfg_status, kind, cfg_comment = config_kind(cfg)
+    if config_error:
+        cfg_status, cfg_comment = config_error
+    row(1, cfg_status, cfg_comment)
+    scene = native.get('scene') if isinstance(native.get('scene'), dict) and not native.get('scene_error') else None
+    live = bool(scene and isinstance(scene.get('blender_version'), str) and isinstance(scene.get('scene'), str))
+    tool_count = native.get('tool_count')
+    tools_ok = isinstance(tool_count, int) and not isinstance(tool_count, bool) and tool_count > 0
+    python_info = python_info or {}
+    if kind == 'python' and live and not config_error:
+        row(2, 'PASS', 'Inferred from fresh official stdio communication; exact server interpreter/version not rechecked.', 'inferred')
+        row(3, 'PASS', 'Inferred: official Python server operating; package/environment metadata not rechecked.', 'inferred')
+    elif python_info.get('python_version'):
+        row(2, 'PASS', f"Configured interpreter runs Python {python_info['python_version']}" + (f" at {python_info['executable']}" if python_info.get('executable') else '') + '.')
+        missing = python_info.get('missing', [])
+        if missing:
+            managed = python_info.get('externally_managed') and not python_info.get('venv')
+            row(3, 'FAIL', ('Create a dedicated venv and install the official package there; this base Python is externally managed. ' if managed else 'Install the official MCP package into the configured interpreter/venv. ') + 'Missing imports: ' + ', '.join(missing) + '. Register that same interpreter; do not bypass managed-environment protection.')
+        else:
+            row(3, 'PASS', f"Required imports available; official package {python_info.get('package_version') or 'version unverified'}.")
+    elif python_info.get('missing_interpreter'):
+        row(2, 'FAIL', 'Configure an existing Python/venv interpreter accessible in the AI client environment; the registered command could not be resolved.')
+        row(3, 'BLOCKED', 'Resolve the configured interpreter first, then check libraries in that environment.')
+    else:
+        detail = python_info.get('blocked') or python_info.get('error') or ('uvx uses an isolated environment; dedicated diagnostics are limited. Do not test unrelated shell Python.' if kind == 'uvx' else 'Inspect the configured interpreter with a supported safe second pass.')
+        row(2, 'FAIL' if python_info.get('error') else 'BLOCKED', detail)
+        row(3, 'BLOCKED', 'Python package readiness is unknown. ' + detail)
+
+    processes = info.get('processes')
+    if processes is None:
+        row(4, 'BLOCKED', 'Installation unknown; restore running-program inspection. No executable search is performed.')
+        row(5, 'BLOCKED', 'Running state unknown. ' + info.get('process_error', 'Use supported running-program inspection.'))
+    elif processes:
+        row(4, 'PASS', 'Blender present in currently running programs; no executable path searched.', 'inferred')
+        row(5, 'PASS', 'Running Blender PID(s): ' + ', '.join(str(p['pid']) for p in processes) + '.')
+    else:
+        row(4, 'BLOCKED', 'Installation unknown without a running Blender process. Open Blender if installed; no executable search is performed.')
+        row(5, 'FAIL', 'Open Blender.')
+    windows = info.get('windows')
+    if processes == []:
+        row(6, 'BLOCKED', 'Open Blender, then check its editor window.')
+    elif info.get('target_pid') is None or windows is None:
+        row(6, 'BLOCKED', info.get('target_error') or 'Editor visibility is unknown or unsupported; show Blender and use a supported fresh window-state check. ' + info.get('window_error', ''))
+    elif any(w.get('pid') == info['target_pid'] and w.get('visible') and not w.get('minimized') for w in windows):
+        row(6, 'PASS', f"Connected editor visible and not minimized (PID {info['target_pid']}); maximization unnecessary.")
+    elif any(w.get('pid') == info['target_pid'] and w.get('minimized') for w in windows):
+        row(6, 'FAIL', 'Restore Blender from the taskbar; leave the connected editor visible and not minimized.')
+    else:
+        row(6, 'FAIL', 'Show the connected Blender editor; a background process or another instance\'s window is insufficient.')
+
+    bridge = endpoint(cfg)
+    addons = scene.get('addons', []) if live else []
+    if live and addons:
+        minimum_ok = None
+        try:
+            minimum_ok = any(tuple(scene['version_tuple']) >= tuple(int(x) for x in a['minimum'].split('.')) for a in addons)
+        except (KeyError, TypeError, ValueError):
+            pass
+        if minimum_ok is False:
+            row(7, 'FAIL', 'Use a Blender version meeting the enabled official add-on\'s minimum; review compatible releases before any upgrade.')
+        elif minimum_ok is None:
+            row(7, 'BLOCKED', 'Bridge responds; inspect the official add-on manifest to verify identity/minimum version.')
+        else:
+            versions = ', '.join(str(a.get('version') or 'unknown') for a in addons)
+            row(7, 'PASS', f'Enabled official Blender Lab add-on {versions}; bridge answered the fresh query.')
+    elif bridge is None:
+        row(7, 'FAIL', 'Correct BLENDER_MCP_HOST / BLENDER_MCP_PORT in the effective client environment; port must be 1..65535.')
+    elif live:
+        row(7, 'BLOCKED', 'Live Blender responds; official add-on identity/version unverified. Inspect its enabled manifest or Preferences checkbox.')
+    elif processes == [] or processes is None:
+        row(7, 'BLOCKED', 'Inspect running Blender first, then verify the official add-on checkbox and bridge.')
+    elif info.get('listeners') is None:
+        row(7, 'BLOCKED', 'Bridge ownership unknown or unsupported; inspect the official MCP checkbox and bridge status in Blender.')
+    else:
+        owned = [x for x in info['listeners'] if listener_matches(x, bridge) and x['pid'] in {p['pid'] for p in processes}]
+        if owned:
+            row(7, 'BLOCKED', f'Blender owns a listener at {bridge[0]}:{bridge[1]}; official add-on identity still needs native/UI evidence.')
+        else:
+            row(7, 'FAIL', f'Check the official MCP enable checkbox, then Start MCP Server at {bridge[0]}:{bridge[1]}. Absence cannot distinguish disabled add-on from stopped bridge; a browser page is not required.')
+    row(8, 'PASS' if tools_ok else ('FAIL' if native.get('handshake_error') else 'BLOCKED'),
+        f'{tool_count} official native tools exposed in the current session; tool discovery is separate from scene access.' if tools_ok else 'Reconnect the official server in the active AI agent and inspect its current tool catalog. ' + sdk_launch_support()[1])
+    row(9, 'PASS' if live else ('FAIL' if native.get('scene_error') else 'BLOCKED'),
+        f"Blender {scene['blender_version']}; scene {scene['scene']!r}, {scene.get('object_count', 'unknown')} object(s)." if live else 'Run an allowed read-only native scene query; inspect the official add-on and configured bridge if it fails. Preserve a successful handshake result.')
+    warnings = []
+    version = python_info.get('package_version')
+    if version and addons and all(a.get('version') != version for a in addons):
+        warnings.append(f'Server package {version} differs from add-on version; review official release compatibility. Observed communication remains separate.')
+    if info.get('platform') == 'darwin':
+        warnings.append('macOS support limited: process adapter untested live; editor/listener and import-subprocess diagnostics unsupported here.')
+    return {'transport': 'Native-session evidence plus read-only local inspection; no helper MCP connection.',
+            'checks': rows, 'mcp_readiness': rows[9]['status'], 'editor_readiness': rows[6]['status'],
+            'all_passed': all(r['status'] == 'PASS' for r in rows), 'warnings': warnings,
+            'target_pid': info.get('target_pid')}
+
+
+def audit(name='blender', native=None, config_path=None, allow_python_probe=False, platform=None):
+    native = native or {}
+    platform = platform or sys.platform
+    config_error = None
+    try:
+        cfg = config(name, config_path)
+    except tomllib.TOMLDecodeError:
+        cfg = {}
+        config_error = ('FAIL', 'Fix TOML syntax or duplicate server tables; keep one entry per MCP server. Do not paste competing command/args examples together.')
+    except FileNotFoundError:
+        cfg = {}
+        config_error = ('FAIL', 'Configure the official MCP server in the active AI client; the selected configuration file is missing.')
+    except Exception as exc:
+        cfg = {}
+        config_error = ('BLOCKED', 'Configuration unverified. ' + diagnostic(exc))
+    scene = native.get('scene') if isinstance(native.get('scene'), dict) and not native.get('scene_error') else {}
+    bridge = endpoint(cfg)
+    info = collect_local(platform, scene.get('pid'), bridge)
+    targeted = False
+    if scene.get('pid') is not None and info['processes'] is not None and scene['pid'] not in {p['pid'] for p in info['processes']}:
+        info = collect_local(platform, scene['pid'], bridge)
+        targeted = True  # Bounded recheck of contradictory local/live PID evidence.
+    kind = config_kind(cfg)[1]
+    details = None
+    healthy = isinstance(scene.get('blender_version'), str) and isinstance(scene.get('scene'), str)
+    if kind == 'python' and not healthy and not config_error:
+        executable = resolve_interpreter(cfg)
+        details = inspect_python(executable, cfg, allow_python_probe, platform) if executable else {'missing_interpreter': True}
+        targeted = True
+    report = build_report(cfg, native, info, details, config_error)
+    report['passes'] = ['quick'] + (['targeted'] if targeted else [])
+    return report
 
 
 def render_report(report, output_format):
     if output_format == 'json':
-        return json.dumps(report, indent=2)
+        return json.dumps(report, indent=2, ensure_ascii=False)
     labels = {'PASS': '✅ Pass', 'FAIL': '❌ Fail', 'BLOCKED': '⛔ Blocked'}
     def cell(value):
-        return str(value).replace('|', '\\|').replace('\n', ' ')
+        return str(value).replace('|', '\\|').replace('\r', ' ').replace('\n', ' ')
     lines = ['| Step | Status | Comment |', '|---|---|---|']
-    for row in report['checks']:
-        lines.append('| {} | {} | {} |'.format(cell(row['step']), labels[row['status']], cell(row['comment'])))
+    for item in report['checks']:
+        comment = item['comment']
+        if item['evidence'] == 'inferred' and not comment.startswith('Inferred'):
+            comment = 'Inferred: ' + comment
+        lines.append(f"| {cell(item['step'])} | {labels[item['status']]} | {cell(comment)} |")
+    lines += ['', f"MCP readiness: {labels[report['mcp_readiness']]}. Editor readiness: {labels[report['editor_readiness']]}."]
+    lines += ['\n' + cell(w) for w in report['warnings']]
     return '\n'.join(lines)
 
 
-def inspect_editor_windows(process_ids):
-    """Read window state without restoring, focusing, or changing Blender."""
-    import ctypes
-    from ctypes import wintypes
-    user32 = ctypes.WinDLL('user32', use_last_error=True)
-    callback_type = ctypes.WINFUNCTYPE(wintypes.BOOL, wintypes.HWND, wintypes.LPARAM)
-    user32.EnumWindows.argtypes = [callback_type, wintypes.LPARAM]
-    user32.EnumWindows.restype = wintypes.BOOL
-    user32.GetWindowThreadProcessId.argtypes = [wintypes.HWND, ctypes.POINTER(wintypes.DWORD)]
-    user32.IsWindowVisible.argtypes = [wintypes.HWND]
-    user32.IsIconic.argtypes = [wintypes.HWND]
-    user32.GetClassNameW.argtypes = [wintypes.HWND, wintypes.LPWSTR, ctypes.c_int]
-    windows = []
-    @callback_type
-    def visit(hwnd, _):
-        pid = wintypes.DWORD()
-        user32.GetWindowThreadProcessId(hwnd, ctypes.byref(pid))
-        if pid.value in process_ids:
-            cls = ctypes.create_unicode_buffer(256)
-            user32.GetClassNameW(hwnd, cls, len(cls))
-            if cls.value == 'GHOST_WindowClass':
-                windows.append({'pid': pid.value, 'visible': bool(user32.IsWindowVisible(hwnd)),
-                                'minimized': bool(user32.IsIconic(hwnd))})
-        return True
-    if not user32.EnumWindows(visit, 0):
-        raise ctypes.WinError(ctypes.get_last_error())
-    return windows
-
-
 def main():
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--server', default='blender')
+    parser.add_argument('--config', help='Explicit client TOML path; project/CLI overrides are not inferred.')
     parser.add_argument('--format', choices=['json', 'markdown'], default='json')
+    parser.add_argument('--native-stdin', action='store_true', help='Fresh normalized native evidence from THIS invocation, as JSON on stdin; never reuse a saved report.')
+    parser.add_argument('--allow-python-probe', action='store_true', help='Allow the reviewed Windows import-only second pass after the outer launch is established as windowless.')
+    parser.add_argument('--python-details', action='store_true', help=argparse.SUPPRESS)
     parser.add_argument('--probe', action='store_true', help=argparse.SUPPRESS)
     args = parser.parse_args()
-    try:
-        cfg = config(args.server)
-    except (OSError, ValueError):
-        cfg = {}
+    if args.python_details:
+        print(json.dumps(python_details()))
+        return 0
     if args.probe:
-        try:
-            print(json.dumps(asyncio.run(asyncio.wait_for(probe(cfg), 40))))
-        except Exception as exc:
-            print(json.dumps({'probe_error': type(exc).__name__}))
-            sys.exit(1)
-        return
-
-    rows = []
-    def row(step, status, comment):
-        rows.append({'step': step, 'status': status, 'comment': comment})
-
-    if os.name != 'nt':
-        print(json.dumps({'error': 'This helper targets Windows. Perform the six skill checks with platform-native tools.'}))
+        print(json.dumps({'probe_blocked': sdk_launch_support()[1]}))
         return 1
-    inspection_error = False
-    command = "$ErrorActionPreference='Stop'; @{processes=@(Get-CimInstance Win32_Process -Filter \"Name='blender.exe'\" | Select-Object ProcessId,ExecutablePath);listeners=@(Get-NetTCPConnection -State Listen | Select-Object OwningProcess,LocalPort)} | ConvertTo-Json -Depth 4 -Compress"
     try:
-        info = json.loads(run_windowless(['powershell.exe', '-NoProfile', '-NonInteractive', '-Command', command], timeout=20, check=True).stdout)
+        native = json.load(sys.stdin) if args.native_stdin else {}
+        if not isinstance(native, dict):
+            raise ValueError('Invalid evidence')
+        report = audit(args.server, native, args.config, args.allow_python_probe)
     except Exception as exc:
-        inspection_error = True
-        inspection_detail = diagnostic(exc)
-        info = {'processes': [], 'listeners': []}
-    processes = info['processes']
-    executable = cfg.get('env', {}).get('BLENDER_PATH') or next((p['ExecutablePath'] for p in processes if p.get('ExecutablePath')), '')
-    installed = bool(executable and Path(executable).is_file())
-    row('1. Blender installed', 'PASS' if installed else 'FAIL', executable if installed else 'Install Blender or correct BLENDER_PATH to an existing Blender executable.')
-    # Window readiness is checked after identifying the bridge-owning process.
-    try:
-        port = int(cfg.get('env', {}).get('BLENDER_MCP_PORT', 9876))
-    except (TypeError, ValueError):
-        port = -1
-    owned = any(x['LocalPort'] == port and x['OwningProcess'] in [p['ProcessId'] for p in processes] for x in info['listeners'])
-    if inspection_error:
-        window_status, window_comment = 'BLOCKED', 'Blender state is unknown. ' + inspection_detail
-    elif not processes:
-        window_status, window_comment = 'FAIL', 'Open Blender.'
-    else:
-        try:
-            owners = {x['OwningProcess'] for x in info['listeners'] if x['LocalPort'] == port}
-            blender_pids = {p['ProcessId'] for p in processes}
-            windows = inspect_editor_windows((owners & blender_pids) or blender_pids)
-            ready = [w for w in windows if w['visible'] and not w['minimized']]
-            if ready:
-                window_status, window_comment = 'PASS', f"Blender editor visible and not minimized (PID {ready[0]['pid']}); maximization is not required."
-            elif any(w['minimized'] for w in windows):
-                window_status, window_comment = 'FAIL', 'Restore Blender from the taskbar; leave its editor open and not minimized. Maximization is not required.'
-            else:
-                window_status, window_comment = 'FAIL', 'Open a visible Blender editor window; a background process alone is insufficient.'
-        except Exception:
-            window_status, window_comment = 'BLOCKED', 'Restore access to Windows window-state inspection and rerun; editor visibility is unknown.'
-    row('2. Blender open', window_status, window_comment)
-    row('3. Official add-on / bridge', 'BLOCKED' if not processes or inspection_error else ('PASS' if owned else 'FAIL'), 'Complete step 2 first.' if not processes or inspection_error else (f'Blender listening on port {port}; identity checked in step 6.' if owned else f'In Blender Preferences, check the MCP box if disabled, then click Start MCP Server for port {port}.'))
-    valid = cfg.get('enabled', True) and Path(cfg.get('command', '')).is_file() and cfg.get('args', []) == ['-m', 'blmcp']
-    row('4. Codex configured', 'PASS' if valid else 'FAIL', f'Enabled official blmcp stdio registration: {args.server}' if valid else 'Register the official Python MCP bridge with codex mcp add; this helper expects python -m blmcp.')
-    if not valid:
-        if owned:
-            rows[2]['status'] = 'BLOCKED'
-            rows[2]['comment'] = 'Blender port is listening; restore step 4 to verify official add-on identity.'
-        row('5. MCP handshake / tools', 'BLOCKED', 'Complete step 4, then rerun.')
-        row('6. Live Blender communication', 'BLOCKED', 'Complete preceding connection steps, then rerun.')
-    else:
-        supported, reason = sdk_launch_support()
-        if not supported:
-            result = {'probe_blocked': reason}
-        else:
-            try:
-                run = run_windowless([cfg['command'], str(Path(__file__).resolve()), '--server', args.server, '--probe'], timeout=50, check=True)
-                result = json.loads(run.stdout.strip().splitlines()[-1])
-            except Exception as exc:
-                result = {'probe_error': diagnostic(exc)}
-        ok = 'tool_count' in result
-        row('5. MCP handshake / tools', 'PASS' if ok else ('BLOCKED' if 'probe_blocked' in result else 'FAIL'), f"{result['tool_count']} tools; official package {result['package_version']}" if ok else result.get('probe_blocked', result.get('probe_error', 'Check the registered Python environment and official MCP dependencies; handshake failed.')))
-        scene = result.get('scene')
-        if scene:
-            addons = scene.get('addons', [])
-            matching = any(a['version'] == result['package_version'] and tuple(scene['version_tuple']) >= tuple(map(int, a['minimum'].split('.'))) for a in addons)
-            if not matching:
-                rows[2]['status'] = 'FAIL'
-                rows[2]['comment'] = 'Review official add-on identity, minimum Blender version, and add-on/server version compatibility.'
-            else:
-                rows[2]['comment'] = f"Official add-on {result['package_version']}; port {port}."
-            row('6. Live Blender communication', 'PASS' if matching else 'FAIL', f"Blender {scene['blender_version']}; scene {scene['scene']!r}, {scene['object_count']} object(s)." if matching else 'Check official release compatibility and use compatible Blender, add-on, and server versions.')
-        else:
-            if owned:
-                rows[2]['status'] = 'BLOCKED'
-                rows[2]['comment'] = 'Blender port is listening, but the official add-on identity could not be verified.'
-            row('6. Live Blender communication', 'FAIL' if ok and owned else 'BLOCKED', 'Complete step 2 first.' if not processes or inspection_error else result.get('probe_blocked', result.get('scene_error', 'Restore the MCP connection and rerun the read-only scene query.')))
-    print(render_report({'transport': 'configured stdio diagnostic subprocess; native session tools must be checked separately', 'checks': rows, 'all_passed': all(r['status'] == 'PASS' for r in rows)}, args.format))
-    return 0 if all(r['status'] == 'PASS' for r in rows) else 1
+        print(json.dumps({'error': diagnostic(exc)}))
+        return 1
+    print(render_report(report, args.format))
+    return 0 if report['all_passed'] else 1
 
 
 if __name__ == '__main__':

@@ -13,7 +13,7 @@ from pathlib import Path
 from mathutils import Vector
 
 ROOT = Path(__file__).resolve().parents[1]
-EXPORTER_VERSION = 3
+EXPORTER_VERSION = 4
 
 
 def browser_materials(objects):
@@ -81,6 +81,20 @@ def bake_procedural(objects, resolution=2048):
     # Preserve object/generated coordinates before joining the static bake copy.
     select(candidates)
     bpy.ops.object.convert(target='MESH')
+    mats = {m for o in candidates for m in o.data.materials if m}
+    # A greybox may deliberately use one Empty as a world-aligned texture
+    # coordinate reference. Bake that coordinate frame rather than silently
+    # falling back to each stretched primitive's local space.
+    object_refs = {
+        node.object
+        for mat in mats if mat.use_nodes
+        for node in mat.node_tree.nodes
+        if node.type == 'TEX_COORD' and node.object and node.outputs['Object'].is_linked
+    }
+    if len(object_refs) > 1:
+        raise RuntimeError('Multiple shared object texture-coordinate references require an explicit bake adapter.')
+    object_ref = next(iter(object_refs), None)
+    object_ref_inverse = object_ref.matrix_world.inverted() if object_ref else None
     for obj in candidates:
         obj.data = obj.data.copy()
         verts = obj.data.vertices
@@ -89,8 +103,12 @@ def bake_procedural(objects, resolution=2048):
         for name in ('viewer_generated', 'viewer_object'):
             attr = obj.data.attributes.get(name) or obj.data.attributes.new(name, 'FLOAT_VECTOR', 'POINT')
             for v, item in zip(verts, attr.data):
-                item.vector = tuple((v.co[i]-low[i])/max(high[i]-low[i],1e-9) for i in range(3)) if name.endswith('generated') else v.co
-    mats = {m for o in candidates for m in o.data.materials if m}
+                if name.endswith('generated'):
+                    item.vector = tuple((v.co[i]-low[i])/max(high[i]-low[i],1e-9) for i in range(3))
+                elif object_ref_inverse:
+                    item.vector = object_ref_inverse @ (obj.matrix_world @ v.co)
+                else:
+                    item.vector = v.co
     for mat in mats:
         if not mat.use_nodes:
             continue
@@ -103,7 +121,7 @@ def bake_procedural(objects, resolution=2048):
         for node in list(nt.nodes):
             if node.type == 'TEX_COORD':
                 for key in attrs:
-                    if key == 'Object' and node.object:
+                    if key == 'Object' and node.object and node.object != object_ref:
                         raise RuntimeError('Referenced object texture coordinates require an explicit bake adapter: '+mat.name)
                     for link in list(node.outputs[key].links):
                         nt.links.new(attrs[key].outputs['Vector'], link.to_socket)

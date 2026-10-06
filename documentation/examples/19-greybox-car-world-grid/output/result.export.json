@@ -1,0 +1,28 @@
+{
+  "sourcePath": "documentation/examples/19-greybox-car-world-grid/output/result.blend",
+  "sourceSha256": "2407ed04e5b184076ef4f6f1aed73fb4a30d096d3c80ae9643462e9a529a733d",
+  "glbPath": "documentation/examples/19-greybox-car-world-grid/output/result.glb",
+  "glbSha256": "96124a394bb0aaf6d5e9632dd703c1baa1fe31c600fdaec109711c9288dea887",
+  "byteSize": 167360,
+  "warnings": [
+    "Blender world, compositor, and studio lighting are replaced by viewer lighting.",
+    "Procedural base color and tangent normals baked to 2048px atlas; microdetail is resolution-limited."
+  ],
+  "blenderVersion": "5.2.2 LTS",
+  "seconds": 2.26,
+  "exporterVersion": 4,
+  "view": {
+    "position": [
+      7.5,
+      5.800000190734863,
+      9.0
+    ],
+    "target": [
+      -0.2440199851989746,
+      0.8438291549682617,
+      -0.29282379150390625
+    ],
+    "frameHeight": 3.9375,
+    "aspect": 1.7777777777777777
+  }
+}

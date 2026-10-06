@@ -1,0 +1,28 @@
+{
+  "sourcePath": "documentation/examples/16-greybox-car-textured/output/result.blend",
+  "sourceSha256": "3e5b3f06a8c1d77d23fca02c5bc13c2d3c2cef8385798754ca63587704bc964b",
+  "glbPath": "documentation/examples/16-greybox-car-textured/output/result.glb",
+  "glbSha256": "1c837a398e859556c10ba52289ad96b9f3becd976865371dcbe55bed40f409ba",
+  "byteSize": 198424,
+  "warnings": [
+    "Blender world, compositor, and studio lighting are replaced by viewer lighting.",
+    "Procedural base color and tangent normals baked to 2048px atlas; microdetail is resolution-limited."
+  ],
+  "blenderVersion": "5.2.2 LTS",
+  "seconds": 3.45,
+  "exporterVersion": 3,
+  "view": {
+    "position": [
+      7.5,
+      5.800000190734863,
+      9.0
+    ],
+    "target": [
+      -0.2440199851989746,
+      0.8438291549682617,
+      -0.29282379150390625
+    ],
+    "frameHeight": 3.9375,
+    "aspect": 1.7777777777777777
+  }
+}

@@ -1,0 +1,10 @@
+$blender-create-greybox
+
+Create a minimal city greybox that communicates blocks, varied building height,
+and a primary road crossing. Use a ground plane, road planes, and varied-height
+rectangular building masses only. Apply the skill's shared Slate category materials
+with a restrained procedural checker as a scale and grouping cue. Do not add facades,
+windows, sidewalks, vehicles, street furniture, trees, image textures, bevels, or UVs.
+
+Deliver an editable Blender source, a modest clean render, and a self-contained
+GLB for the Model Viewer. State the category-to-material map and omissions.

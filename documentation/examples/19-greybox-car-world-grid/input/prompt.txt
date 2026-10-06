@@ -1,0 +1,13 @@
+$blender-create-greybox
+
+Create a minimal car greybox that answers whether its primary vehicle masses,
+wheel placement, and ground contact read immediately. Use only a ground plane,
+two box masses, and four low-sided wheels. Apply shared Slate semantic materials
+with a world-aligned procedural grid: every major tile is one scene unit square,
+using a single shared grid reference so stretching a primitive cannot stretch its
+tiles. Treat one scene unit as one metre for this example. Do not add glazing,
+doors, lights, interiors, trim, image textures, UVs, or modifiers.
+
+Deliver an editable Blender source, a modest clean render, and a self-contained
+GLB for the Model Viewer. Report the grid scale, coordinate method, category map,
+and omitted detail.

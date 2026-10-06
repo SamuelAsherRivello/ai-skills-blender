@@ -1013,6 +1013,276 @@
         "aspect": 1.7777777777777777
       },
       "previewPath": "documentation/examples/15-greybox-kitchen-interior/output/result.png"
+    },
+    {
+      "id": "documentation/examples/16-greybox-car-textured/output/result.blend",
+      "title": "Greybox Car Textured",
+      "sourcePath": "documentation/examples/16-greybox-car-textured/output/result.blend",
+      "glbPath": "documentation/examples/16-greybox-car-textured/output/result.glb",
+      "byteSize": 198424,
+      "sourceSha256": "3e5b3f06a8c1d77d23fca02c5bc13c2d3c2cef8385798754ca63587704bc964b",
+      "glbSha256": "1c837a398e859556c10ba52289ad96b9f3becd976865371dcbe55bed40f409ba",
+      "warnings": [
+        "Blender world, compositor, and studio lighting are replaced by viewer lighting.",
+        "Procedural base color and tangent normals baked to 2048px atlas; microdetail is resolution-limited."
+      ],
+      "metadata": [
+        {
+          "label": "Review",
+          "value": "This greybox answers whether the wheel placement, ground contact, and two main masses read as a car. The selected hue is Slate; every material uses the same editable Object-coordinate checker graph with a mapping scale of 3.0 and restrained value contrast.",
+          "provenancePath": "documentation/examples/16-greybox-car-textured/output/review.md"
+        },
+        {
+          "label": "Example prompt",
+          "value": "$blender-create-greybox\n\nCreate a minimal car greybox that communicates vehicle silhouette, wheel placement,\nand ground contact. Use only a ground plane, a chassis block, a cabin block, and\nsimple wheel cylinders. Apply the skill's shared Slate category materials with a\nrestrained procedural checker; use the checker as a scale and role cue, never as\ndecoration. Do not add doors, windows, lights, seats, trim, bevels, image textures,\nor UVs.\n\nDeliver an editable Blender source, a modest clean render, and a self-contained\nGLB for the Model Viewer. State the category-to-material map and omissions.",
+          "provenancePath": "documentation/examples/16-greybox-car-textured/input/prompt.txt"
+        }
+      ],
+      "exported": {
+        "meshes": 1,
+        "materials": 3,
+        "animations": []
+      },
+      "view": {
+        "position": [
+          7.5,
+          5.800000190734863,
+          9.0
+        ],
+        "target": [
+          -0.2440199851989746,
+          0.8438291549682617,
+          -0.29282379150390625
+        ],
+        "frameHeight": 3.9375,
+        "aspect": 1.7777777777777777
+      },
+      "previewPath": "documentation/examples/16-greybox-car-textured/output/result.png"
+    },
+    {
+      "id": "documentation/examples/17-greybox-city-textured/output/result.blend",
+      "title": "Greybox City Textured",
+      "sourcePath": "documentation/examples/17-greybox-city-textured/output/result.blend",
+      "glbPath": "documentation/examples/17-greybox-city-textured/output/result.glb",
+      "byteSize": 156848,
+      "sourceSha256": "078dc5a29cca3d656b3b5ef57dfef296fa3f3347057927d38037775a27bfb9db",
+      "glbSha256": "2c9ca5a2265c361e7cda2df322fcb39c4d25182950f109c92feef01fdc31294d",
+      "warnings": [
+        "Blender world, compositor, and studio lighting are replaced by viewer lighting.",
+        "Procedural base color and tangent normals baked to 2048px atlas; microdetail is resolution-limited."
+      ],
+      "metadata": [
+        {
+          "label": "Review",
+          "value": "This greybox answers whether a primary road crossing, four city blocks, and a varied-height building hierarchy read immediately. The selected hue is Slate; every material uses the same editable Object-coordinate checker graph with a mapping scale of 3.0 and restrained value contrast.",
+          "provenancePath": "documentation/examples/17-greybox-city-textured/output/review.md"
+        },
+        {
+          "label": "Example prompt",
+          "value": "$blender-create-greybox\n\nCreate a minimal city greybox that communicates blocks, varied building height,\nand a primary road crossing. Use a ground plane, road planes, and varied-height\nrectangular building masses only. Apply the skill's shared Slate category materials\nwith a restrained procedural checker as a scale and grouping cue. Do not add facades,\nwindows, sidewalks, vehicles, street furniture, trees, image textures, bevels, or UVs.\n\nDeliver an editable Blender source, a modest clean render, and a self-contained\nGLB for the Model Viewer. State the category-to-material map and omissions.",
+          "provenancePath": "documentation/examples/17-greybox-city-textured/input/prompt.txt"
+        }
+      ],
+      "exported": {
+        "meshes": 1,
+        "materials": 3,
+        "animations": []
+      },
+      "view": {
+        "position": [
+          25.0,
+          25.0,
+          28.0
+        ],
+        "target": [
+          -1.0645122528076172,
+          2.584524154663086,
+          -1.1922550201416016
+        ],
+        "frameHeight": 18.0,
+        "aspect": 1.7777777777777777
+      },
+      "previewPath": "documentation/examples/17-greybox-city-textured/output/result.png"
+    },
+    {
+      "id": "documentation/examples/18-greybox-kitchen-textured/output/result.blend",
+      "title": "Greybox Kitchen Textured",
+      "sourcePath": "documentation/examples/18-greybox-kitchen-textured/output/result.blend",
+      "glbPath": "documentation/examples/18-greybox-kitchen-textured/output/result.glb",
+      "byteSize": 147356,
+      "sourceSha256": "ac9e937592ce5995c68d58b24b835a89840b596f765b08becccf68d7b2bb2f03",
+      "glbSha256": "56cd99004c982c57ff9a53bf19804aa8d6cf4aa41b0acee207c84e998c00ed33",
+      "warnings": [
+        "Blender world, compositor, and studio lighting are replaced by viewer lighting.",
+        "Procedural base color and tangent normals baked to 2048px atlas; microdetail is resolution-limited."
+      ],
+      "metadata": [
+        {
+          "label": "Review",
+          "value": "This greybox answers whether an open room shell, an L-shaped kitchen work zone, refrigerator mass, and central circulation path read immediately. The selected hue is Slate; every material uses the same editable Object-coordinate checker graph with a mapping scale of 3.0 and restrained value contrast.",
+          "provenancePath": "documentation/examples/18-greybox-kitchen-textured/output/review.md"
+        },
+        {
+          "label": "Example prompt",
+          "value": "$blender-create-greybox\n\nCreate a minimal house-kitchen interior greybox. Use an open room shell with a\nfloor and two walls, then simple counter, refrigerator, and island masses to show\nthe work zone and central circulation. Apply the skill's shared Slate category\nmaterials with a restrained procedural checker as a scale and grouping cue. Do not\nadd cabinet fronts, doors, windows, handles, sink detail, stools, decor, image\ntextures, bevels, or UVs.\n\nDeliver an editable Blender source, a modest clean render, and a self-contained\nGLB for the Model Viewer. State the category-to-material map and omissions.",
+          "provenancePath": "documentation/examples/18-greybox-kitchen-textured/input/prompt.txt"
+        }
+      ],
+      "exported": {
+        "meshes": 1,
+        "materials": 4,
+        "animations": []
+      },
+      "view": {
+        "position": [
+          10.0,
+          8.5,
+          12.0
+        ],
+        "target": [
+          -0.12105560302734375,
+          1.7188940048217773,
+          -0.9549522399902344
+        ],
+        "frameHeight": 7.3125,
+        "aspect": 1.7777777777777777
+      },
+      "previewPath": "documentation/examples/18-greybox-kitchen-textured/output/result.png"
+    },
+    {
+      "id": "documentation/examples/19-greybox-car-world-grid/output/result.blend",
+      "title": "Greybox Car World Grid",
+      "sourcePath": "documentation/examples/19-greybox-car-world-grid/output/result.blend",
+      "glbPath": "documentation/examples/19-greybox-car-world-grid/output/result.glb",
+      "byteSize": 167360,
+      "sourceSha256": "2407ed04e5b184076ef4f6f1aed73fb4a30d096d3c80ae9643462e9a529a733d",
+      "glbSha256": "96124a394bb0aaf6d5e9632dd703c1baa1fe31c600fdaec109711c9288dea887",
+      "warnings": [
+        "Blender world, compositor, and studio lighting are replaced by viewer lighting.",
+        "Procedural base color and tangent normals baked to 2048px atlas; microdetail is resolution-limited."
+      ],
+      "metadata": [
+        {
+          "label": "Review",
+          "value": "This greybox answers whether the wheel placement, ground contact, and two main masses read as a car. The selected hue is Slate. Major tiles are fixed one-scene-unit squares; this example records the deliberate convention that one scene unit equals one metre.",
+          "provenancePath": "documentation/examples/19-greybox-car-world-grid/output/review.md"
+        },
+        {
+          "label": "Example prompt",
+          "value": "$blender-create-greybox\n\nCreate a minimal car greybox that answers whether its primary vehicle masses,\nwheel placement, and ground contact read immediately. Use only a ground plane,\ntwo box masses, and four low-sided wheels. Apply shared Slate semantic materials\nwith a world-aligned procedural grid: every major tile is one scene unit square,\nusing a single shared grid reference so stretching a primitive cannot stretch its\ntiles. Treat one scene unit as one metre for this example. Do not add glazing,\ndoors, lights, interiors, trim, image textures, UVs, or modifiers.\n\nDeliver an editable Blender source, a modest clean render, and a self-contained\nGLB for the Model Viewer. Report the grid scale, coordinate method, category map,\nand omitted detail.",
+          "provenancePath": "documentation/examples/19-greybox-car-world-grid/input/prompt.txt"
+        }
+      ],
+      "exported": {
+        "meshes": 1,
+        "materials": 3,
+        "animations": []
+      },
+      "view": {
+        "position": [
+          7.5,
+          5.800000190734863,
+          9.0
+        ],
+        "target": [
+          -0.2440199851989746,
+          0.8438291549682617,
+          -0.29282379150390625
+        ],
+        "frameHeight": 3.9375,
+        "aspect": 1.7777777777777777
+      },
+      "previewPath": "documentation/examples/19-greybox-car-world-grid/output/result.png"
+    },
+    {
+      "id": "documentation/examples/20-greybox-city-world-grid/output/result.blend",
+      "title": "Greybox City World Grid",
+      "sourcePath": "documentation/examples/20-greybox-city-world-grid/output/result.blend",
+      "glbPath": "documentation/examples/20-greybox-city-world-grid/output/result.glb",
+      "byteSize": 161772,
+      "sourceSha256": "64c907553c795f23c4fede760b6952abf06578b755379d34241c95634788abe7",
+      "glbSha256": "140056fb4555951f20299ea714d0bcdd68a36d58c88702e8f8517c159521cc06",
+      "warnings": [
+        "Blender world, compositor, and studio lighting are replaced by viewer lighting.",
+        "Procedural base color and tangent normals baked to 2048px atlas; microdetail is resolution-limited."
+      ],
+      "metadata": [
+        {
+          "label": "Review",
+          "value": "This greybox answers whether a primary road crossing, varied-height blocks, and their relative one-metre scale read immediately. The selected hue is Slate. Major tiles are fixed one-scene-unit squares; this example records the deliberate convention that one scene unit equals one metre.",
+          "provenancePath": "documentation/examples/20-greybox-city-world-grid/output/review.md"
+        },
+        {
+          "label": "Example prompt",
+          "value": "$blender-create-greybox\n\nCreate a minimal city greybox that communicates blocks, varied building height,\nand a primary road crossing. Use a ground plane, road planes, and varied-height\nrectangular building masses only. Apply shared Slate semantic materials with a\nworld-aligned procedural grid: every major tile is one scene unit square, using a\nsingle shared grid reference so stretching a primitive cannot stretch its tiles.\nTreat one scene unit as one metre for this example. Do not add facades, windows,\nroad markings, sidewalks, vehicles, street furniture, trees, image textures,\nbevels, or UVs.\n\nDeliver an editable Blender source, a modest clean render, and a self-contained\nGLB for the Model Viewer. Report the grid scale, coordinate method, category map,\nand omitted detail.",
+          "provenancePath": "documentation/examples/20-greybox-city-world-grid/input/prompt.txt"
+        }
+      ],
+      "exported": {
+        "meshes": 1,
+        "materials": 3,
+        "animations": []
+      },
+      "view": {
+        "position": [
+          25.0,
+          25.0,
+          28.0
+        ],
+        "target": [
+          -1.0645122528076172,
+          2.584524154663086,
+          -1.1922550201416016
+        ],
+        "frameHeight": 18.0,
+        "aspect": 1.7777777777777777
+      },
+      "previewPath": "documentation/examples/20-greybox-city-world-grid/output/result.png"
+    },
+    {
+      "id": "documentation/examples/21-greybox-kitchen-world-grid/output/result.blend",
+      "title": "Greybox Kitchen World Grid",
+      "sourcePath": "documentation/examples/21-greybox-kitchen-world-grid/output/result.blend",
+      "glbPath": "documentation/examples/21-greybox-kitchen-world-grid/output/result.glb",
+      "byteSize": 142764,
+      "sourceSha256": "a74ac41bef83e35a9a270e4aeda0e4f7842ce61d00eebb952726fa648b853f73",
+      "glbSha256": "80588e496a3d2fd7cf6a5a175f56dd3cd0c70db5e51895306dfbc151489c8d1b",
+      "warnings": [
+        "Blender world, compositor, and studio lighting are replaced by viewer lighting.",
+        "Procedural base color and tangent normals baked to 2048px atlas; microdetail is resolution-limited."
+      ],
+      "metadata": [
+        {
+          "label": "Review",
+          "value": "This greybox answers whether an open room shell, L-shaped work zone, refrigerator mass, and central circulation path read immediately at a one-metre grid scale. The selected hue is Slate. Major tiles are fixed one-scene-unit squares; this example records the deliberate convention that one scene unit equals one metre.",
+          "provenancePath": "documentation/examples/21-greybox-kitchen-world-grid/output/review.md"
+        },
+        {
+          "label": "Example prompt",
+          "value": "$blender-create-greybox\n\nCreate a minimal house-kitchen interior greybox. Use an open room shell with a\nfloor and two walls, then simple counter, refrigerator, and island masses to show\nthe work zone and central circulation. Apply shared Slate semantic materials with\na world-aligned procedural grid: every major tile is one scene unit square, using\na single shared grid reference so stretching a primitive cannot stretch its tiles.\nTreat one scene unit as one metre for this example. Do not add cabinet fronts,\ndoors, windows, handles, sink detail, stools, decor, image textures, bevels, or\nUVs.\n\nDeliver an editable Blender source, a modest clean render, and a self-contained\nGLB for the Model Viewer. Report the grid scale, coordinate method, category map,\nand omitted detail.",
+          "provenancePath": "documentation/examples/21-greybox-kitchen-world-grid/input/prompt.txt"
+        }
+      ],
+      "exported": {
+        "meshes": 1,
+        "materials": 4,
+        "animations": []
+      },
+      "view": {
+        "position": [
+          10.0,
+          8.5,
+          12.0
+        ],
+        "target": [
+          -0.12105560302734375,
+          1.7188940048217773,
+          -0.9549522399902344
+        ],
+        "frameHeight": 7.3125,
+        "aspect": 1.7777777777777777
+      },
+      "previewPath": "documentation/examples/21-greybox-kitchen-world-grid/output/result.png"
     }
   ]
 }

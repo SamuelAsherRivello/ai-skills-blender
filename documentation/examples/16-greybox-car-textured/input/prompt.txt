@@ -1,0 +1,11 @@
+$blender-create-greybox
+
+Create a minimal car greybox that communicates vehicle silhouette, wheel placement,
+and ground contact. Use only a ground plane, a chassis block, a cabin block, and
+simple wheel cylinders. Apply the skill's shared Slate category materials with a
+restrained procedural checker; use the checker as a scale and role cue, never as
+decoration. Do not add doors, windows, lights, seats, trim, bevels, image textures,
+or UVs.
+
+Deliver an editable Blender source, a modest clean render, and a self-contained
+GLB for the Model Viewer. State the category-to-material map and omissions.

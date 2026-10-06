@@ -1,0 +1,14 @@
+$blender-create-greybox
+
+Create a minimal city greybox that communicates blocks, varied building height,
+and a primary road crossing. Use a ground plane, road planes, and varied-height
+rectangular building masses only. Apply shared Slate semantic materials with a
+world-aligned procedural grid: every major tile is one scene unit square, using a
+single shared grid reference so stretching a primitive cannot stretch its tiles.
+Treat one scene unit as one metre for this example. Do not add facades, windows,
+road markings, sidewalks, vehicles, street furniture, trees, image textures,
+bevels, or UVs.
+
+Deliver an editable Blender source, a modest clean render, and a self-contained
+GLB for the Model Viewer. Report the grid scale, coordinate method, category map,
+and omitted detail.

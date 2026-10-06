@@ -1,0 +1,11 @@
+$blender-create-greybox
+
+Create a minimal house-kitchen interior greybox. Use an open room shell with a
+floor and two walls, then simple counter, refrigerator, and island masses to show
+the work zone and central circulation. Apply the skill's shared Slate category
+materials with a restrained procedural checker as a scale and grouping cue. Do not
+add cabinet fronts, doors, windows, handles, sink detail, stools, decor, image
+textures, bevels, or UVs.
+
+Deliver an editable Blender source, a modest clean render, and a self-contained
+GLB for the Model Viewer. State the category-to-material map and omissions.

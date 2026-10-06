@@ -1,0 +1,14 @@
+$blender-create-greybox
+
+Create a minimal house-kitchen interior greybox. Use an open room shell with a
+floor and two walls, then simple counter, refrigerator, and island masses to show
+the work zone and central circulation. Apply shared Slate semantic materials with
+a world-aligned procedural grid: every major tile is one scene unit square, using
+a single shared grid reference so stretching a primitive cannot stretch its tiles.
+Treat one scene unit as one metre for this example. Do not add cabinet fronts,
+doors, windows, handles, sink detail, stools, decor, image textures, bevels, or
+UVs.
+
+Deliver an editable Blender source, a modest clean render, and a self-contained
+GLB for the Model Viewer. Report the grid scale, coordinate method, category map,
+and omitted detail.

@@ -34,7 +34,7 @@
         "position": [
           4.400000095367432,
           4.300000190734863,
-          8
+          8.0
         ],
         "target": [
           -0.11931943893432617,
@@ -51,17 +51,22 @@
       "title": "City Corner Firehouse",
       "sourcePath": "documentation/examples/02-city-corner-firehouse/output/result.blend",
       "glbPath": "documentation/examples/02-city-corner-firehouse/output/result.glb",
-      "byteSize": 19429000,
-      "sourceSha256": "6276cdddda097687b1f28d33d0f90ee8561b9374d14db917dbee23d0e5d7adcb",
-      "glbSha256": "b6e8231c8fb1cf890a32764b815731ec67b7076997dd372f9af0327911a2a3ec",
+      "byteSize": 8527948,
+      "sourceSha256": "c98ee8d020d72d4daa068ee2dedb3357e7e4c138f7967cd8dd2ff7e923ffaa67",
+      "glbSha256": "402376f0629292403cb8ca82890911fa0d67a64b0f6cc60dd9f1c105f0e9a807",
       "warnings": [
         "Blender world, compositor, and studio lighting are replaced by viewer lighting.",
         "Procedural base color and tangent normals baked to 2048px atlas; microdetail is resolution-limited."
       ],
       "metadata": [
         {
+          "label": "Objects",
+          "value": "2611",
+          "provenancePath": "documentation/examples/02-city-corner-firehouse/output/manifest.json"
+        },
+        {
           "label": "Review",
-          "value": "Selected final firehouse with arched bays, detailed facade, and blue-sky/color treatment. Older attempts removed.",
+          "value": "Selected version: attempt 05 with the final blue-sky and color pass. Earlier attempts were compared visually and removed during cleanup. This version has the most complete facade, arched apparatus bays, readable glazing, and coherent city context.",
           "provenancePath": "documentation/examples/02-city-corner-firehouse/output/review.md"
         },
         {
@@ -71,15 +76,15 @@
         }
       ],
       "exported": {
-        "meshes": 884,
+        "meshes": 2608,
         "materials": 17,
         "animations": []
       },
       "view": {
         "position": [
-          22,
+          22.0,
           3.4000000953674316,
-          32
+          32.0
         ],
         "target": [
           1.590585708618164,
@@ -96,16 +101,16 @@
       "title": "Game Ready Treasure Chest",
       "sourcePath": "documentation/examples/03-game-ready-treasure-chest/output/result.blend",
       "glbPath": "documentation/examples/03-game-ready-treasure-chest/output/result.glb",
-      "byteSize": 1699924,
-      "sourceSha256": "22ccddebc57dcc116735952c13f652a5e7ae059a93073660a0dda8cb9746a980",
-      "glbSha256": "d49456853ec8521877e0328af811c21a933dfc378bd70fc0f76dc0cb00c42136",
+      "byteSize": 1676976,
+      "sourceSha256": "f4a38a4d0ff8408ccf774fc22ba48e8b2b14a475261898576ebf70c689d1e1d0",
+      "glbSha256": "a79f9177e73c82db5ff6f9cad76b03943122f5a5298f9c4054a380e7aba83bc3",
       "warnings": [
         "Blender world, compositor, and studio lighting are replaced by viewer lighting."
       ],
       "metadata": [
         {
           "label": "Scene",
-          "value": "Example_03-game-ready-treasure-chest",
+          "value": "Example_03-game-ready-treasure-chest.006",
           "provenancePath": "documentation/examples/03-game-ready-treasure-chest/output/manifest.json"
         },
         {
@@ -130,7 +135,7 @@
         },
         {
           "label": "Render seconds",
-          "value": "5.473535400000401",
+          "value": "6.511420700000599",
           "provenancePath": "documentation/examples/03-game-ready-treasure-chest/output/manifest.json"
         },
         {
@@ -155,15 +160,15 @@
         }
       ],
       "exported": {
-        "meshes": 2,
-        "materials": 2,
+        "meshes": 1,
+        "materials": 1,
         "animations": []
       },
       "view": {
         "position": [
-          5,
-          4,
-          7
+          5.0,
+          4.0,
+          7.0
         ],
         "target": [
           -0.17788124084472656,
@@ -262,9 +267,9 @@
       },
       "view": {
         "position": [
-          5,
+          5.0,
           4.5,
-          9
+          9.0
         ],
         "target": [
           -0.18914461135864258,
@@ -353,9 +358,9 @@
       },
       "view": {
         "position": [
-          4,
+          4.0,
           3.299999952316284,
-          6
+          6.0
         ],
         "target": [
           -0.12582826614379883,
@@ -437,9 +442,9 @@
       },
       "view": {
         "position": [
-          2,
+          2.0,
           2.5999999046325684,
-          7
+          7.0
         ],
         "target": [
           -0.26775312423706055,
@@ -456,16 +461,16 @@
       "title": "Sunlit Reading Nook",
       "sourcePath": "documentation/examples/07-sunlit-reading-nook/output/result.blend",
       "glbPath": "documentation/examples/07-sunlit-reading-nook/output/result.glb",
-      "byteSize": 2320748,
-      "sourceSha256": "2c8d3a07cab68f70ff998cc72713dc8b6a93f67a45188f8b72de4cb642b04309",
-      "glbSha256": "42c2cb199b107182d3353749608987239a69b228f3e7f86a43754edcf2bafa09",
+      "byteSize": 492260,
+      "sourceSha256": "82eb0014d4c80b1aec7fdb3f8cf3de82e5d902d373f11259d596b15b636b7ba6",
+      "glbSha256": "ca28f15aceac55f1efd1eb1310f1c9813c4c28f39b48b076becdc1eafe643f95",
       "warnings": [
         "Blender world, compositor, and studio lighting are replaced by viewer lighting."
       ],
       "metadata": [
         {
           "label": "Scene",
-          "value": "Example_07-sunlit-reading-nook",
+          "value": "Example_07-sunlit-reading-nook.001",
           "provenancePath": "documentation/examples/07-sunlit-reading-nook/output/manifest.json"
         },
         {
@@ -490,7 +495,7 @@
         },
         {
           "label": "Render seconds",
-          "value": "6.436587699980009",
+          "value": "10.248705599980894",
           "provenancePath": "documentation/examples/07-sunlit-reading-nook/output/manifest.json"
         },
         {
@@ -521,9 +526,9 @@
       },
       "view": {
         "position": [
-          7,
-          6,
-          9
+          7.0,
+          6.0,
+          9.0
         ],
         "target": [
           -0.3131070137023926,
@@ -540,16 +545,16 @@
       "title": "Modular Greenhouse",
       "sourcePath": "documentation/examples/08-modular-greenhouse/output/result.blend",
       "glbPath": "documentation/examples/08-modular-greenhouse/output/result.glb",
-      "byteSize": 1730128,
-      "sourceSha256": "40a420be749a4e9081fae592fe5218737ec297e07eb8317935dd4a76175881c6",
-      "glbSha256": "3a565fa9c67955c54b6ae6d208402a517cf73f16ae94b2205c6efd24a499ecde",
+      "byteSize": 555976,
+      "sourceSha256": "5f7c19831d53c2f419adcc92300c65281f8de04191795069ccf88e91944d80dc",
+      "glbSha256": "f0fc13b5240bd6df6a3a1deeb7152d1ab37a2da6d8ab6c1d566c1a3fba1f72fc",
       "warnings": [
         "Blender world, compositor, and studio lighting are replaced by viewer lighting."
       ],
       "metadata": [
         {
           "label": "Scene",
-          "value": "Example_08-modular-greenhouse",
+          "value": "Example_08-modular-greenhouse.003",
           "provenancePath": "documentation/examples/08-modular-greenhouse/output/manifest.json"
         },
         {
@@ -564,7 +569,7 @@
         },
         {
           "label": "Objects",
-          "value": "170",
+          "value": "183",
           "provenancePath": "documentation/examples/08-modular-greenhouse/output/manifest.json"
         },
         {
@@ -574,7 +579,7 @@
         },
         {
           "label": "Render seconds",
-          "value": "8.014203400001861",
+          "value": "6.51375869999174",
           "provenancePath": "documentation/examples/08-modular-greenhouse/output/manifest.json"
         },
         {
@@ -599,15 +604,15 @@
         }
       ],
       "exported": {
-        "meshes": 166,
-        "materials": 9,
+        "meshes": 179,
+        "materials": 10,
         "animations": []
       },
       "view": {
         "position": [
-          7,
-          6,
-          9
+          7.0,
+          6.0,
+          9.0
         ],
         "target": [
           -0.43225717544555664,
@@ -689,9 +694,9 @@
       },
       "view": {
         "position": [
-          5,
-          4,
-          7
+          5.0,
+          4.0,
+          7.0
         ],
         "target": [
           -0.12809371948242188,
@@ -773,9 +778,9 @@
       },
       "view": {
         "position": [
-          7,
-          7,
-          9
+          7.0,
+          7.0,
+          9.0
         ],
         "target": [
           -0.30816078186035156,

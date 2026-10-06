@@ -1,9 +1,9 @@
 {
   "sourcePath": "documentation/examples/07-sunlit-reading-nook/output/result.blend",
-  "sourceSha256": "2c8d3a07cab68f70ff998cc72713dc8b6a93f67a45188f8b72de4cb642b04309",
+  "sourceSha256": "82eb0014d4c80b1aec7fdb3f8cf3de82e5d902d373f11259d596b15b636b7ba6",
   "glbPath": "documentation/examples/07-sunlit-reading-nook/output/result.glb",
-  "glbSha256": "42c2cb199b107182d3353749608987239a69b228f3e7f86a43754edcf2bafa09",
-  "byteSize": 2320748,
+  "glbSha256": "ca28f15aceac55f1efd1eb1310f1c9813c4c28f39b48b076becdc1eafe643f95",
+  "byteSize": 492260,
   "warnings": [
     "Blender world, compositor, and studio lighting are replaced by viewer lighting."
   ],

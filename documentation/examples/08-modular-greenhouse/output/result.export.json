@@ -1,9 +1,9 @@
 {
   "sourcePath": "documentation/examples/08-modular-greenhouse/output/result.blend",
-  "sourceSha256": "40a420be749a4e9081fae592fe5218737ec297e07eb8317935dd4a76175881c6",
+  "sourceSha256": "5f7c19831d53c2f419adcc92300c65281f8de04191795069ccf88e91944d80dc",
   "glbPath": "documentation/examples/08-modular-greenhouse/output/result.glb",
-  "glbSha256": "3a565fa9c67955c54b6ae6d208402a517cf73f16ae94b2205c6efd24a499ecde",
-  "byteSize": 1730128,
+  "glbSha256": "f0fc13b5240bd6df6a3a1deeb7152d1ab37a2da6d8ab6c1d566c1a3fba1f72fc",
+  "byteSize": 555976,
   "warnings": [
     "Blender world, compositor, and studio lighting are replaced by viewer lighting."
   ],

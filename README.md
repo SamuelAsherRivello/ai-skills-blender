@@ -123,6 +123,7 @@ Explore visual references for camera angles, color palettes, lighting, and rende
 Explore completed Blender examples with editable scenes and rendered previews.
 
 - [Browse the examples table](documentation/examples-readme.md)
+- [Review the 2026-10-03 visual refresh](documentation/examples/human-review-2026-10-03.html)
 
 ### 📝 Structure
 

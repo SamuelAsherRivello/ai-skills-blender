@@ -2,19 +2,19 @@
   "run_id": "Feedback_Firehouse_05",
   "source": "result.blend",
   "fresh_start_objects": 0,
-  "build_seconds": 13.256115299998783,
+  "build_seconds": 14.40783690000535,
   "blender_version": "5.2.2 LTS",
   "objects": 2611,
+  "script_sha256": "df2e074ac92b619359f59c2d370c5eef1a9735b95fcfe1707ff007ea886b1b31",
   "settings": {
     "engine": "CYCLES",
     "device": "OPTIX",
     "samples": 64,
+    "seed": 27,
     "resolution": [
       1280,
       720
-    ],
-    "procedural_seed": 27,
-    "cycles_seed": 0
+    ]
   },
   "outputs": [
     {
@@ -23,17 +23,5 @@
       "height": 720,
       "alpha": true
     }
-  ],
-  "render_seconds": 7.8455029,
-  "editor_capture": "editor.png",
-  "editor_verified": true,
-  "finalization": "One selected final version; historical attempts removed at user request.",
-  "selected_revision": "Attempt 05 with final sky/color pass",
-  "build_source": "../input/build.py",
-  "editor_matches_final_sky": false,
-  "editor_note": "Retained genuine screenshot predates sky/color pass.",
-  "sky": {
-    "procedural_clouds": true,
-    "saturation_multiplier": 1.1
-  }
+  ]
 }

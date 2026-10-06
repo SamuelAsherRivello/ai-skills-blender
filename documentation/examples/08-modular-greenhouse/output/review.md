@@ -28,6 +28,17 @@ Saved file reopened in Blender, with a valid camera, 1280×720 output, relative 
 
 ## Target comparison and remaining limits
 
-Compared with the target, ornament and glazing detail are simplified. The roof catches a strong white reflection. Pots sit directly on the planting bed rather than the requested benches; the brick-colored plinth lacks masonry joints. The open door and modular pitched-roof structure are readable.
+Compared with the target, ornament and glazing detail are simplified. The open
+door, open pot beds, modular pitched-roof structure and masonry joints are
+readable. The selected roof glazing uses a lower-reflection material to keep
+its structure and interior more visible.
 
 No second artistic attempt was made. Technical completion does not imply human approval or photographic equivalence to the target.
+
+## 2026-10-03 OpenSpec refresh
+
+The preserved baseline lacked visible benches and masonry joints, and roof glare
+made its glass read as opaque. Draft 1 adds two slatted benches, foundation
+mortar/joint geometry and rougher transmissive glass. The inspected render
+shows the planting area and benches through the side glazing. The bright roof
+remains a documented studio-light limitation. See [gallery refresh record](../../refresh-2026-10-03.md).

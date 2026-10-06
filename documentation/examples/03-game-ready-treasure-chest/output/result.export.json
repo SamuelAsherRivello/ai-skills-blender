@@ -1,9 +1,9 @@
 {
   "sourcePath": "documentation/examples/03-game-ready-treasure-chest/output/result.blend",
-  "sourceSha256": "22ccddebc57dcc116735952c13f652a5e7ae059a93073660a0dda8cb9746a980",
+  "sourceSha256": "f4a38a4d0ff8408ccf774fc22ba48e8b2b14a475261898576ebf70c689d1e1d0",
   "glbPath": "documentation/examples/03-game-ready-treasure-chest/output/result.glb",
-  "glbSha256": "d49456853ec8521877e0328af811c21a933dfc378bd70fc0f76dc0cb00c42136",
-  "byteSize": 1699924,
+  "glbSha256": "a79f9177e73c82db5ff6f9cad76b03943122f5a5298f9c4054a380e7aba83bc3",
+  "byteSize": 1676976,
   "warnings": [
     "Blender world, compositor, and studio lighting are replaced by viewer lighting."
   ],

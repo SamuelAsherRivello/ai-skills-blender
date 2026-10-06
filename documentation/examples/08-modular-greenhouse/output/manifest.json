@@ -1,5 +1,5 @@
 {
-  "render_seconds": 8.014203400001861,
+  "render_seconds": 6.51375869999174,
   "controls": {
     "bays": 4,
     "spacing": 1.0
@@ -40,8 +40,8 @@
     }
   ],
   "limitation": "Thin modeled panes; simplified greenery and no climate simulation.",
-  "scene": "Example_08-modular-greenhouse",
-  "objects": 170,
+  "scene": "Example_08-modular-greenhouse.003",
+  "objects": 183,
   "blender": "5.2.2 LTS",
   "engine": "Cycles",
   "device": "OptiX",

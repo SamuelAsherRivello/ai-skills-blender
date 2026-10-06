@@ -28,6 +28,17 @@ No additional specialist export requested.
 
 ## Target comparison and remaining limits
 
-The target is more photographic and texturally rich. The result reads as a clean stylized diorama; the rust chair is lighter coral and textiles are simplified. The prompt requested architectural perspective, but this first pass uses orthographic projection. The upper wall and front platform are cropped. These composition differences remain visible for review under the one-iteration budget.
+The target is more photographic and texturally rich. The result reads as a
+clean stylized diorama; the rust chair is lighter coral and textiles are
+simplified. The selected current scene uses architectural perspective and
+includes the full platform and furnishing layout.
 
 No second artistic attempt was made. Technical completion does not imply human approval or photographic equivalence to the target.
+
+## 2026-10-03 OpenSpec refresh
+
+The original orthographic/cropped framing failed the frozen target's
+three-quarter architectural framing criterion. A fresh scene now uses a 46 mm
+perspective camera at `(7.4, -9.6, 5.1)` aimed at `(-0.15, 0.2, 1.15)`; the
+inspected render includes the full room platform and furnishing separation.
+The prior version is preserved in `baseline-2026-10-03/`. See [gallery refresh record](../../refresh-2026-10-03.md).

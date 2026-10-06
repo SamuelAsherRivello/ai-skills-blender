@@ -30,6 +30,18 @@ Saved file reopened in Blender, with a valid camera, 1280×720 output, relative 
 
 ## Target comparison and remaining limits
 
-The silhouette and wood/metal palette follow the target, but ornament and material richness are simplified. Lid end panels are missing, leaving visible openings; straps have uneven baked highlights. Checker density varies across islands. Uniform roughness and no metallic map reduce material fidelity. These are recorded for human review, not silently accepted as production-ready.
+The silhouette and wood/metal palette follow the target. The selected current
+scene closes the visible lid end with a flush arch-shaped wood board under the
+longitudinal staves. Uniform roughness and no metallic map reduce material
+fidelity.
 
 No second artistic attempt was made. Technical completion does not imply human approval or photographic equivalence to the target.
+
+## 2026-10-03 OpenSpec refresh
+
+Draft 1 exposed the right end of the domed lid. The selected correction adds a
+modeled curved wooden end cap and lower closure before the export target is
+joined, baked and rendered. The resulting 1280×720 render was inspected; it
+closes the defect while preserving the board, band, rivet and clasp read.
+The rejected oversized-sphere correction is retained with its scene, render
+and review in `attempts/2026-10-03-draft-2-invalid/`. See [gallery refresh record](../../refresh-2026-10-03.md).

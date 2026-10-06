@@ -6,6 +6,10 @@ Eleven integrated workflows, ready for visual review. Click a render to open it 
 
 See the [style coverage map](style-coverage.md) for the intended and observed look of each example and the initial refresh candidates.
 
+## Current visual review
+
+[Open the side-by-side refresh gallery](human-review-2026-10-03.html) to review examples 02, 03, 07, and 08. It compares each selected refresh against its preserved baseline and states the visible decision to make.
+
 | Name | Image | Files |
 |---|---|---|
 | [01 — School Morning Character](01-school-morning-character/) | <a href="01-school-morning-character/output/result.png"><img src="01-school-morning-character/output/result.png" width="100" alt="School Morning Character render" /></a> | [Prompt](01-school-morning-character/input/prompt.txt) · [Render](01-school-morning-character/output/result.png) · [Blend](01-school-morning-character/output/result.blend) · [Editor](01-school-morning-character/output/editor.png) · [Review](01-school-morning-character/output/review.md) |

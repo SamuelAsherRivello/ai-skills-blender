@@ -6,6 +6,10 @@ Explore completed Blender scenes; click a name for its project files or a thumbn
 
 [Browse all prompts, Blender files and reviews](examples/README.md).
 
+## Current visual review
+
+[Open the side-by-side refresh gallery](examples/human-review-2026-10-03.html) for the four updated examples. It shows each preserved baseline beside its selected refresh and asks the specific visual question to review.
+
 | Name | Comment | Image |
 |---|---|---|
 | [01 School Morning Character](examples/01-school-morning-character/) | Cheerful schoolboy shoulders a yellow backpack in morning light | <a href="examples/01-school-morning-character/output/result.png"><img src="examples/01-school-morning-character/output/result.png" width="100" alt="School Morning Character render" /></a> |

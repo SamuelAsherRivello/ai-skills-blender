@@ -1,0 +1,10 @@
+$blender-create-greybox
+
+Create a minimal car greybox that communicates vehicle silhouette, wheel placement,
+and ground contact. Use editable primitive-like geometry only: a ground plane, a
+rectangular chassis, a smaller cabin mass, and simple wheels. Use neutral greys
+only to separate functional masses. Do not model doors, windows, lights, seats,
+handles, trim, bevels, texture maps, or UVs.
+
+Deliver an editable Blender source, a modest clean render, and a self-contained
+GLB for the Model Viewer. State what was intentionally omitted.

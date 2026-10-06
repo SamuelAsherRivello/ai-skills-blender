@@ -90,10 +90,15 @@ class SetupTests(unittest.TestCase):
         self.assertEqual(report['editor_readiness'], 'FAIL')
         self.assertIn('Restore Blender from the taskbar', report['checks'][6]['comment'])
 
-    def test_background_process_is_not_an_open_editor(self):
+    def test_no_visible_editor_is_not_an_open_editor(self):
         report, *_ = self.audit(windows=[])
         self.assertEqual(report['editor_readiness'], 'FAIL')
         self.assertEqual(report['mcp_readiness'], 'PASS')
+
+    def test_visible_editor_does_not_require_foreground_or_maximization(self):
+        report, *_ = self.audit(windows=[{'pid': 42, 'visible': True, 'minimized': False}])
+        self.assertEqual(report['editor_readiness'], 'PASS')
+        self.assertIn('behind other apps', report['checks'][6]['comment'])
 
     def test_window_permission_gap_is_unknown(self):
         report, *_ = self.audit(window_error=PermissionError(5, 'secret'))

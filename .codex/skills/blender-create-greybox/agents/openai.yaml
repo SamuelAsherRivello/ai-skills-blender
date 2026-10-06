@@ -1,0 +1,4 @@
+interface:
+  display_name: "Blender Create Greybox"
+  short_description: "Block out a clear low-fidelity 3D idea"
+  default_prompt: "Use $blender-create-greybox to communicate this spatial idea with the fewest clear Blender primitives."

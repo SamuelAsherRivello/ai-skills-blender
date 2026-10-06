@@ -25,7 +25,7 @@ If fresh evidence fails, contradicts a prerequisite, or leaves necessary readine
 4. Report Python Available and Python Configured separately. On a failing connection, resolve the configured interpreter using its effective environment/working directory, then check version and required imports only through a reviewed safe launch. Never assume terminal Python is the same interpreter.
 5. Identify Blender only through currently running programs. Never search its executable on disk, PATH, registry or installation directories, or use `BLENDER_PATH` to discover it. No process means installation unknown, not uninstalled.
 6. Match the process reached by MCP using the native query's PID or verified bridge ownership. If several processes remain ambiguous, block instance-specific checks and ask which is intended. Do not substitute another instance's visible window.
-7. Inspect that process's editor window read-only. Require a visible, non-minimized editor; maximization is unnecessary. Closed, minimized, hidden and unknown states have different next actions. This check is independent of MCP access.
+7. Inspect that process's editor window read-only. Require a visible, non-minimized editor; it may remain behind other apps. Never require focus, foreground placement, unobstructed pixels or maximization. Closed, minimized, hidden and unknown states have different next actions. This check is independent of MCP access.
 8. Check official MCP installation, enablement/compatibility and bridge runtime as three distinct report rows. Use the effective configured host/port, including inherited environment values. A listener alone does not prove add-on identity; socket refusal cannot distinguish a disabled add-on from a stopped bridge.
 9. Deepen only failed, conflicting or necessary missing evidence in a bounded second pass. Honor platform permissions and tool policy; keep unsafe SDK launching blocked. Report version discrepancies for compatibility review without automatic upgrades or erasing observed live access.
 10. Present the twelve-row Step / Status / Comment table, the separate MCP and editor verdicts, platform limits, and exact next actions. Do not invent unobserved interpreter, package, add-on or Blender versions.
@@ -46,7 +46,7 @@ Use the exact headers **Step**, **Status**, **Comment**, with these rows in orde
 | 4. Python Configured | observed status | Required libraries in that runtime; label inference or unknown metadata |
 | 5. Blender Installed | observed status | Inferred from running programs; otherwise unknown |
 | 6. Blender Running | observed status | Current Blender process evidence |
-| 7. Blender Open | observed status | Connected editor visible and not minimized |
+| 7. Blender Open | observed status | Connected editor visible and not minimized; foreground placement is not required |
 | 8. Official MCP Installed | observed status | Official Blender Lab add-on installation evidence |
 | 9. Official MCP Configured | observed status | Add-on enabled and compatible with Blender |
 | 10. Official MCP Running | observed status | Official bridge responding at the expected endpoint |
@@ -55,7 +55,7 @@ Use the exact headers **Step**, **Status**, **Comment**, with these rows in orde
 
 Display statuses as **✅ Pass**, **❌ Fail**, **⛔ Blocked**. Each Fail comment must contain its concrete solution. Each Blocked comment names the missing evidence/prerequisite and safe next step. Keep passing evidence short; label inferred passes explicitly. Failed process inspection means unknown, not closed. When no Blender process is found, step 5 is Blocked/installation unknown, step 6 fails with **Open Blender**, and step 7 is Blocked.
 
-Below the table report **MCP Readiness** and **Editor Readiness** separately. A minimized editor can require **Restore Blender from the taskbar** while MCP remains working. A successful handshake stays Pass if the scene query fails. A helper that verifies configuration or local bridge evidence does not prove that native tools are exposed in this conversation. If tools are absent, explain that reconnecting/restarting the AI client or starting a new thread may be needed; do not describe it as currently connected.
+Below the table report **MCP Readiness** and **Editor Readiness** separately. A minimized editor can require **Restore Blender from the taskbar** while MCP remains working. A successful handshake stays Pass if the scene query fails. A blocked editor-window check is informational and must not block MCP work that does not capture editor pixels. Do not ask the user to foreground Blender: a visible, non-minimized window may remain behind other apps. A helper that verifies configuration or local bridge evidence does not prove that native tools are exposed in this conversation. If tools are absent, explain that reconnecting/restarting the AI client or starting a new thread may be needed; do not describe it as currently connected.
 
 ## Supplemental Helper and Compatibility
 
@@ -92,7 +92,7 @@ Use [Blender's official MCP setup](https://www.blender.org/lab/mcp-server/) and 
 
 ## Editor Readiness and Screenshots
 
-Screenshot capture is authorized as part of requested Blender work. Before **every** editor/window/area screenshot call, freshly inspect the connected process's visible, non-minimized editor; do not reuse an earlier setup result. If closed, ask the user to open Blender. If minimized or hidden, say **Restore Blender from the taskbar** or ask them to show it; maximization is unnecessary. If inspection is unavailable, report unknown and ask the user to make the editor visible. Pause capture until resolved, then check again. Never restore, focus or maximize it yourself.
+Screenshot capture is authorized as part of requested Blender work. Before **every** editor/window/area screenshot call, freshly inspect the connected process's visible, non-minimized editor; do not reuse an earlier setup result. The editor may remain behind other apps: do not focus, foreground, maximize or otherwise rearrange it. If closed, ask the user to open Blender. If minimized or hidden, say **Restore Blender from the taskbar** or ask them to show it; maximization is unnecessary. If inspection is unavailable, report unknown and ask the user to make the editor visible. Pause capture until resolved, then check again.
 
 Inspect captured pixels. Both official full-window and area captures have returned black while minimized on the observed Windows workstation. Visibility is a prerequisite, not a guarantee: report black/stale captures and request show/restore before a fresh check and retry. Never substitute a render or old screenshot as fresh editor evidence. This prerequisite applies to editor screenshots, not saved render output.
 

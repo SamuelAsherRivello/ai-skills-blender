@@ -282,11 +282,11 @@ def build_report(cfg, native, info, python_info=None, config_error=None):
     elif info.get('target_pid') is None or windows is None:
         row(6, 'BLOCKED', info.get('target_error') or 'Editor visibility is unknown or unsupported; show Blender and use a supported fresh window-state check. ' + info.get('window_error', ''))
     elif any(w.get('pid') == info['target_pid'] and w.get('visible') and not w.get('minimized') for w in windows):
-        row(6, 'PASS', f"Connected editor visible and not minimized (PID {info['target_pid']}); maximization unnecessary.")
+        row(6, 'PASS', f"Connected editor visible and not minimized (PID {info['target_pid']}); it may remain behind other apps, and foregrounding or maximization is unnecessary.")
     elif any(w.get('pid') == info['target_pid'] and w.get('minimized') for w in windows):
         row(6, 'FAIL', 'Restore Blender from the taskbar; leave the connected editor visible and not minimized.')
     else:
-        row(6, 'FAIL', 'Show the connected Blender editor; a background process or another instance\'s window is insufficient.')
+        row(6, 'FAIL', 'Show the connected Blender editor without minimizing it; foreground placement is unnecessary, but no visible top-level editor belongs to the connected process.')
 
     bridge = endpoint(cfg)
     addons = scene.get('addons', []) if live else []

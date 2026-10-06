@@ -1,0 +1,27 @@
+{
+  "sourcePath": "documentation/examples/13-greybox-car/output/result.blend",
+  "sourceSha256": "170e03607cd887d20b9eafcf45ebf50d4da4358cecbe7dc2d51c77a5b8d041ae",
+  "glbPath": "documentation/examples/13-greybox-car/output/result.glb",
+  "glbSha256": "96bdf1a2187e86d9613eba58ed49cd4700e5363883aff266457ab7338476b856",
+  "byteSize": 13448,
+  "warnings": [
+    "Blender world, compositor, and studio lighting are replaced by viewer lighting."
+  ],
+  "blenderVersion": "5.2.2 LTS",
+  "seconds": 0.025,
+  "exporterVersion": 3,
+  "view": {
+    "position": [
+      7.5,
+      5.800000190734863,
+      9.0
+    ],
+    "target": [
+      -0.2440199851989746,
+      0.8438291549682617,
+      -0.29282379150390625
+    ],
+    "frameHeight": 3.9375,
+    "aspect": 1.7777777777777777
+  }
+}

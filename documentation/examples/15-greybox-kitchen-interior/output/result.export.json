@@ -1,0 +1,27 @@
+{
+  "sourcePath": "documentation/examples/15-greybox-kitchen-interior/output/result.blend",
+  "sourceSha256": "b218976192ddeabb033475149c65e1441a487696aca8c967aca40db6d75400c4",
+  "glbPath": "documentation/examples/15-greybox-kitchen-interior/output/result.glb",
+  "glbSha256": "1e5e6555beffd19c443be9baa8286964959706f30b7bd3bcc8f4b1186b5ed11f",
+  "byteSize": 7492,
+  "warnings": [
+    "Blender world, compositor, and studio lighting are replaced by viewer lighting."
+  ],
+  "blenderVersion": "5.2.2 LTS",
+  "seconds": 0.032,
+  "exporterVersion": 3,
+  "view": {
+    "position": [
+      10.0,
+      8.5,
+      12.0
+    ],
+    "target": [
+      -0.12105560302734375,
+      1.7188940048217773,
+      -0.9549522399902344
+    ],
+    "frameHeight": 7.3125,
+    "aspect": 1.7777777777777777
+  }
+}

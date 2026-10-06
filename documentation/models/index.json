@@ -837,6 +837,182 @@
         "aspect": 1.7777777777777777
       },
       "previewPath": "documentation/examples/11-floating-forest-from-sketch/output/result.png"
+    },
+    {
+      "id": "documentation/examples/12-greybox-2-5d/output/result.blend",
+      "title": "Greybox 2 5D",
+      "sourcePath": "documentation/examples/12-greybox-2-5d/output/result.blend",
+      "glbPath": "documentation/examples/12-greybox-2-5d/output/result.glb",
+      "byteSize": 1836,
+      "sourceSha256": "dac4e3587e9950d5017a807120dcdb5693592f7fccdd21736ae5a623c06d2293",
+      "glbSha256": "7a62ca90f973db245c45d025e82ee396915bc573bbe46541ff99ced9df879012",
+      "warnings": [
+        "Blender world, compositor, and studio lighting are replaced by viewer lighting."
+      ],
+      "metadata": [
+        {
+          "label": "Review",
+          "value": "This deliberately minimal scene answers one question: can a ground plane and a perpendicular upright plane communicate a 2.5D spatial setup? The answer is evaluated from its orthographic three-quarter camera view. Floor and backdrop use neutral greys only to separate their roles.",
+          "provenancePath": "documentation/examples/12-greybox-2-5d/output/review.md"
+        },
+        {
+          "label": "Example prompt",
+          "value": "$blender-create-greybox\n\nCreate the smallest clear 2.5D greybox demonstration. Use only a floor plane\nand a perpendicular upright backdrop plane, arranged so an orthographic\nthree-quarter view makes the two spatial layers unambiguous. Keep both meshes\neditable and assign neutral grey materials only for separation. Do not add\narchitecture, props, bevels, texture maps, UV work, or decorative details.\n\nDeliver an editable Blender source, a modest clean render, and a self-contained\nGLB for the Model Viewer. State what was intentionally omitted.",
+          "provenancePath": "documentation/examples/12-greybox-2-5d/input/prompt.txt"
+        }
+      ],
+      "exported": {
+        "meshes": 2,
+        "materials": 2,
+        "animations": []
+      },
+      "view": {
+        "position": [
+          9.0,
+          7.5,
+          11.0
+        ],
+        "target": [
+          -0.13834190368652344,
+          1.9154553413391113,
+          -0.9813852310180664
+        ],
+        "frameHeight": 7.03125,
+        "aspect": 1.7777777777777777
+      },
+      "previewPath": "documentation/examples/12-greybox-2-5d/output/result.png"
+    },
+    {
+      "id": "documentation/examples/13-greybox-car/output/result.blend",
+      "title": "Greybox Car",
+      "sourcePath": "documentation/examples/13-greybox-car/output/result.blend",
+      "glbPath": "documentation/examples/13-greybox-car/output/result.glb",
+      "byteSize": 13448,
+      "sourceSha256": "170e03607cd887d20b9eafcf45ebf50d4da4358cecbe7dc2d51c77a5b8d041ae",
+      "glbSha256": "96bdf1a2187e86d9613eba58ed49cd4700e5363883aff266457ab7338476b856",
+      "warnings": [
+        "Blender world, compositor, and studio lighting are replaced by viewer lighting."
+      ],
+      "metadata": [
+        {
+          "label": "Review",
+          "value": "This greybox answers whether the vehicle's wheel placement, ground contact, and two main masses read as a car. It uses a chassis block, cabin block, four low-sided wheel cylinders, and a ground plane only.",
+          "provenancePath": "documentation/examples/13-greybox-car/output/review.md"
+        },
+        {
+          "label": "Example prompt",
+          "value": "$blender-create-greybox\n\nCreate a minimal car greybox that communicates vehicle silhouette, wheel placement,\nand ground contact. Use editable primitive-like geometry only: a ground plane, a\nrectangular chassis, a smaller cabin mass, and simple wheels. Use neutral greys\nonly to separate functional masses. Do not model doors, windows, lights, seats,\nhandles, trim, bevels, texture maps, or UVs.\n\nDeliver an editable Blender source, a modest clean render, and a self-contained\nGLB for the Model Viewer. State what was intentionally omitted.",
+          "provenancePath": "documentation/examples/13-greybox-car/input/prompt.txt"
+        }
+      ],
+      "exported": {
+        "meshes": 7,
+        "materials": 4,
+        "animations": []
+      },
+      "view": {
+        "position": [
+          7.5,
+          5.800000190734863,
+          9.0
+        ],
+        "target": [
+          -0.2440199851989746,
+          0.8438291549682617,
+          -0.29282379150390625
+        ],
+        "frameHeight": 3.9375,
+        "aspect": 1.7777777777777777
+      },
+      "previewPath": "documentation/examples/13-greybox-car/output/result.png"
+    },
+    {
+      "id": "documentation/examples/14-greybox-city/output/result.blend",
+      "title": "Greybox City",
+      "sourcePath": "documentation/examples/14-greybox-city/output/result.blend",
+      "glbPath": "documentation/examples/14-greybox-city/output/result.glb",
+      "byteSize": 9772,
+      "sourceSha256": "36ea6d237c9b05442d76252e894674f986429947b1734d1c4e34c11e3c2db3d2",
+      "glbSha256": "ca20599b307200320ef9c58d7e41917cdcde5c58b8351ddb201ce5eeee76d447",
+      "warnings": [
+        "Blender world, compositor, and studio lighting are replaced by viewer lighting."
+      ],
+      "metadata": [
+        {
+          "label": "Review",
+          "value": "This greybox answers whether a primary road crossing, four city blocks, and a varied-height building hierarchy read immediately. It uses one ground plane, two road planes, and six rectangular building masses only.",
+          "provenancePath": "documentation/examples/14-greybox-city/output/review.md"
+        },
+        {
+          "label": "Example prompt",
+          "value": "$blender-create-greybox\n\nCreate a minimal city greybox that communicates blocks, varied building height,\nand a primary road crossing. Use an editable ground plane, simple road planes,\nand varied-height rectangular building masses only. Use neutral greys only to\nseparate ground, road, and buildings. Do not add facades, windows, sidewalks,\nvehicles, street furniture, trees, texture maps, bevels, or UVs.\n\nDeliver an editable Blender source, a modest clean render, and a self-contained\nGLB for the Model Viewer. State what was intentionally omitted.",
+          "provenancePath": "documentation/examples/14-greybox-city/input/prompt.txt"
+        }
+      ],
+      "exported": {
+        "meshes": 9,
+        "materials": 5,
+        "animations": []
+      },
+      "view": {
+        "position": [
+          25.0,
+          25.0,
+          28.0
+        ],
+        "target": [
+          -1.0645122528076172,
+          2.584524154663086,
+          -1.1922550201416016
+        ],
+        "frameHeight": 18.0,
+        "aspect": 1.7777777777777777
+      },
+      "previewPath": "documentation/examples/14-greybox-city/output/result.png"
+    },
+    {
+      "id": "documentation/examples/15-greybox-kitchen-interior/output/result.blend",
+      "title": "Greybox Kitchen Interior",
+      "sourcePath": "documentation/examples/15-greybox-kitchen-interior/output/result.blend",
+      "glbPath": "documentation/examples/15-greybox-kitchen-interior/output/result.glb",
+      "byteSize": 7492,
+      "sourceSha256": "b218976192ddeabb033475149c65e1441a487696aca8c967aca40db6d75400c4",
+      "glbSha256": "1e5e6555beffd19c443be9baa8286964959706f30b7bd3bcc8f4b1186b5ed11f",
+      "warnings": [
+        "Blender world, compositor, and studio lighting are replaced by viewer lighting."
+      ],
+      "metadata": [
+        {
+          "label": "Review",
+          "value": "This greybox answers whether an open room shell, an L-shaped kitchen work zone, a refrigerator mass, and a central circulation path read immediately. It uses floor and wall planes plus four rectangular kitchen masses only.",
+          "provenancePath": "documentation/examples/15-greybox-kitchen-interior/output/review.md"
+        },
+        {
+          "label": "Example prompt",
+          "value": "$blender-create-greybox\n\nCreate a minimal interior greybox of a house kitchen. Use an open room shell\nwith a floor and two walls, then add simple counter and refrigerator masses to\nshow the kitchen work zone and circulation. Use neutral greys only to separate\nroom boundaries, work surfaces, and appliance mass. Do not add cabinets,\ndoors, windows, handles, sink detail, stools, decoration, texture maps, bevels,\nor UVs.\n\nDeliver an editable Blender source, a modest clean render, and a self-contained\nGLB for the Model Viewer. State what was intentionally omitted.",
+          "provenancePath": "documentation/examples/15-greybox-kitchen-interior/input/prompt.txt"
+        }
+      ],
+      "exported": {
+        "meshes": 7,
+        "materials": 4,
+        "animations": []
+      },
+      "view": {
+        "position": [
+          10.0,
+          8.5,
+          12.0
+        ],
+        "target": [
+          -0.12105560302734375,
+          1.7188940048217773,
+          -0.9549522399902344
+        ],
+        "frameHeight": 7.3125,
+        "aspect": 1.7777777777777777
+      },
+      "previewPath": "documentation/examples/15-greybox-kitchen-interior/output/result.png"
     }
   ]
 }

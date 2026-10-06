@@ -1,0 +1,26 @@
+{
+  "sourcePath": "documentation/examples/12-greybox-2-5d/output/result.blend",
+  "sourceSha256": "dac4e3587e9950d5017a807120dcdb5693592f7fccdd21736ae5a623c06d2293",
+  "glbPath": "documentation/examples/12-greybox-2-5d/output/result.glb",
+  "glbSha256": "7a62ca90f973db245c45d025e82ee396915bc573bbe46541ff99ced9df879012",
+  "byteSize": 1836,
+  "warnings": [
+    "Blender world, compositor, and studio lighting are replaced by viewer lighting."
+  ],
+  "blenderVersion": "5.2.2 LTS",
+  "exporterVersion": 3,
+  "view": {
+    "position": [
+      9.0,
+      7.5,
+      11.0
+    ],
+    "target": [
+      -0.13834190368652344,
+      1.9154553413391113,
+      -0.9813852310180664
+    ],
+    "frameHeight": 7.03125,
+    "aspect": 1.7777777777777777
+  }
+}

@@ -1,0 +1,10 @@
+$blender-create-greybox
+
+Create a minimal city greybox that communicates blocks, varied building height,
+and a primary road crossing. Use an editable ground plane, simple road planes,
+and varied-height rectangular building masses only. Use neutral greys only to
+separate ground, road, and buildings. Do not add facades, windows, sidewalks,
+vehicles, street furniture, trees, texture maps, bevels, or UVs.
+
+Deliver an editable Blender source, a modest clean render, and a self-contained
+GLB for the Model Viewer. State what was intentionally omitted.

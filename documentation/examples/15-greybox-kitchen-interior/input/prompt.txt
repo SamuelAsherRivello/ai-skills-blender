@@ -1,0 +1,11 @@
+$blender-create-greybox
+
+Create a minimal interior greybox of a house kitchen. Use an open room shell
+with a floor and two walls, then add simple counter and refrigerator masses to
+show the kitchen work zone and circulation. Use neutral greys only to separate
+room boundaries, work surfaces, and appliance mass. Do not add cabinets,
+doors, windows, handles, sink detail, stools, decoration, texture maps, bevels,
+or UVs.
+
+Deliver an editable Blender source, a modest clean render, and a self-contained
+GLB for the Model Viewer. State what was intentionally omitted.

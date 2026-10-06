@@ -1,0 +1,10 @@
+$blender-create-greybox
+
+Create the smallest clear 2.5D greybox demonstration. Use only a floor plane
+and a perpendicular upright backdrop plane, arranged so an orthographic
+three-quarter view makes the two spatial layers unambiguous. Keep both meshes
+editable and assign neutral grey materials only for separation. Do not add
+architecture, props, bevels, texture maps, UV work, or decorative details.
+
+Deliver an editable Blender source, a modest clean render, and a self-contained
+GLB for the Model Viewer. State what was intentionally omitted.

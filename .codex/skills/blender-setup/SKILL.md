@@ -7,7 +7,7 @@ description: Quickly check the official Blender Lab MCP connection with fresh ev
 
 Audit the active AI agent's official Blender Lab MCP connection. Default to a read-only check. Repairs, installations, configuration edits, application startup and Blender scene changes require the user's requested scope. Do not restore or focus the user's editor during an audit.
 
-Use the existing MCP connection whenever it can perform the operation. On Windows, auxiliary execution MUST remain windowless, including brief flashes, during setup, diagnostics, rendering, export, and verification. Before launching, establish suppression for the complete process chain, including client-owned and dependency-owned startup. Use explicit no-console creation (such as subprocess.CREATE_NO_WINDOW) and captured output for reviewed console-only commands. If any required boundary is unknown or unsupported, do not launch: report BLOCKED with the reason and next action, and continue independent safe work. Never retry through a visible terminal, toggle Blender's system console, or weaken suppression. An absolute executable path, cmd /c, Blender --background, or Start-Process -WindowStyle Hidden alone is not proof of no flashes. Keep exit status, bounded timeouts, useful diagnostics without secrets, and cleanup of owned descendants. Do not hide, minimize, restore, focus, or close the existing Blender editor to suppress auxiliary windows. Preserve fresh editor-readiness checks before screenshots.
+Read [operating boundaries](references/operating-boundaries.md) before a helper launch, Blender mutation, editor screenshot, or example-scene change.
 
 ## Fresh Quick Pass, Then Targeted Diagnostics
 

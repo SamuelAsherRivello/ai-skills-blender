@@ -1,17 +1,17 @@
 ---
 name: blender-create-visual-target-2d
-description: Generate or interpret a prompt-specific 2D visual target and 3D direction brief. Start as a parallel target worker for every new Blender 3D task and use its result for preview feedback; also callable directly for concept direction.
+description: Generate or interpret a prompt-specific 2D visual target and concise 3D direction brief for visual development or reference-led Blender work.
 ---
 
 # Blender Create Visual Target 2D
 
-Use the existing MCP connection whenever it can perform the operation. On Windows, auxiliary execution MUST remain windowless, including brief flashes, during setup, diagnostics, rendering, export, and verification. Before launching, establish suppression for the complete process chain, including client-owned and dependency-owned startup. Use explicit no-console creation (such as subprocess.CREATE_NO_WINDOW) and captured output for reviewed console-only commands. If any required boundary is unknown or unsupported, do not launch: report BLOCKED with the reason and next action, and continue independent safe work. Never retry through a visible terminal, toggle Blender's system console, or weaken suppression. An absolute executable path, cmd /c, Blender --background, or Start-Process -WindowStyle Hidden alone is not proof of no flashes. Keep exit status, bounded timeouts, useful diagnostics without secrets, and cleanup of owned descendants. Do not hide, minimize, restore, focus, or close the existing Blender editor to suppress auxiliary windows. Preserve fresh editor-readiness checks before screenshots.
+Before launching a helper, mutating Blender, capturing editor pixels, or changing an example `.blend`, read [operating boundaries](../blender-setup/references/operating-boundaries.md). A target-only request neither requires Blender nor authorizes a Blender connection or mutation.
 
 ## Inputs and scope
 
-Accept a subject or supplied target image, intended 3D use, and optional style, setting, pose/action, camera, lighting, palette, aspect ratio, resolution, references and budget. State reasonable defaults; clarify only material ambiguity. Every new 3D task starts a prompt-specific visual-target worker by default, alongside the main Blender work. A target-only request does not require Blender, its MCP connection, or any scene mutation.
+Accept a subject or supplied target image, intended 3D use, and optional style, setting, pose/action, camera, lighting, palette, aspect ratio, resolution, references and budget. State reasonable defaults; clarify only material ambiguity. Use this skill when a visual direction brief or a comparison target would materially help; technical-only work does not need it.
 
-For 3D-task orchestration, read [references/parallel-feedback.md](references/parallel-feedback.md). The parent launches one worker and continues construction immediately; nested skills reuse the same task/target. When running as the target worker, execute the workflow below without spawning another worker or changing Blender. A direct target-only invocation executes it once, with no recursive delegation.
+For parallel work, read [references/parallel-feedback.md](references/parallel-feedback.md). A parent may delegate a target while it continues independent construction; nested skills reuse the same task/target. A worker neither changes Blender nor recursively delegates. A direct invocation runs once.
 
 Use an image tool actually available in the current session and follow its provider instructions. Codex or Claude being the client does not establish image-generation capability. Do not install a provider, switch to an unconfigured API, acquire credentials or start a paid service as a fallback. A supplied image can be analyzed without generation; otherwise deliver an explicit prompt-only result when generation is unavailable.
 

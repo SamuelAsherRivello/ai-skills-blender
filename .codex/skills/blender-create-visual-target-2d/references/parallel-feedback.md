@@ -1,6 +1,6 @@
 # Parallel target and 3D feedback
 
-At the start of each top-level 3D task, the parent launches one target worker using this skill. This includes modeling, scene creation, materials, UV/baking, lighting, rendering, rigging/animation, procedural work, export, optimization and dimensional conversions. Pure connection diagnostics, documentation and skill maintenance are not 3D tasks. An explicit user opt-out overrides the default.
+Use a target worker when a new or changed asset/scene needs visual direction or visual comparison. It is normally useful for reference-led modeling, environment construction, art-directed materials, shots, sprites, and animation poses. Do not launch it for setup, maintenance, export-only, render-only, UV/bake-only, topology, performance, or other technical work unless the user also requests a visual revision. An explicit user opt-out always wins.
 
 ## Dispatch without blocking construction
 

@@ -1283,6 +1283,141 @@
         "aspect": 1.7777777777777777
       },
       "previewPath": "documentation/examples/21-greybox-kitchen-world-grid/output/result.png"
+    },
+    {
+      "id": "documentation/examples/22-greybox-car-palette-grid/output/result.blend",
+      "title": "Greybox Car Palette Grid",
+      "sourcePath": "documentation/examples/22-greybox-car-palette-grid/output/result.blend",
+      "glbPath": "documentation/examples/22-greybox-car-palette-grid/output/result.glb",
+      "byteSize": 180052,
+      "sourceSha256": "ab334c6890d0633229b5768f3a1ef48c9e21a5ee083fb0987779ef409a019580",
+      "glbSha256": "90d95a2b4ca97f57c113a69450c401e2a90f57f0dcd6b5cf5711fc31b798ea36",
+      "warnings": [
+        "Blender world, compositor, and studio lighting are replaced by viewer lighting.",
+        "Procedural base color and tangent normals baked to 2048px atlas; microdetail is resolution-limited."
+      ],
+      "metadata": [
+        {
+          "label": "Review",
+          "value": "This greybox answers whether the ground plane and complete vehicle read as two distinct groups while wheel placement and contact remain clear. The one-scene-unit tile convention is deliberately treated as one metre.",
+          "provenancePath": "documentation/examples/22-greybox-car-palette-grid/output/review.md"
+        },
+        {
+          "label": "Example prompt",
+          "value": "$blender-create-greybox\n\nCreate a minimal car greybox using a fixed light greybox palette. Use exactly two\ncategories in their introduction order: floor first and car second. The car body\nand all faces of its four wheels share the second material; do not create a wheel\ncategory. Use a shared world-aligned one-metre grid with square tiles. Do not add\nglazing, doors, lights, interiors, trim, image textures, UVs, or modifiers.\n\nDeliver an editable Blender source, render, and self-contained GLB with the\npalette/category map and grid method documented.",
+          "provenancePath": "documentation/examples/22-greybox-car-palette-grid/input/prompt.txt"
+        }
+      ],
+      "exported": {
+        "meshes": 1,
+        "materials": 2,
+        "animations": []
+      },
+      "view": {
+        "position": [
+          7.5,
+          5.800000190734863,
+          9.0
+        ],
+        "target": [
+          -0.2440199851989746,
+          0.8438291549682617,
+          -0.29282379150390625
+        ],
+        "frameHeight": 3.9375,
+        "aspect": 1.7777777777777777
+      },
+      "previewPath": "documentation/examples/22-greybox-car-palette-grid/output/result.png"
+    },
+    {
+      "id": "documentation/examples/23-greybox-city-palette-grid/output/result.blend",
+      "title": "Greybox City Palette Grid",
+      "sourcePath": "documentation/examples/23-greybox-city-palette-grid/output/result.blend",
+      "glbPath": "documentation/examples/23-greybox-city-palette-grid/output/result.glb",
+      "byteSize": 158476,
+      "sourceSha256": "049f6fe80444e2da1f11806ab5608f1de20e891aaab97fdce9effad2949dcfdb",
+      "glbSha256": "fb077edbff232a64c98d770d22858f2bb4148d31d70d694016ebd2a679e6d514",
+      "warnings": [
+        "Blender world, compositor, and studio lighting are replaced by viewer lighting.",
+        "Procedural base color and tangent normals baked to 2048px atlas; microdetail is resolution-limited."
+      ],
+      "metadata": [
+        {
+          "label": "Review",
+          "value": "This greybox answers whether the road/ground network and the varied-height building set read as two immediately distinct groups. The one-scene-unit tile convention is deliberately treated as one metre.",
+          "provenancePath": "documentation/examples/23-greybox-city-palette-grid/output/review.md"
+        },
+        {
+          "label": "Example prompt",
+          "value": "$blender-create-greybox\n\nCreate a minimal city greybox with a primary road crossing and varied-height\nbuilding blocks. Use exactly two palette categories in introduction order: the\nground and road surfaces first, then every building second. Use a shared\nworld-aligned one-metre grid with square tiles. Do not add facades, windows,\nroad markings, sidewalks, vehicles, trees, image textures, bevels, or UVs.\n\nDeliver an editable Blender source, render, and self-contained GLB with the\npalette/category map and grid method documented.",
+          "provenancePath": "documentation/examples/23-greybox-city-palette-grid/input/prompt.txt"
+        }
+      ],
+      "exported": {
+        "meshes": 1,
+        "materials": 2,
+        "animations": []
+      },
+      "view": {
+        "position": [
+          25.0,
+          25.0,
+          28.0
+        ],
+        "target": [
+          -1.0645122528076172,
+          2.584524154663086,
+          -1.1922550201416016
+        ],
+        "frameHeight": 18.0,
+        "aspect": 1.7777777777777777
+      },
+      "previewPath": "documentation/examples/23-greybox-city-palette-grid/output/result.png"
+    },
+    {
+      "id": "documentation/examples/24-greybox-kitchen-palette-grid/output/result.blend",
+      "title": "Greybox Kitchen Palette Grid",
+      "sourcePath": "documentation/examples/24-greybox-kitchen-palette-grid/output/result.blend",
+      "glbPath": "documentation/examples/24-greybox-kitchen-palette-grid/output/result.glb",
+      "byteSize": 141316,
+      "sourceSha256": "1ee5a3e18d03400ff512dfdb44c018b02921e9eb5d8d3b3a0691da75e29ef25b",
+      "glbSha256": "2cfaf02b1103c83a6a156ab4d75f2446a0cc998f7ba51865f7568d257803a269",
+      "warnings": [
+        "Blender world, compositor, and studio lighting are replaced by viewer lighting.",
+        "Procedural base color and tangent normals baked to 2048px atlas; microdetail is resolution-limited."
+      ],
+      "metadata": [
+        {
+          "label": "Review",
+          "value": "This greybox answers whether the floor, enclosing room surfaces, and repeated kitchen fixtures read as three intentional groups. The one-scene-unit tile convention is deliberately treated as one metre.",
+          "provenancePath": "documentation/examples/24-greybox-kitchen-palette-grid/output/review.md"
+        },
+        {
+          "label": "Example prompt",
+          "value": "$blender-create-greybox\n\nCreate a minimal house-kitchen interior greybox. Use exactly three palette\ncategories in introduction order: floor first, both walls second, then all\nkitchen furniture/appliances third. The counters, island, and refrigerator share\nthat third material. Use a shared world-aligned one-metre grid with square tiles.\nDo not add cabinet fronts, doors, windows, handles, sink detail, stools, decor,\nimage textures, bevels, or UVs.\n\nDeliver an editable Blender source, render, and self-contained GLB with the\npalette/category map and grid method documented.",
+          "provenancePath": "documentation/examples/24-greybox-kitchen-palette-grid/input/prompt.txt"
+        }
+      ],
+      "exported": {
+        "meshes": 1,
+        "materials": 3,
+        "animations": []
+      },
+      "view": {
+        "position": [
+          10.0,
+          8.5,
+          12.0
+        ],
+        "target": [
+          -0.12105560302734375,
+          1.7188940048217773,
+          -0.9549522399902344
+        ],
+        "frameHeight": 7.3125,
+        "aspect": 1.7777777777777777
+      },
+      "previewPath": "documentation/examples/24-greybox-kitchen-palette-grid/output/result.png"
     }
   ]
 }

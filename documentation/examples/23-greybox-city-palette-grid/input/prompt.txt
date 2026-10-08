@@ -1,0 +1,10 @@
+$blender-create-greybox
+
+Create a minimal city greybox with a primary road crossing and varied-height
+building blocks. Use exactly two palette categories in introduction order: the
+ground and road surfaces first, then every building second. Use a shared
+world-aligned one-metre grid with square tiles. Do not add facades, windows,
+road markings, sidewalks, vehicles, trees, image textures, bevels, or UVs.
+
+Deliver an editable Blender source, render, and self-contained GLB with the
+palette/category map and grid method documented.

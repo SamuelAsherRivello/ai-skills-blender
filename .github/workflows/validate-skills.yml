@@ -1,0 +1,24 @@
+name: Validate skills
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+      - name: Install validator dependency
+        run: python -m pip install -r requirements-dev.txt
+      - name: Validate authoring sources
+        run: python scripts/validate-skills.py skills --client codex --require-openai-metadata --require-ten-step-workflow
+      - name: Validate Codex package
+        run: python scripts/validate-skills.py .codex/skills --client codex --require-openai-metadata --require-ten-step-workflow --link-root .codex/skills
+      - name: Validate Claude package
+        run: python scripts/validate-skills.py .claude/skills --client claude --require-ten-step-workflow
+      - name: Check generated Claude package drift
+        run: python scripts/sync-client-skills.py --check

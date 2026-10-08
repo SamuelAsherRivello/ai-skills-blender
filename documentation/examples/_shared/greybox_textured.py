@@ -5,6 +5,18 @@ import bpy
 from mathutils import Vector
 
 
+GREYBOX_PALETTE = (
+    ("PowderBlue", (0.46, 0.61, 0.74)),
+    ("SoftSage", (0.52, 0.70, 0.60)),
+    ("SoftRose", (0.76, 0.56, 0.62)),
+    ("Lavender", (0.63, 0.56, 0.76)),
+    ("Sand", (0.76, 0.67, 0.49)),
+    ("MistTeal", (0.47, 0.68, 0.68)),
+    ("Apricot", (0.76, 0.58, 0.47)),
+    ("PalePlum", (0.68, 0.52, 0.67)),
+)
+
+
 def _remove_if_orphan(datablock):
     if datablock and datablock.users == 0:
         for collection in (bpy.data.meshes, bpy.data.cameras, bpy.data.lights, bpy.data.materials, bpy.data.worlds):
@@ -92,6 +104,49 @@ def slate_material(category, base_color, grid_reference, tile_size=1.0):
     material["grid_coordinate_space"] = "Greybox_GridReference Object coordinates"
     material["grid_mapping_scale"] = 1 / tile_size
     material["semantic_category"] = category
+    return material
+
+
+def palette_material(category, palette_index, grid_reference, tile_size=1.0):
+    """Create one shared, world-grid material from the fixed greybox palette."""
+    if not 0 <= palette_index < len(GREYBOX_PALETTE):
+        raise ValueError(f"Palette index must be 0 through {len(GREYBOX_PALETTE) - 1}")
+    palette_name, base_color = GREYBOX_PALETTE[palette_index]
+    name = f"Greybox_{palette_name}_{category}"
+    existing = bpy.data.materials.get(name)
+    if existing:
+        if existing.users:
+            raise RuntimeError(f"Material name is already in use outside this clean greybox: {name}")
+        bpy.data.materials.remove(existing)
+    if tile_size <= 0:
+        raise ValueError("Grid tile size must be positive")
+
+    material = bpy.data.materials.new(name)
+    material.use_nodes = True
+    nodes = material.node_tree.nodes
+    links = material.node_tree.links
+    nodes.clear()
+    output = nodes.new("ShaderNodeOutputMaterial")
+    principled = nodes.new("ShaderNodeBsdfPrincipled")
+    coordinates = nodes.new("ShaderNodeTexCoord")
+    coordinates.object = grid_reference
+    mapping = nodes.new("ShaderNodeMapping")
+    checker = nodes.new("ShaderNodeTexChecker")
+    mapping.inputs["Scale"].default_value = (1 / tile_size, 1 / tile_size, 1 / tile_size)
+    checker.inputs["Color1"].default_value = (*base_color, 1.0)
+    checker.inputs["Color2"].default_value = (*[min(1.0, component + 0.12) for component in base_color], 1.0)
+    checker.inputs["Scale"].default_value = 1.0
+    principled.inputs["Roughness"].default_value = 0.84
+    links.new(coordinates.outputs["Object"], mapping.inputs["Vector"])
+    links.new(mapping.outputs["Vector"], checker.inputs["Vector"])
+    links.new(checker.outputs["Color"], principled.inputs["Base Color"])
+    links.new(principled.outputs["BSDF"], output.inputs["Surface"])
+    material["greybox_palette_entry"] = palette_name
+    material["greybox_palette_index"] = palette_index + 1
+    material["semantic_category"] = category
+    material["grid_tile_world_units"] = tile_size
+    material["grid_coordinate_space"] = "Greybox_GridReference Object coordinates"
+    material["grid_mapping_scale"] = 1 / tile_size
     return material
 
 

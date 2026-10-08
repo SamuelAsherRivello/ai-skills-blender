@@ -6,15 +6,18 @@ Local Codex, Blender and the [official Blender Lab MCP connection](https://www.b
 
 ## Installation
 
-From this repository in PowerShell:
+From this repository in PowerShell, preview a project-local install and then install:
 
 ```powershell
-./scripts/install-codex.ps1 -Scope User -Skills all
+./scripts/install-codex.ps1 -Scope Project -ProjectPath C:\MyProject -Skills all -DryRun
+./scripts/install-codex.ps1 -Scope Project -ProjectPath C:\MyProject -Skills all
 ```
 
-For a project, use -Scope Project -ProjectPath C:\MyProject. Add -DryRun to preview. Existing destinations require explicit -Replace and receive recoverable backups.
+Use `-Scope User` to make skills available across projects. Select individual names with `-Skills`; the installer also includes any sibling skill whose linked resources are required. Existing destinations require explicit `-Replace` and receive recoverable backups.
 
 The repository package is .codex/skills/. Codex's current discovery destination is .agents/skills/ in the chosen project or user home. Keeping a distribution copy under .codex does not replace that installation step.
+
+On other platforms, copy selected folders from `.codex/skills/` into the destination project's `.agents/skills/`. A repository-wide `npx skills add` scans both shared and client package directories and cannot currently guarantee which same-name variant it chooses. Use this package when the Codex setup workflow matters.
 
 ## Verify
 
@@ -22,7 +25,7 @@ Restart Codex if necessary, then invoke $blender-setup. Setup and Blender workfl
 
 ## Updating
 
-Pull this repository and rerun the installer with -Replace when ready to replace an installed copy. Author shared changes in skills/, then run python scripts/sync-client-skills.py. Do not hand-edit generated mirrors.
+Pull this repository and rerun the installer with `-Replace` when ready to replace an installed copy. The Codex package is curated in `.codex/skills/` and validated separately from `skills/`; `scripts/sync-client-skills.py` updates only the Claude package. Keep corresponding shared and Codex guidance consistent when a change applies to both.
 
 ## Windows execution
 

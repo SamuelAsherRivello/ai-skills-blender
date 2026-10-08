@@ -1,0 +1,11 @@
+$blender-create-greybox
+
+Create a minimal house-kitchen interior greybox. Use exactly three palette
+categories in introduction order: floor first, both walls second, then all
+kitchen furniture/appliances third. The counters, island, and refrigerator share
+that third material. Use a shared world-aligned one-metre grid with square tiles.
+Do not add cabinet fronts, doors, windows, handles, sink detail, stools, decor,
+image textures, bevels, or UVs.
+
+Deliver an editable Blender source, render, and self-contained GLB with the
+palette/category map and grid method documented.

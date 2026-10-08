@@ -39,6 +39,24 @@ function Copy-SkillContent([string]$Source, [string]$Destination) {
 $names = if ($Skills.Count -eq 1 -and $Skills[0] -eq 'all') {
     @(Get-ChildItem -LiteralPath $sourceRoot -Directory | Select-Object -ExpandProperty Name)
 } else { @($Skills | Select-Object -Unique) }
+$names = @($names)
+
+# A selected skill may link to a sibling skill's resources. Include those
+# dependencies so selective installation does not leave broken links.
+do {
+    $added = $false
+    foreach ($name in @($names)) {
+        $entry = Join-Path (Join-Path $sourceRoot $name) 'SKILL.md'
+        if (-not (Test-Path -LiteralPath $entry)) { continue }
+        foreach ($match in [regex]::Matches([IO.File]::ReadAllText($entry), '\]\(\.\./([a-z0-9]+(?:-[a-z0-9]+)*)/')) {
+            $dependency = $match.Groups[1].Value
+            if ($names -notcontains $dependency) {
+                $names += $dependency
+                $added = $true
+            }
+        }
+    }
+} while ($added)
 
 function Assert-NoReparse([string]$Path) {
     $cursor = [IO.Path]::GetFullPath($Path)
@@ -56,7 +74,7 @@ function Assert-NoReparse([string]$Path) {
 
 $plan = @()
 foreach ($name in $names) {
-    if ($name -notmatch '^blender-[a-z0-9-]+$') { throw "Invalid skill: $name" }
+    if ($name -notmatch '^[a-z0-9]+(?:-[a-z0-9]+)*$' -or $name.Length -gt 63) { throw "Invalid skill: $name" }
     $src = Join-Path $sourceRoot $name
     if (-not (Test-Path -LiteralPath (Join-Path $src 'SKILL.md'))) { throw "Unknown skill: $name" }
     $dst = Join-Path $destination $name

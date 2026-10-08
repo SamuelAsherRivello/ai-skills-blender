@@ -8,13 +8,16 @@ Claude Code, Blender and the [official Blender Lab MCP connection](https://www.b
 
 This checkout already contains native project skills in .claude/skills/. Open Claude Code in the repository to use them after accepting the normal workspace trust prompt.
 
-To copy skills into your user scope or another project, run from this repository in PowerShell:
+To copy skills into another project, preview and install from this repository in PowerShell:
 
 ```powershell
-./scripts/install-claude.ps1 -Scope User -Skills all
+./scripts/install-claude.ps1 -Scope Project -ProjectPath C:\MyProject -Skills all -DryRun
+./scripts/install-claude.ps1 -Scope Project -ProjectPath C:\MyProject -Skills all
 ```
 
-For a project use -Scope Project -ProjectPath C:\MyProject. Add -DryRun to preview. Existing destinations require explicit -Replace and receive recoverable backups. No MCP configuration is installed.
+Use `-Scope User` to make skills available across projects. Select individual names with `-Skills`. Existing destinations require explicit `-Replace` and receive recoverable backups. No MCP configuration is installed.
+
+On other platforms, copy selected folders from `.claude/skills/` into the destination project's `.claude/skills/`. A repository-wide `npx skills add` scans both shared and client package directories and cannot currently guarantee which same-name variant it chooses. Use this package for the Claude-specific setup workflow.
 
 ## Verify
 

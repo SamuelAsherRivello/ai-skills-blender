@@ -1,0 +1,28 @@
+{
+  "sourcePath": "documentation/examples/24-greybox-kitchen-palette-grid/output/result.blend",
+  "sourceSha256": "1ee5a3e18d03400ff512dfdb44c018b02921e9eb5d8d3b3a0691da75e29ef25b",
+  "glbPath": "documentation/examples/24-greybox-kitchen-palette-grid/output/result.glb",
+  "glbSha256": "2cfaf02b1103c83a6a156ab4d75f2446a0cc998f7ba51865f7568d257803a269",
+  "byteSize": 141316,
+  "warnings": [
+    "Blender world, compositor, and studio lighting are replaced by viewer lighting.",
+    "Procedural base color and tangent normals baked to 2048px atlas; microdetail is resolution-limited."
+  ],
+  "blenderVersion": "5.2.2 LTS",
+  "seconds": 4.14,
+  "exporterVersion": 4,
+  "view": {
+    "position": [
+      10.0,
+      8.5,
+      12.0
+    ],
+    "target": [
+      -0.12105560302734375,
+      1.7188940048217773,
+      -0.9549522399902344
+    ],
+    "frameHeight": 7.3125,
+    "aspect": 1.7777777777777777
+  }
+}

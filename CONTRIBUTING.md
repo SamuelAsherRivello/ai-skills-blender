@@ -20,8 +20,10 @@ For bug reports, include what you tried, what you expected, what happened, and s
 
 1. Fork the repository and create a branch for your change.
 2. Read the [getting started guide](documentation/getting-started-readme.md) and [repository instructions](AGENTS.md).
-3. Make a focused change. Author shared skills in [skills/](skills/); the Claude setup adapter lives in [scripts/adapters/](scripts/adapters/). Regenerate client copies with [sync-client-skills.py](scripts/sync-client-skills.py) when those sources change.
-4. Check the affected behavior and links. See the [helper and validation guide](scripts/script-documentation/helpers.md) for available checks. Describe what you tested and anything you could not verify.
+3. Make a focused change. Author shared skills in [skills/](skills/), and edit the separately curated Codex package in [.codex/skills/](.codex/skills/) when its behavior changes. The Claude setup adapter lives in [scripts/adapters/](scripts/adapters/). Regenerate the Claude package with [sync-client-skills.py](scripts/sync-client-skills.py) when its sources change.
+4. Check the affected behavior and links. Run the [structural validator](scripts/validate-skills.py) on the source and both client packages, then run `python scripts/sync-client-skills.py --check` for Claude drift. See the [helper and validation guide](scripts/script-documentation/helpers.md) for other checks. Describe what you tested and anything you could not verify.
 5. [Open a pull request](https://github.com/SamuelAsherRivello/ai-skills-blender/pulls) explaining the problem, your changes, and any related issue. Draft pull requests are welcome for work in progress.
 
 Keep discussions respectful and constructive. Ask questions if you are unsure where to start—we welcome collaboration at every experience level.
+
+If you are copying this repository for a different theme, follow the [adaptation guide](documentation/adapting-repository.md) before publishing. It calls out the Blender-specific instructions and the different Codex and Claude setup packages.

@@ -1,0 +1,28 @@
+{
+  "sourcePath": "documentation/examples/23-greybox-city-palette-grid/output/result.blend",
+  "sourceSha256": "049f6fe80444e2da1f11806ab5608f1de20e891aaab97fdce9effad2949dcfdb",
+  "glbPath": "documentation/examples/23-greybox-city-palette-grid/output/result.glb",
+  "glbSha256": "fb077edbff232a64c98d770d22858f2bb4148d31d70d694016ebd2a679e6d514",
+  "byteSize": 158476,
+  "warnings": [
+    "Blender world, compositor, and studio lighting are replaced by viewer lighting.",
+    "Procedural base color and tangent normals baked to 2048px atlas; microdetail is resolution-limited."
+  ],
+  "blenderVersion": "5.2.2 LTS",
+  "seconds": 3.95,
+  "exporterVersion": 4,
+  "view": {
+    "position": [
+      25.0,
+      25.0,
+      28.0
+    ],
+    "target": [
+      -1.0645122528076172,
+      2.584524154663086,
+      -1.1922550201416016
+    ],
+    "frameHeight": 18.0,
+    "aspect": 1.7777777777777777
+  }
+}

@@ -5,15 +5,14 @@
 </p>
 
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Skills](https://img.shields.io/badge/skills-14-orange.svg)](skills/)
 [![Blender MCP](https://img.shields.io/badge/Blender_MCP-official-blueviolet.svg)](https://www.blender.org/lab/mcp-server/)
 [![Codex](https://img.shields.io/badge/Codex-skills-green.svg)](.codex/INSTALL.md)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-skills-black.svg)](.claude/INSTALL.md)
 
 # AI Skills Blender
 
-Create, refine, and render 3D assets with fourteen reusable Blender skills.<br />
-Shared sources live in [skills/](skills/), with client packages in [.codex/](.codex/INSTALL.md) and [.claude/](.claude/INSTALL.md).
+Create, refine, and render 3D assets with reusable Blender skills.<br />
+Shared skill sources live in [skills/](skills/). The [Codex package](.codex/INSTALL.md) is curated separately; the [Claude package](.claude/INSTALL.md) is generated from the shared sources with a Claude-specific setup adapter.
 
 > [!IMPORTANT]
 > Skills designed to work with the existing [official Blender Lab MCP](https://www.blender.org/lab/mcp-server/).
@@ -40,41 +39,37 @@ Shared sources live in [skills/](skills/), with client packages in [.codex/](.co
 
 ## Getting Started
 
-### 1. Get the skills
+### 1. Choose your AI client
 
-From your project directory, run:
+| Client | Recommended installation | Setup check |
+|---|---|---|
+| Codex | Copy the [Codex package](.codex/INSTALL.md) | `$blender-setup` |
+| Claude Code | Copy the [Claude package](.claude/INSTALL.md), which has a Claude-specific setup skill | `/blender-setup` |
+| Other agents | Adapt the shared skills and setup instructions to that client's MCP commands | Use that client's skill invocation |
 
-```sh
-npx skills@latest add SamuelAsherRivello/ai-skills-blender --copy
+On Windows, clone this repository, then run the relevant installer from its root. Preview the destination first:
+
+```powershell
+./scripts/install-codex.ps1 -Scope Project -ProjectPath C:\MyProject -Skills all -DryRun
+./scripts/install-codex.ps1 -Scope Project -ProjectPath C:\MyProject -Skills all
 ```
 
-Choose the Blender skills you want and the agents to install them for, including Codex and Claude Code. Project-local installation is the recommended default. `--copy` installs ordinary files you can edit.
+For Claude Code, use the same flow with its installer:
 
-To install globally instead, add `--global`:
-
-```sh
-npx skills@latest add SamuelAsherRivello/ai-skills-blender --copy --global
+```powershell
+./scripts/install-claude.ps1 -Scope Project -ProjectPath C:\MyProject -Skills all -DryRun
+./scripts/install-claude.ps1 -Scope Project -ProjectPath C:\MyProject -Skills all
 ```
+
+On other platforms, copy the selected folders from `.codex/skills/` into the destination project's `.agents/skills/` for Codex, or from `.claude/skills/` into `.claude/skills/` for Claude Code. The Claude package contains a different `blender-setup` skill. The [`skills` CLI discovers both shared and client package folders](https://github.com/vercel-labs/skills#skill-discovery) and [currently deduplicates same-name variants](https://github.com/vercel-labs/skills/issues/1290), so a repository-wide `npx skills add` cannot guarantee the intended client variant. Do not install the same skill twice through different routes.
 
 ### 2. Update the skills
 
-For project-local installations:
-
-```sh
-npx skills update --project
-```
-
-For global installations:
-
-```sh
-npx skills update --global
-```
-
-Before using Blender skills, install Blender and configure the official Blender MCP connection. See the [getting started guide](documentation/getting-started-readme.md) for prerequisites and setup. The [Codex](.codex/INSTALL.md) and [Claude Code](.claude/INSTALL.md) package installers remain available as advanced options.
+Pull this repository and copy the selected package folders again. On Windows, rerun the matching installer with `-Replace` to keep recoverable backups. Before using the skills, install Blender and configure the official Blender MCP connection **in the AI client you use**. See the [getting started guide](documentation/getting-started-readme.md).
 
 ## Use Skills
 
-Claude uses `/skill-name` for the same catalog shown below with Codex `$skill-name` syntax.
+Codex uses `$skill-name`; Claude Code uses `/skill-name`. Other agents may invoke installed skills by name or discover them from a matching request.
 
 ### Calling a skill
 
@@ -127,14 +122,16 @@ Explore completed Blender examples with editable scenes and rendered previews.
 
 ### 📝 Structure
 
-- `skills/`: shared authoring sources for fourteen skills.
-- `.codex/skills/`: generated Codex package with OpenAI metadata.
+- `skills/`: shared Blender skill sources and the basis for the Claude package.
+- `.codex/skills/`: separately curated Codex package with OpenAI metadata, operating guidance, and a Codex-only greybox skill.
 - `.claude/skills/`: generated Claude package with a client-specific setup workflow.
 - `scripts/`: installation and development validation tools.
 - `documentation/references/`: the original camera, colors, lighting and renders directories.
 - `documentation/examples/`: example projects and rendered outputs.
 - `documentation/`: user guides, visual references, and examples.
 - `scripts/script-documentation/`: helper interfaces, source notes, and validation evidence.
+
+To reuse this layout for another theme, follow the [repository adaptation guide](documentation/adapting-repository.md). It identifies the Blender-specific files and checks that must be rewritten before publishing a new catalog.
 
 ### 📦 Dependencies
 

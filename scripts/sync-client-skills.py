@@ -1,4 +1,8 @@
-"""Generate checked-in client packages from shared skill sources; --check detects drift."""
+"""Generate the Claude package from shared sources; --check detects drift.
+
+The Codex package is curated separately because it contains Codex-only skills
+and operating guidance. This script never overwrites it.
+"""
 import argparse
 from pathlib import Path
 import sys
@@ -24,7 +28,7 @@ def expected_files(repo, client):
 
 def sync(repo, check=False):
     errors = []
-    for client in ("codex", "claude"):
+    for client in ("claude",):
         target = repo / ("." + client) / "skills"
         expected = expected_files(repo, client)
         existing = {p.relative_to(target) for p in target.rglob("*") if p.is_file()
@@ -48,5 +52,5 @@ if __name__ == "__main__":
     parser.add_argument("--check", action="store_true")
     args = parser.parse_args()
     errors = sync(Path(__file__).resolve().parents[1], args.check)
-    print("\n".join(errors) if errors else "Codex and Claude skill packages are synchronized.")
+    print("\n".join(errors) if errors else "Claude skill package is synchronized; Codex package is curated separately.")
     sys.exit(bool(errors))

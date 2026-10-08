@@ -86,7 +86,10 @@ Consumers can validate packages with:
 
 ```powershell
 python -m pip install -r requirements-dev.txt
-python scripts/validate-skills.py .codex/skills
+python scripts/validate-skills.py skills --client codex --require-openai-metadata --require-ten-step-workflow
+python scripts/validate-skills.py .codex/skills --client codex --require-openai-metadata --require-ten-step-workflow --link-root .codex/skills
 python scripts/validate-skills.py .claude/skills --client claude
 python scripts/sync-client-skills.py --check
 ```
+
+The validator needs PyYAML. On Windows, `python` may resolve to an unusable WindowsApps alias; use `py -3` or the executable path of a verified Python installation instead. Agent-launched checks must still satisfy the repository's no-console process rule. The default validator check is theme-neutral; the optional flags above enforce this Blender catalog's metadata and workflow convention. `--expected-count N` is available when a release deliberately fixes its catalog size. The sync check covers only the generated Claude package; the Codex package is curated separately. See the [adaptation guide](../../documentation/adapting-repository.md) before carrying those optional rules into another theme.

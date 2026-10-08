@@ -4,35 +4,25 @@
 
 ## 1. Get the skills
 
-From your project directory, run:
+Clone this repository. On Windows, run the matching installer from the repository root. For Codex:
 
-```sh
-npx skills@latest add SamuelAsherRivello/ai-skills-blender --copy
+```powershell
+./scripts/install-codex.ps1 -Scope Project -ProjectPath C:\MyProject -Skills all -DryRun
+./scripts/install-codex.ps1 -Scope Project -ProjectPath C:\MyProject -Skills all
 ```
 
-Choose the Blender skills you want and the agents to install them for, including Codex and Claude Code. Project-local installation is the recommended default. `--copy` installs ordinary files you can edit.
+For Claude Code, use the checked-in [Claude package](../.claude/INSTALL.md):
 
-To install globally instead, add `--global`:
-
-```sh
-npx skills@latest add SamuelAsherRivello/ai-skills-blender --copy --global
+```powershell
+./scripts/install-claude.ps1 -Scope Project -ProjectPath C:\MyProject -Skills all -DryRun
+./scripts/install-claude.ps1 -Scope Project -ProjectPath C:\MyProject -Skills all
 ```
 
-The existing [Codex](../.codex/INSTALL.md) and [Claude Code](../.claude/INSTALL.md) PowerShell installers remain available for package-specific installation.
+On other platforms, copy selected folders from `.codex/skills/` to the destination project's `.agents/skills/` for Codex, or from `.claude/skills/` to `.claude/skills/` for Claude Code. This package contains a Claude-specific `blender-setup` adapter. A repository-wide `npx skills add` currently deduplicates same-name client variants, so it cannot guarantee which setup variant is installed. Do not install duplicate copies under the same client.
 
 ## 2. Update the skills
 
-For project-local installations:
-
-```sh
-npx skills update --project
-```
-
-For global installations:
-
-```sh
-npx skills update --global
-```
+Pull this repository and copy the selected package folders again. The Windows installers require `-Replace` for existing destinations and save backups. To maintain or retheme this repository, see the [adaptation guide](adapting-repository.md).
 
 ## 3. Set up Blender MCP
 

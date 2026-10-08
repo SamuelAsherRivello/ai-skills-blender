@@ -2,7 +2,7 @@
 
 This house greybox asks whether a ground block, block house with a pyramid roof and chimney, and one blocky tree read as three distinct groups. The ground uses PowderBlue, all house parts use SoftSage, and both tree parts use SoftRose. Each category has one shared checker material with a one-scene-unit tile on axis-aligned faces; this example treats one scene unit as one metre.
 
-The roof uses XY projection, so its sloped checker cells are stretched compared with the axis-aligned cubes. The scene intentionally omits doors, windows, a path, foliage detail, bevels, and realistic materials. The earlier two-plane scene remains in `../../12-greybox-2-5d/` as a historical example.
+The roof uses XY projection, so its sloped checker cells are stretched compared with the axis-aligned cubes. The scene intentionally omits doors, windows, a path, foliage detail, bevels, and realistic materials. The earlier two-plane scene remains in `../../25-greybox-2-5d-historical/` as a historical example.
 
 ## Verification
 

@@ -27,7 +27,7 @@ See the [style coverage map](style-coverage.md) for the intended and observed lo
 
 ## Layout and reproduction
 
-Each numbered example stores prompts, build source and optional visual targets in `input/`, and Blender results, screenshots and review evidence in `output/`. Example 02 follows the same input/output pattern but is retained as a preserved baseline for comparison. Examples 03-10 each use a single creative iteration, while 11 demonstrates the sketch-based workflow and 12 demonstrates the greybox house. The original two-plane scene remains available as a [historical variant](12-greybox-2-5d/).
+Each numbered example stores prompts, build source and optional visual targets in `input/`, and Blender results, screenshots and review evidence in `output/`. Example 02 follows the same input/output pattern but is retained as a preserved baseline for comparison. Examples 03-10 each use a single creative iteration, while 11 demonstrates the sketch-based workflow and 12 demonstrates the greybox house. The original two-plane scene remains available as a [historical variant](25-greybox-2-5d-historical/).
 
 `_shared/build_common.py` supplies common modeling, lighting and save helpers for examples 03–10. Open a result.blend to inspect its editable scene. To rebuild, use the verified official MCP with the example folder as context and the checked-in source assets. Saved scenes contain their required assets; helper source is separate from asset portability. Embedded build text records the original run; use the external input/build.py for the current checkout-integrated source.
 

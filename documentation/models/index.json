@@ -1422,10 +1422,10 @@
       "previewPath": "documentation/examples/24-greybox-kitchen-palette-grid/output/result.png"
     },
     {
-      "id": "documentation/examples/12-greybox-2-5d/output/result.blend",
+      "id": "documentation/examples/25-greybox-2-5d-historical/output/result.blend",
       "title": "2.5D Greybox (Historical)",
-      "sourcePath": "documentation/examples/12-greybox-2-5d/output/result.blend",
-      "glbPath": "documentation/examples/12-greybox-2-5d/output/result.glb",
+      "sourcePath": "documentation/examples/25-greybox-2-5d-historical/output/result.blend",
+      "glbPath": "documentation/examples/25-greybox-2-5d-historical/output/result.glb",
       "byteSize": 1836,
       "sourceSha256": "dac4e3587e9950d5017a807120dcdb5693592f7fccdd21736ae5a623c06d2293",
       "glbSha256": "7a62ca90f973db245c45d025e82ee396915bc573bbe46541ff99ced9df879012",
@@ -1436,12 +1436,12 @@
         {
           "label": "Review",
           "value": "This deliberately minimal scene answers one question: can a ground plane and a perpendicular upright plane communicate a 2.5D spatial setup? The answer is evaluated from its orthographic three-quarter camera view. Floor and backdrop use neutral greys only to separate their roles.",
-          "provenancePath": "documentation/examples/12-greybox-2-5d/output/review.md"
+          "provenancePath": "documentation/examples/25-greybox-2-5d-historical/output/review.md"
         },
         {
           "label": "Example prompt",
           "value": "$blender-create-greybox\n\nCreate the smallest clear 2.5D greybox demonstration. Use only a floor plane\nand a perpendicular upright backdrop plane, arranged so an orthographic\nthree-quarter view makes the two spatial layers unambiguous. Keep both meshes\neditable and assign neutral grey materials only for separation. Do not add\narchitecture, props, bevels, texture maps, UV work, or decorative details.\n\nDeliver an editable Blender source, a modest clean render, and a self-contained\nGLB for the Model Viewer. State what was intentionally omitted.",
-          "provenancePath": "documentation/examples/12-greybox-2-5d/input/prompt.txt"
+          "provenancePath": "documentation/examples/25-greybox-2-5d-historical/input/prompt.txt"
         }
       ],
       "exported": {
@@ -1463,7 +1463,7 @@
         "frameHeight": 7.03125,
         "aspect": 1.7777777777777777
       },
-      "previewPath": "documentation/examples/12-greybox-2-5d/output/result.png"
+      "previewPath": "documentation/examples/25-greybox-2-5d-historical/output/result.png"
     }
   ]
 }

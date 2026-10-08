@@ -6,4 +6,4 @@ The source intentionally omits thickness, props, texture maps, UV work, bevels, 
 
 ## Verification
 
-The saved 960×540 render was inspected visually: the two planes meet at a clear right angle, with the floor receding to the vertical backdrop. The adjacent GLB has two exported meshes, no external buffers or textures, and passed the repository validator with zero errors and warnings. It was also opened in a local browser viewer, where both planes were visible and orbit controls were available. The browser check is local only; public HTTP access remains unverified because this example has not been published.
+The saved 960×540 render was inspected visually: the two planes meet at a clear right angle, with the floor receding to the vertical backdrop. The adjacent GLB has two exported meshes, no external buffers or textures, and passed the repository validator with zero errors and warnings. This source is preserved as a historical variant after the textured house replaced it at example 12; the public Model Viewer keeps it available as the final catalog entry.

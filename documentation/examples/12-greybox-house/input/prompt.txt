@@ -1,0 +1,14 @@
+$blender-create-greybox
+
+Replace the example-12 two-plane demonstration with a small greybox house.
+Show a ground block, a rectangular house block, a four-sided pyramid roof, a
+chimney, and one blocky tree. Use a readable checker texture on the cubes and
+keep its tiles at one scene unit per square on axis-aligned faces. Treat one
+scene unit as one metre for this example.
+
+Use exactly three shared color categories: ground first (PowderBlue), all
+house parts including roof and chimney second (SoftSage), and both parts of
+the tree third (SoftRose). Keep the forms simple; omit doors, windows, paths,
+foliage detail, bevels, and realistic materials. Deliver an editable Blender
+scene, clean render, and self-contained GLB for the public Model Viewer.
+Preserve the original two-plane example as a historical source.

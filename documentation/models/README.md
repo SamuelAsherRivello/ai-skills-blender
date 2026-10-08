@@ -11,6 +11,8 @@
 
 Windows process launches must follow AGENTS.md: explicit no-console creation at every boundary, captured diagnostics, bounded execution, and cleanup. The exporter uses in-process Blender APIs and disables Draco compression; it launches no child helpers. Batch runners must impose a timeout and terminate their owned Blender process on failure. No shell or system console is needed.
 
+An isolated scene built through the existing official MCP may export its selected meshes directly when its source uses packed image textures and needs no procedural bake. Its builder must preserve the editor's previous scene, save an isolated `.blend`, record `exportMethod` and limitations in `.export.json`, and pass the same GLB, hash, catalog, and browser checks. The example-12 greybox house uses this route.
+
 ## Contract
 
 - `schemaVersion`: currently `1`.
@@ -20,6 +22,7 @@ Windows process launches must follow AGENTS.md: explicit no-console creation at 
 - `warnings`: documented export limitations. Render previews are references, never substitutes for a working 3D export.
 - `exported`: counts/animation names measured from the exported GLB, distinct from Blender scene statistics.
 - Optional `view`: source camera position/target in glTF right-handed Y-up coordinates, vertical `frameHeight` at the target and original render `aspect`. This frames the subject even when studio floors are large. Cameras themselves are not exported into the GLB.
+- Optional adjacent `catalog.json` may set a source title and `historical: true`; historical entries remain in the catalog after current numbered examples.
 
 All paths are repository-relative and slash-separated. Clients should resolve one source commit per browsing session and load its catalog and assets at that revision. No viewer build or release includes these model bytes.
 

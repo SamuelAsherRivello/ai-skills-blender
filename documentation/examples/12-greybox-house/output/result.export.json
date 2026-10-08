@@ -1,0 +1,29 @@
+{
+  "sourcePath": "documentation/examples/12-greybox-house/output/result.blend",
+  "sourceSha256": "8cdcb3bd48ba71c91bd5ea90d03141f804edaa87eb8304df979943d5dc1e3dd4",
+  "glbPath": "documentation/examples/12-greybox-house/output/result.glb",
+  "glbSha256": "fa20a123b833a132b8396ae061908573a0c8ecdeb375a59e4c9ce5808bcdac7c",
+  "byteSize": 12328,
+  "warnings": [
+    "Blender world and studio lighting are replaced by viewer lighting.",
+    "Checker images are packed; world-axis UVs keep one-metre tiles square on axis-aligned faces, while roof slopes use XY projection.",
+    "Packed-image direct export replaces the standard procedural atlas bake for this scene."
+  ],
+  "blenderVersion": "5.2.2 LTS",
+  "exportMethod": "Direct glTF export of packed checker images from an isolated scene",
+  "seconds": 0.55,
+  "view": {
+    "position": [
+      8.0,
+      8.0,
+      11.0
+    ],
+    "target": [
+      -0.25,
+      2.0,
+      -0.0
+    ],
+    "frameHeight": 7.875,
+    "aspect": 1.7777777777777777
+  }
+}

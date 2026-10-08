@@ -839,48 +839,50 @@
       "previewPath": "documentation/examples/11-floating-forest-from-sketch/output/result.png"
     },
     {
-      "id": "documentation/examples/12-greybox-2-5d/output/result.blend",
-      "title": "Greybox 2 5D",
-      "sourcePath": "documentation/examples/12-greybox-2-5d/output/result.blend",
-      "glbPath": "documentation/examples/12-greybox-2-5d/output/result.glb",
-      "byteSize": 1836,
-      "sourceSha256": "dac4e3587e9950d5017a807120dcdb5693592f7fccdd21736ae5a623c06d2293",
-      "glbSha256": "7a62ca90f973db245c45d025e82ee396915bc573bbe46541ff99ced9df879012",
+      "id": "documentation/examples/12-greybox-house/output/result.blend",
+      "title": "Greybox House",
+      "sourcePath": "documentation/examples/12-greybox-house/output/result.blend",
+      "glbPath": "documentation/examples/12-greybox-house/output/result.glb",
+      "byteSize": 12328,
+      "sourceSha256": "8cdcb3bd48ba71c91bd5ea90d03141f804edaa87eb8304df979943d5dc1e3dd4",
+      "glbSha256": "fa20a123b833a132b8396ae061908573a0c8ecdeb375a59e4c9ce5808bcdac7c",
       "warnings": [
-        "Blender world, compositor, and studio lighting are replaced by viewer lighting."
+        "Blender world and studio lighting are replaced by viewer lighting.",
+        "Checker images are packed; world-axis UVs keep one-metre tiles square on axis-aligned faces, while roof slopes use XY projection.",
+        "Packed-image direct export replaces the standard procedural atlas bake for this scene."
       ],
       "metadata": [
         {
           "label": "Review",
-          "value": "This deliberately minimal scene answers one question: can a ground plane and a perpendicular upright plane communicate a 2.5D spatial setup? The answer is evaluated from its orthographic three-quarter camera view. Floor and backdrop use neutral greys only to separate their roles.",
-          "provenancePath": "documentation/examples/12-greybox-2-5d/output/review.md"
+          "value": "This house greybox asks whether a ground block, block house with a pyramid roof and chimney, and one blocky tree read as three distinct groups. The ground uses PowderBlue, all house parts use SoftSage, and both tree parts use SoftRose. Each category has one shared checker material with a one-scene-unit tile on axis-aligned faces; this example treats one scene unit as one metre.",
+          "provenancePath": "documentation/examples/12-greybox-house/output/review.md"
         },
         {
           "label": "Example prompt",
-          "value": "$blender-create-greybox\n\nCreate the smallest clear 2.5D greybox demonstration. Use only a floor plane\nand a perpendicular upright backdrop plane, arranged so an orthographic\nthree-quarter view makes the two spatial layers unambiguous. Keep both meshes\neditable and assign neutral grey materials only for separation. Do not add\narchitecture, props, bevels, texture maps, UV work, or decorative details.\n\nDeliver an editable Blender source, a modest clean render, and a self-contained\nGLB for the Model Viewer. State what was intentionally omitted.",
-          "provenancePath": "documentation/examples/12-greybox-2-5d/input/prompt.txt"
+          "value": "$blender-create-greybox\n\nReplace the example-12 two-plane demonstration with a small greybox house.\nShow a ground block, a rectangular house block, a four-sided pyramid roof, a\nchimney, and one blocky tree. Use a readable checker texture on the cubes and\nkeep its tiles at one scene unit per square on axis-aligned faces. Treat one\nscene unit as one metre for this example.\n\nUse exactly three shared color categories: ground first (PowderBlue), all\nhouse parts including roof and chimney second (SoftSage), and both parts of\nthe tree third (SoftRose). Keep the forms simple; omit doors, windows, paths,\nfoliage detail, bevels, and realistic materials. Deliver an editable Blender\nscene, clean render, and self-contained GLB for the public Model Viewer.\nPreserve the original two-plane example as a historical source.",
+          "provenancePath": "documentation/examples/12-greybox-house/input/prompt.txt"
         }
       ],
       "exported": {
-        "meshes": 2,
-        "materials": 2,
+        "meshes": 6,
+        "materials": 3,
         "animations": []
       },
       "view": {
         "position": [
-          9.0,
-          7.5,
+          8.0,
+          8.0,
           11.0
         ],
         "target": [
-          -0.13834190368652344,
-          1.9154553413391113,
-          -0.9813852310180664
+          -0.25,
+          2.0,
+          -0.0
         ],
-        "frameHeight": 7.03125,
+        "frameHeight": 7.875,
         "aspect": 1.7777777777777777
       },
-      "previewPath": "documentation/examples/12-greybox-2-5d/output/result.png"
+      "previewPath": "documentation/examples/12-greybox-house/output/result.png"
     },
     {
       "id": "documentation/examples/13-greybox-car/output/result.blend",
@@ -1418,6 +1420,50 @@
         "aspect": 1.7777777777777777
       },
       "previewPath": "documentation/examples/24-greybox-kitchen-palette-grid/output/result.png"
+    },
+    {
+      "id": "documentation/examples/12-greybox-2-5d/output/result.blend",
+      "title": "2.5D Greybox (Historical)",
+      "sourcePath": "documentation/examples/12-greybox-2-5d/output/result.blend",
+      "glbPath": "documentation/examples/12-greybox-2-5d/output/result.glb",
+      "byteSize": 1836,
+      "sourceSha256": "dac4e3587e9950d5017a807120dcdb5693592f7fccdd21736ae5a623c06d2293",
+      "glbSha256": "7a62ca90f973db245c45d025e82ee396915bc573bbe46541ff99ced9df879012",
+      "warnings": [
+        "Blender world, compositor, and studio lighting are replaced by viewer lighting."
+      ],
+      "metadata": [
+        {
+          "label": "Review",
+          "value": "This deliberately minimal scene answers one question: can a ground plane and a perpendicular upright plane communicate a 2.5D spatial setup? The answer is evaluated from its orthographic three-quarter camera view. Floor and backdrop use neutral greys only to separate their roles.",
+          "provenancePath": "documentation/examples/12-greybox-2-5d/output/review.md"
+        },
+        {
+          "label": "Example prompt",
+          "value": "$blender-create-greybox\n\nCreate the smallest clear 2.5D greybox demonstration. Use only a floor plane\nand a perpendicular upright backdrop plane, arranged so an orthographic\nthree-quarter view makes the two spatial layers unambiguous. Keep both meshes\neditable and assign neutral grey materials only for separation. Do not add\narchitecture, props, bevels, texture maps, UV work, or decorative details.\n\nDeliver an editable Blender source, a modest clean render, and a self-contained\nGLB for the Model Viewer. State what was intentionally omitted.",
+          "provenancePath": "documentation/examples/12-greybox-2-5d/input/prompt.txt"
+        }
+      ],
+      "exported": {
+        "meshes": 2,
+        "materials": 2,
+        "animations": []
+      },
+      "view": {
+        "position": [
+          9.0,
+          7.5,
+          11.0
+        ],
+        "target": [
+          -0.13834190368652344,
+          1.9154553413391113,
+          -0.9813852310180664
+        ],
+        "frameHeight": 7.03125,
+        "aspect": 1.7777777777777777
+      },
+      "previewPath": "documentation/examples/12-greybox-2-5d/output/result.png"
     }
   ]
 }

@@ -2,7 +2,7 @@
 
 # Blender examples
 
-Eleven integrated workflows, ready for visual review. Click a render to open it at full size. Examples 03–10 each use one creative iteration; review notes identify remaining artistic issues. Example 02 is the preserved baseline and examples 03, 07, and 08 have refresh candidates. Example 11 is the current showcase asset from a sketch input.
+Selected Blender examples, ready for visual review. Click a render to open it at full size. Examples 03–10 each use one creative iteration; review notes identify remaining artistic issues. Example 02 is the preserved baseline and examples 03, 07, and 08 have refresh candidates. Example 11 is the current showcase asset from a sketch input; example 12 demonstrates a textured greybox house.
 
 See the [style coverage map](style-coverage.md) for the intended and observed look of each example and the initial refresh candidates.
 
@@ -23,13 +23,14 @@ See the [style coverage map](style-coverage.md) for the intended and observed lo
 | [09 — Ceramic Tea Still Life](09-ceramic-tea-still-life/) | <a href="09-ceramic-tea-still-life/output/result.png"><img src="09-ceramic-tea-still-life/output/result.png" width="100" alt="Ceramic Tea Still Life render" /></a> | [Prompt](09-ceramic-tea-still-life/input/prompt.md) / [Result](09-ceramic-tea-still-life/output/) |
 | [10 — Low-Poly Island](10-low-poly-island/) | <a href="10-low-poly-island/output/result.png"><img src="10-low-poly-island/output/result.png" width="100" alt="Low-Poly Island render" /></a> | [Prompt](10-low-poly-island/input/prompt.md) / [Result](10-low-poly-island/output/) |
 | [11 — Floating Forest from Sketch](11-floating-forest-from-sketch/) | <a href="11-floating-forest-from-sketch/output/result.png"><img src="11-floating-forest-from-sketch/output/result.png" width="100" alt="Floating Forest from Sketch render" /></a> | [Prompt](11-floating-forest-from-sketch/input/prompt.md) / [Result](11-floating-forest-from-sketch/output/) |
+| [12 — Greybox House](12-greybox-house/) | <a href="12-greybox-house/output/result.png"><img src="12-greybox-house/output/result.png" width="100" alt="Greybox House render" /></a> | [Prompt](12-greybox-house/input/prompt.txt) / [Result](12-greybox-house/output/) |
 
 ## Layout and reproduction
 
-Each numbered example stores prompts, build source and optional visual targets in `input/`, and Blender results, screenshots and review evidence in `output/`. Example 02 follows the same input/output pattern but is retained as a preserved baseline for comparison. Examples 03-10 each use a single creative iteration, while 11 demonstrates the sketch-based workflow. Example 11 is tracked with its preserved source, review notes and output renders.
+Each numbered example stores prompts, build source and optional visual targets in `input/`, and Blender results, screenshots and review evidence in `output/`. Example 02 follows the same input/output pattern but is retained as a preserved baseline for comparison. Examples 03-10 each use a single creative iteration, while 11 demonstrates the sketch-based workflow and 12 demonstrates the greybox house. The original two-plane scene remains available as a [historical variant](12-greybox-2-5d/).
 
 `_shared/build_common.py` supplies common modeling, lighting and save helpers for examples 03–10. Open a result.blend to inspect its editable scene. To rebuild, use the verified official MCP with the example folder as context and the checked-in source assets. Saved scenes contain their required assets; helper source is separate from asset portability. Embedded build text records the original run; use the external input/build.py for the current checkout-integrated source.
 
 ## Skill coverage
 
-All examples exercise setup, materials, lighting/camera, rendering and review. Model creation is shown by the character, chest, robot, fox, lamp and still life; environment creation by the firehouse, island and floating forest; greybox workflows are covered separately. See [verification.json](verification.json) for file and image checks. Reviews distinguish technical evidence from pending artistic approval. No target-engine compatibility is implied by Blender GLB or image export formatting.
+All examples exercise setup, materials, lighting/camera, rendering and review. Model creation is shown by the character, chest, robot, fox, lamp and still life; environment creation by the firehouse, island and floating forest; example 12 introduces the greybox workflow. See [verification.json](verification.json) for file and image checks. Reviews distinguish technical evidence from pending artistic approval. No target-engine compatibility is implied by Blender GLB or image export formatting.

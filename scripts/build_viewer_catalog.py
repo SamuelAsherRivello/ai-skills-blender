@@ -52,9 +52,15 @@ def metadata(source):
     return rows
 
 
+def catalog_options(source):
+    options = source.parent / 'catalog.json'
+    return json.loads(options.read_text(encoding='utf-8')) if options.exists() else {}
+
+
 def build():
     entries=[]
-    for source in sorted((ROOT/'documentation/examples').rglob('*.blend')):
+    sources = sorted((ROOT/'documentation/examples').rglob('*.blend'), key=lambda source: (bool(catalog_options(source).get('historical')), source.as_posix()))
+    for source in sources:
         output=source.with_suffix('.glb')
         report=json.loads(source.with_suffix('.export.json').read_text(encoding='utf-8'))
         assert report['sourceSha256']==sha(source), 'Stale source export: '+str(source)
@@ -62,7 +68,7 @@ def build():
         doc=glb_document(output)
         path=source.relative_to(ROOT).as_posix()
         parts=path.split('/')
-        title=re.sub(r'^\d+-','',parts[2]).replace('-',' ').title()
+        title=catalog_options(source).get('title') or re.sub(r'^\d+-','',parts[2]).replace('-',' ').title()
         variant='/'.join(parts[4:-1])
         if variant:title+=' / '+variant.replace('-',' ').replace('/',' / ').title()
         entry={'id':path,'title':title,'sourcePath':path,'glbPath':output.relative_to(ROOT).as_posix(),'byteSize':output.stat().st_size,'sourceSha256':report['sourceSha256'],'glbSha256':report['glbSha256'],'warnings':report['warnings'],'metadata':metadata(source),'exported':{'meshes':len(doc.get('meshes',[])),'materials':len(doc.get('materials',[])),'animations':[a.get('name','Unnamed') for a in doc.get('animations',[])]}}
